@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Salmos 90 — Bíblia Strong Interativa | Voltemos à Palavra</title>
+<meta name="description" content="Leia Salmos capítulo 90 com dicionário Strong em português, referências cruzadas e vista paralela ARA e KJV.">
+<link rel="canonical" href="https://voltemosapalavra1-bit.github.io/B-blia_Strong/salmos/90.html">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<div class="seo-text" aria-hidden="true">1 « Oração de Moisés, homem de Deus » Senhor, tu tens sido o nosso refúgio, de geração em geração. 2 Antes que os montes nascessem e se formassem a terra e o mundo, de eternidade a eternidade, tu és Deus. 3 Tu reduzes o homem ao pó e dizes: Tornai, filhos dos homens. 4 Pois mil anos, aos teus olhos, são como o dia de ontem que se foi e como a vigília da noite. 5 Tu os arrastas na torrente, são como um sono, como a relva que floresce de madrugada; 6 de madrugada, viceja e floresce; à tarde, murcha e seca. 7 Pois somos consumidos pela tua ira e pelo teu furor, conturbados. 8 Diante de ti puseste as nossas iniqüidades e, sob a luz do teu rosto, os nossos pecados ocultos. 9 Pois todos os nossos dias se passam na tua ira; acabam-se os nossos anos como um breve pensamento. 10 Os dias da nossa vida sobem a setenta anos ou, em havendo vigor, a oitenta; neste caso, o melhor deles é canseira e enfado, porque tudo passa rapidamente, e nós voamos. 11 Quem conhece o poder da tua ira? E a tua cólera, segundo o temor que te é devido? 12 Ensina-nos a contar os nossos dias, para que alcancemos coração sábio. 13 Volta-te, SENHOR! Até quando? Tem compaixão dos teus servos. 14 Sacia-nos de manhã com a tua benignidade, para que cantemos de júbilo e nos alegremos todos os nossos dias. 15 Alegra-nos por tantos dias quantos nos tens afligido, por tantos anos quantos suportamos a adversidade. 16 Aos teus servos apareçam as tuas obras, e a seus filhos, a tua glória. 17 Seja sobre nós a graça do Senhor, nosso Deus; confirma sobre nós as obras das nossas mãos, sim, confirma a obra das nossas mãos.</div>
+<header class="header">
+  <div class="header-inner">
+    <a class="logo" href="../../index.html"><h1>Voltemos à Palavra</h1><span>Bíblia Strong Interativa</span></a>
+    <div class="search-wrap">
+      <input type="text" id="searchInput" placeholder="Ex: Gênesis 1 1 · João 3 16" onkeypress="if(event.key==='Enter')doSearch()">
+      <button class="btn-search" onclick="doSearch()">🔍 Buscar</button>
+    </div>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar"><div class="sidebar-head">✦ Livros</div><ul class="book-list" id="bookList"></ul></aside>
+  <section class="main">
+    <div class="toolbar">
+      <div class="vg"><span class="vg-lbl">Versão</span>
+        <input type="radio" class="r" name="ver" id="rAlm" value="ara" checked onchange="render()"><label class="r" for="rAlm">🇧🇷 ARA</label>
+        <input type="radio" class="r" name="ver" id="rKJV" value="kjv" onchange="render()"><label class="r" for="rKJV">🇬🇧 KJV</label>
+      </div>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkPar" onchange="render()"> Vista Paralela</label>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkStr" checked onchange="render()"> Códigos Strong</label>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkRef" checked onchange="render()"> Referências</label>
+    </div>
+    <div class="chap-bar">
+      <div><h2 id="chapTitle">Salmos 90</h2><div class="sub" id="chapSub">Almeida Revista e Atualizada</div></div>
+      <div class="nav-btns"><a class="nav-btn" href="../../salmos/89.html">← Salmos 89</a><select class="cap-sel" id="capSel" onchange="onCapSel()"></select><a class="nav-btn" href="../../salmos/91.html">Salmos 91 →</a></div>
+    </div>
+    <div class="par-heads" id="parHeads">
+      <div class="col-lbl">🇧🇷 ARA — Almeida Revista e Atualizada</div>
+      <div class="col-lbl">🇬🇧 KJV — King James Version</div>
+    </div>
+    <div class="verses-panel" id="versesPanel"><div class="loading"><div class="spinner"></div><div>Carregando…</div></div></div>
+  </section>
+</div>
+<div class="overlay" id="overlay" onclick="closePopup()"></div>
+<div class="popup" id="popup">
+  <div class="pop-top"><div class="pop-code"><span id="popCode"></span><span class="badge" id="popBadge"></span></div><button class="pop-close" onclick="closePopup()">✕</button></div>
+  <div class="pop-word"><div class="original" id="popOrig"></div><div class="translit" id="popXlit"></div></div>
+  <div class="pop-body">
+    <div class="def-block"><div class="lbl">Pronunciação</div><div class="val" id="popPron"></div></div>
+    <div class="def-block"><div class="lbl">Definição</div><div class="val" id="popDesc"></div></div>
+  </div>
+</div>
+<script>var INIT_BOOK="Psalms";var INIT_CAP=90;var BASE="../../";</script>
+<script src="../../app.js"></script>
+</body>
+</html>

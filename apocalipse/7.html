@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apocalipse 7 — Bíblia Strong Interativa | Voltemos à Palavra</title>
+<meta name="description" content="Leia Apocalipse capítulo 7 com dicionário Strong em português, referências cruzadas e vista paralela ARA e KJV.">
+<link rel="canonical" href="https://voltemosapalavra1-bit.github.io/B-blia_Strong/apocalipse/7.html">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<div class="seo-text" aria-hidden="true">1 Depois disto, vi quatro anjos em pé nos quatro cantos da terra, conservando seguros os quatro ventos da terra, para que nenhum vento soprasse sobre a terra, nem sobre o mar, nem sobre árvore alguma. 2 Vi outro anjo que subia do nascente do sol, tendo o selo do Deus vivo, e clamou em grande voz aos quatro anjos, aqueles aos quais fora dado fazer dano à terra e ao mar, 3 dizendo: Não danifiqueis nem a terra, nem o mar, nem as árvores, até selarmos na fronte os servos do nosso Deus. 4 Então, ouvi o número dos que foram selados, que era cento e quarenta e quatro mil, de todas as tribos dos filhos de Israel: 5 da tribo de Judá foram selados doze mil; da tribo de Rúben, doze mil; da tribo de Gade, doze mil; 6 da tribo de Aser, doze mil; da tribo de Naftali, doze mil; da tribo de Manassés, doze mil; 7 da tribo de Simeão, doze mil; da tribo de Levi, doze mil; da tribo de Issacar, doze mil; 8 da tribo de Zebulom, doze mil; da tribo de José, doze mil; da tribo de Benjamim foram selados doze mil. 9 Depois destas coisas, vi, e eis grande multidão que ninguém podia enumerar, de todas as nações, tribos, povos e línguas, em pé diante do trono e diante do Cordeiro, vestidos de vestiduras brancas, com palmas nas mãos; 10 e clamavam em grande voz, dizendo: Ao nosso Deus, que se assenta no trono, e ao Cordeiro, pertence a salvação. 11 Todos os anjos estavam de pé rodeando o trono, os anciãos e os quatro seres viventes, e ante o trono se prostraram sobre o seu rosto, e adoraram a Deus, 12 dizendo: Amém! O louvor, e a glória, e a sabedoria, e as ações de graças, e a honra, e o poder, e a força sejam ao nosso Deus, pelos séculos dos séculos. Amém! 13 Um dos anciãos tomou a palavra, dizendo: Estes, que se vestem de vestiduras brancas, quem são e donde vieram? 14 Respondi-lhe: meu Senhor, tu o sabes. Ele, então, me disse: São estes os que vêm da grande tribulação, lavaram suas vestiduras e as alvejaram no sangue do Cordeiro, 15 razão por que se acham diante do trono de Deus e o servem de dia e de noite no seu santuário; e aquele que se assenta no trono estenderá sobre eles o seu tabernáculo. 16 Jamais terão fome, nunca mais terão sede, não cairá sobre eles o sol, nem ardor algum, 17 pois o Cordeiro que se encontra no meio do trono os apascentará e os guiará para as fontes da água da vida. E Deus lhes enxugará dos olhos toda lágrima.</div>
+<header class="header">
+  <div class="header-inner">
+    <a class="logo" href="../../index.html"><h1>Voltemos à Palavra</h1><span>Bíblia Strong Interativa</span></a>
+    <div class="search-wrap">
+      <input type="text" id="searchInput" placeholder="Ex: Gênesis 1 1 · João 3 16" onkeypress="if(event.key==='Enter')doSearch()">
+      <button class="btn-search" onclick="doSearch()">🔍 Buscar</button>
+    </div>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar"><div class="sidebar-head">✦ Livros</div><ul class="book-list" id="bookList"></ul></aside>
+  <section class="main">
+    <div class="toolbar">
+      <div class="vg"><span class="vg-lbl">Versão</span>
+        <input type="radio" class="r" name="ver" id="rAlm" value="ara" checked onchange="render()"><label class="r" for="rAlm">🇧🇷 ARA</label>
+        <input type="radio" class="r" name="ver" id="rKJV" value="kjv" onchange="render()"><label class="r" for="rKJV">🇬🇧 KJV</label>
+      </div>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkPar" onchange="render()"> Vista Paralela</label>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkStr" checked onchange="render()"> Códigos Strong</label>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkRef" checked onchange="render()"> Referências</label>
+    </div>
+    <div class="chap-bar">
+      <div><h2 id="chapTitle">Apocalipse 7</h2><div class="sub" id="chapSub">Almeida Revista e Atualizada</div></div>
+      <div class="nav-btns"><a class="nav-btn" href="../../apocalipse/6.html">← Apocalipse 6</a><select class="cap-sel" id="capSel" onchange="onCapSel()"></select><a class="nav-btn" href="../../apocalipse/8.html">Apocalipse 8 →</a></div>
+    </div>
+    <div class="par-heads" id="parHeads">
+      <div class="col-lbl">🇧🇷 ARA — Almeida Revista e Atualizada</div>
+      <div class="col-lbl">🇬🇧 KJV — King James Version</div>
+    </div>
+    <div class="verses-panel" id="versesPanel"><div class="loading"><div class="spinner"></div><div>Carregando…</div></div></div>
+  </section>
+</div>
+<div class="overlay" id="overlay" onclick="closePopup()"></div>
+<div class="popup" id="popup">
+  <div class="pop-top"><div class="pop-code"><span id="popCode"></span><span class="badge" id="popBadge"></span></div><button class="pop-close" onclick="closePopup()">✕</button></div>
+  <div class="pop-word"><div class="original" id="popOrig"></div><div class="translit" id="popXlit"></div></div>
+  <div class="pop-body">
+    <div class="def-block"><div class="lbl">Pronunciação</div><div class="val" id="popPron"></div></div>
+    <div class="def-block"><div class="lbl">Definição</div><div class="val" id="popDesc"></div></div>
+  </div>
+</div>
+<script>var INIT_BOOK="Revelation";var INIT_CAP=7;var BASE="../../";</script>
+<script src="../../app.js"></script>
+</body>
+</html>

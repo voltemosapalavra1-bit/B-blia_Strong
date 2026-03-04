@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Salmos 49 — Bíblia Strong Interativa | Voltemos à Palavra</title>
+<meta name="description" content="Leia Salmos capítulo 49 com dicionário Strong em português, referências cruzadas e vista paralela ARA e KJV.">
+<link rel="canonical" href="https://voltemosapalavra1-bit.github.io/B-blia_Strong/salmos/49.html">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<div class="seo-text" aria-hidden="true">1 « Ao mestre de canto. Salmo dos filhos de Corá » Povos todos, escutai isto; dai ouvidos, moradores todos da terra, 2 tanto plebeus como os de fina estirpe, todos juntamente, ricos e pobres. 3 Os meus lábios falarão sabedoria, e o meu coração terá pensamentos judiciosos. 4 Inclinarei os ouvidos a uma parábola, decifrarei o meu enigma ao som da harpa. 5 Por que hei de eu temer nos dias da tribulação, quando me salteia a iniqüidade dos que me perseguem, 6 dos que confiam nos seus bens e na sua muita riqueza se gloriam? 7 Ao irmão, verdadeiramente, ninguém o pode remir, nem pagar por ele a Deus o seu resgate 8 (Pois a redenção da alma deles é caríssima, e cessará a tentativa para sempre.), 9 para que continue a viver perpetuamente e não veja a cova; 10 porquanto vê-se morrerem os sábios e perecerem tanto o estulto como o inepto, os quais deixam a outros as suas riquezas. 11 O seu pensamento íntimo é que as suas casas serão perpétuas e, as suas moradas, para todas as gerações; chegam a dar seu próprio nome às suas terras. 12 Todavia, o homem não permanece em sua ostentação; é, antes, como os animais, que perecem. 13 Tal proceder é estultícia deles; assim mesmo os seus seguidores aplaudem o que eles dizem. 14 Como ovelhas são postos na sepultura; a morte é o seu pastor; eles descem diretamente para a cova, onde a sua formosura se consome; a sepultura é o lugar em que habitam. 15 Mas Deus remirá a minha alma do poder da morte, pois ele me tomará para si. 16 Não temas, quando alguém se enriquecer, quando avultar a glória de sua casa; 17 pois, em morrendo, nada levará consigo, a sua glória não o acompanhará. 18 Ainda que durante a vida ele se tenha lisonjeado, e ainda que o louvem quando faz o bem a si mesmo, 19 irá ter com a geração de seus pais, os quais já não verão a luz. 20 O homem, revestido de honrarias, mas sem entendimento, é, antes, como os animais, que perecem.</div>
+<header class="header">
+  <div class="header-inner">
+    <a class="logo" href="../../index.html"><h1>Voltemos à Palavra</h1><span>Bíblia Strong Interativa</span></a>
+    <div class="search-wrap">
+      <input type="text" id="searchInput" placeholder="Ex: Gênesis 1 1 · João 3 16" onkeypress="if(event.key==='Enter')doSearch()">
+      <button class="btn-search" onclick="doSearch()">🔍 Buscar</button>
+    </div>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar"><div class="sidebar-head">✦ Livros</div><ul class="book-list" id="bookList"></ul></aside>
+  <section class="main">
+    <div class="toolbar">
+      <div class="vg"><span class="vg-lbl">Versão</span>
+        <input type="radio" class="r" name="ver" id="rAlm" value="ara" checked onchange="render()"><label class="r" for="rAlm">🇧🇷 ARA</label>
+        <input type="radio" class="r" name="ver" id="rKJV" value="kjv" onchange="render()"><label class="r" for="rKJV">🇬🇧 KJV</label>
+      </div>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkPar" onchange="render()"> Vista Paralela</label>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkStr" checked onchange="render()"> Códigos Strong</label>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkRef" checked onchange="render()"> Referências</label>
+    </div>
+    <div class="chap-bar">
+      <div><h2 id="chapTitle">Salmos 49</h2><div class="sub" id="chapSub">Almeida Revista e Atualizada</div></div>
+      <div class="nav-btns"><a class="nav-btn" href="../../salmos/48.html">← Salmos 48</a><select class="cap-sel" id="capSel" onchange="onCapSel()"></select><a class="nav-btn" href="../../salmos/50.html">Salmos 50 →</a></div>
+    </div>
+    <div class="par-heads" id="parHeads">
+      <div class="col-lbl">🇧🇷 ARA — Almeida Revista e Atualizada</div>
+      <div class="col-lbl">🇬🇧 KJV — King James Version</div>
+    </div>
+    <div class="verses-panel" id="versesPanel"><div class="loading"><div class="spinner"></div><div>Carregando…</div></div></div>
+  </section>
+</div>
+<div class="overlay" id="overlay" onclick="closePopup()"></div>
+<div class="popup" id="popup">
+  <div class="pop-top"><div class="pop-code"><span id="popCode"></span><span class="badge" id="popBadge"></span></div><button class="pop-close" onclick="closePopup()">✕</button></div>
+  <div class="pop-word"><div class="original" id="popOrig"></div><div class="translit" id="popXlit"></div></div>
+  <div class="pop-body">
+    <div class="def-block"><div class="lbl">Pronunciação</div><div class="val" id="popPron"></div></div>
+    <div class="def-block"><div class="lbl">Definição</div><div class="val" id="popDesc"></div></div>
+  </div>
+</div>
+<script>var INIT_BOOK="Psalms";var INIT_CAP=49;var BASE="../../";</script>
+<script src="../../app.js"></script>
+</body>
+</html>

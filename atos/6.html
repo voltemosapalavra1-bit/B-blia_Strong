@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Atos 6 — Bíblia Strong Interativa | Voltemos à Palavra</title>
+<meta name="description" content="Leia Atos capítulo 6 com dicionário Strong em português, referências cruzadas e vista paralela ARA e KJV.">
+<link rel="canonical" href="https://voltemosapalavra1-bit.github.io/B-blia_Strong/atos/6.html">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<div class="seo-text" aria-hidden="true">1 Ora, naqueles dias, multiplicando-se o número dos discípulos, houve murmuração dos helenistas contra os hebreus, porque as viúvas deles estavam sendo esquecidas na distribuição diária. 2 Então, os doze convocaram a comunidade dos discípulos e disseram: Não é razoável que nós abandonemos a palavra de Deus para servir às mesas. 3 Mas, irmãos, escolhei dentre vós sete homens de boa reputação, cheios do Espírito e de sabedoria, aos quais encarregaremos deste serviço; 4 e, quanto a nós, nos consagraremos à oração e ao ministério da palavra. 5 O parecer agradou a toda a comunidade; e elegeram Estêvão, homem cheio de fé e do Espírito Santo, Filipe, Prócoro, Nicanor, Timão, Pármenas e Nicolau, prosélito de Antioquia. 6 Apresentaram-nos perante os apóstolos, e estes, orando, lhes impuseram as mãos. 7 Crescia a palavra de Deus, e, em Jerusalém, se multiplicava o número dos discípulos; também muitíssimos sacerdotes obedeciam à fé. 8 Estêvão, cheio de graça e poder, fazia prodígios e grandes sinais entre o povo. 9 Levantaram-se, porém, alguns dos que eram da sinagoga chamada dos Libertos, dos cireneus, dos alexandrinos e dos da Cilícia e Ásia, e discutiam com Estêvão; 10 e não podiam resistir à sabedoria e ao Espírito, pelo qual ele falava. 11 Então, subornaram homens que dissessem: Temos ouvido este homem proferir blasfêmias contra Moisés e contra Deus. 12 WG5037> Sublevaram o povo, os anciãos e os escribas e, investindo, o arrebataram, levando-o ao Sinédrio. 13 WG5037> Apresentaram testemunhas falsas, que depuseram: Este homem não cessa de falar contra o lugar santo e contra a lei; 14 porque o temos ouvido dizer que esse Jesus, o Nazareno, destruirá este lugar e mudará os costumes que Moisés nos deu. 15 Todos os que estavam assentados no Sinédrio, fitando os olhos em Estêvão, viram o seu rosto como se fosse rosto de anjo.</div>
+<header class="header">
+  <div class="header-inner">
+    <a class="logo" href="../../index.html"><h1>Voltemos à Palavra</h1><span>Bíblia Strong Interativa</span></a>
+    <div class="search-wrap">
+      <input type="text" id="searchInput" placeholder="Ex: Gênesis 1 1 · João 3 16" onkeypress="if(event.key==='Enter')doSearch()">
+      <button class="btn-search" onclick="doSearch()">🔍 Buscar</button>
+    </div>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar"><div class="sidebar-head">✦ Livros</div><ul class="book-list" id="bookList"></ul></aside>
+  <section class="main">
+    <div class="toolbar">
+      <div class="vg"><span class="vg-lbl">Versão</span>
+        <input type="radio" class="r" name="ver" id="rAlm" value="ara" checked onchange="render()"><label class="r" for="rAlm">🇧🇷 ARA</label>
+        <input type="radio" class="r" name="ver" id="rKJV" value="kjv" onchange="render()"><label class="r" for="rKJV">🇬🇧 KJV</label>
+      </div>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkPar" onchange="render()"> Vista Paralela</label>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkStr" checked onchange="render()"> Códigos Strong</label>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkRef" checked onchange="render()"> Referências</label>
+    </div>
+    <div class="chap-bar">
+      <div><h2 id="chapTitle">Atos 6</h2><div class="sub" id="chapSub">Almeida Revista e Atualizada</div></div>
+      <div class="nav-btns"><a class="nav-btn" href="../../atos/5.html">← Atos 5</a><select class="cap-sel" id="capSel" onchange="onCapSel()"></select><a class="nav-btn" href="../../atos/7.html">Atos 7 →</a></div>
+    </div>
+    <div class="par-heads" id="parHeads">
+      <div class="col-lbl">🇧🇷 ARA — Almeida Revista e Atualizada</div>
+      <div class="col-lbl">🇬🇧 KJV — King James Version</div>
+    </div>
+    <div class="verses-panel" id="versesPanel"><div class="loading"><div class="spinner"></div><div>Carregando…</div></div></div>
+  </section>
+</div>
+<div class="overlay" id="overlay" onclick="closePopup()"></div>
+<div class="popup" id="popup">
+  <div class="pop-top"><div class="pop-code"><span id="popCode"></span><span class="badge" id="popBadge"></span></div><button class="pop-close" onclick="closePopup()">✕</button></div>
+  <div class="pop-word"><div class="original" id="popOrig"></div><div class="translit" id="popXlit"></div></div>
+  <div class="pop-body">
+    <div class="def-block"><div class="lbl">Pronunciação</div><div class="val" id="popPron"></div></div>
+    <div class="def-block"><div class="lbl">Definição</div><div class="val" id="popDesc"></div></div>
+  </div>
+</div>
+<script>var INIT_BOOK="Acts";var INIT_CAP=6;var BASE="../../";</script>
+<script src="../../app.js"></script>
+</body>
+</html>

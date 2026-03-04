@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apocalipse 5 — Bíblia Strong Interativa | Voltemos à Palavra</title>
+<meta name="description" content="Leia Apocalipse capítulo 5 com dicionário Strong em português, referências cruzadas e vista paralela ARA e KJV.">
+<link rel="canonical" href="https://voltemosapalavra1-bit.github.io/B-blia_Strong/apocalipse/5.html">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<div class="seo-text" aria-hidden="true">1 Vi, na mão direita daquele que estava sentado no trono, um livro escrito por dentro e por fora, de todo selado com sete selos. 2 Vi, também, um anjo forte, que proclamava em grande voz: Quem é digno de abrir o livro e de lhe desatar os selos? 3 Ora, nem no céu, nem sobre a terra, nem debaixo da terra, ninguém podia abrir o livro, nem mesmo olhar para ele; 4 e eu chorava muito, porque ninguém foi achado digno de abrir o livro, nem mesmo de olhar para ele. 5 Todavia, um dos anciãos me disse: Não chores; eis que o Leão da tribo de Judá, a Raiz de Davi, venceu para abrir o livro e os seus sete selos. 6 Então, vi, no meio do trono e dos quatro seres viventes e entre os anciãos, de pé, um Cordeiro como tendo sido morto. Ele tinha sete chifres, bem como sete olhos, que são os sete Espíritos de Deus enviados por toda a terra. 7 Veio, pois, e tomou o livro da mão direita daquele que estava sentado no trono; 8 e, quando tomou o livro, os quatro seres viventes e os vinte e quatro anciãos prostraram-se diante do Cordeiro, tendo cada um deles uma harpa e taças de ouro cheias de incenso, que são as orações dos santos, 9 e entoavam novo cântico, dizendo: Digno és de tomar o livro e de abrir-lhe os selos, porque foste morto e com o teu sangue compraste para Deus os que procedem de toda tribo, língua, povo e nação 10 e para o nosso Deus os constituíste reino e sacerdotes; e reinarão sobre a terra. 11 Vi e ouvi uma voz de muitos anjos ao redor do trono, dos seres viventes e dos anciãos, cujo número era de milhões de milhões e milhares de milhares, 12 proclamando em grande voz: Digno é o Cordeiro que foi morto de receber o poder, e riqueza, e sabedoria, e força, e honra, e glória, e louvor. 13 Então, ouvi que toda criatura que há no céu e sobre a terra, debaixo da terra e sobre o mar, e tudo o que neles há, estava dizendo: Àquele que está sentado no trono e ao Cordeiro, seja o louvor, e a honra, e a glória, e o domínio pelos séculos dos séculos. 14 E os quatro seres viventes respondiam: Amém! Também os anciãos prostraram-se e adoraram.</div>
+<header class="header">
+  <div class="header-inner">
+    <a class="logo" href="../../index.html"><h1>Voltemos à Palavra</h1><span>Bíblia Strong Interativa</span></a>
+    <div class="search-wrap">
+      <input type="text" id="searchInput" placeholder="Ex: Gênesis 1 1 · João 3 16" onkeypress="if(event.key==='Enter')doSearch()">
+      <button class="btn-search" onclick="doSearch()">🔍 Buscar</button>
+    </div>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar"><div class="sidebar-head">✦ Livros</div><ul class="book-list" id="bookList"></ul></aside>
+  <section class="main">
+    <div class="toolbar">
+      <div class="vg"><span class="vg-lbl">Versão</span>
+        <input type="radio" class="r" name="ver" id="rAlm" value="ara" checked onchange="render()"><label class="r" for="rAlm">🇧🇷 ARA</label>
+        <input type="radio" class="r" name="ver" id="rKJV" value="kjv" onchange="render()"><label class="r" for="rKJV">🇬🇧 KJV</label>
+      </div>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkPar" onchange="render()"> Vista Paralela</label>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkStr" checked onchange="render()"> Códigos Strong</label>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkRef" checked onchange="render()"> Referências</label>
+    </div>
+    <div class="chap-bar">
+      <div><h2 id="chapTitle">Apocalipse 5</h2><div class="sub" id="chapSub">Almeida Revista e Atualizada</div></div>
+      <div class="nav-btns"><a class="nav-btn" href="../../apocalipse/4.html">← Apocalipse 4</a><select class="cap-sel" id="capSel" onchange="onCapSel()"></select><a class="nav-btn" href="../../apocalipse/6.html">Apocalipse 6 →</a></div>
+    </div>
+    <div class="par-heads" id="parHeads">
+      <div class="col-lbl">🇧🇷 ARA — Almeida Revista e Atualizada</div>
+      <div class="col-lbl">🇬🇧 KJV — King James Version</div>
+    </div>
+    <div class="verses-panel" id="versesPanel"><div class="loading"><div class="spinner"></div><div>Carregando…</div></div></div>
+  </section>
+</div>
+<div class="overlay" id="overlay" onclick="closePopup()"></div>
+<div class="popup" id="popup">
+  <div class="pop-top"><div class="pop-code"><span id="popCode"></span><span class="badge" id="popBadge"></span></div><button class="pop-close" onclick="closePopup()">✕</button></div>
+  <div class="pop-word"><div class="original" id="popOrig"></div><div class="translit" id="popXlit"></div></div>
+  <div class="pop-body">
+    <div class="def-block"><div class="lbl">Pronunciação</div><div class="val" id="popPron"></div></div>
+    <div class="def-block"><div class="lbl">Definição</div><div class="val" id="popDesc"></div></div>
+  </div>
+</div>
+<script>var INIT_BOOK="Revelation";var INIT_CAP=5;var BASE="../../";</script>
+<script src="../../app.js"></script>
+</body>
+</html>

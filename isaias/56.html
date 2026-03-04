@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Isaías 56 — Bíblia Strong Interativa | Voltemos à Palavra</title>
+<meta name="description" content="Leia Isaías capítulo 56 com dicionário Strong em português, referências cruzadas e vista paralela ARA e KJV.">
+<link rel="canonical" href="https://voltemosapalavra1-bit.github.io/B-blia_Strong/isaias/56.html">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<div class="seo-text" aria-hidden="true">1 Assim diz o SENHOR: Mantende o juízo e fazei justiça, porque a minha salvação está prestes a vir, e a minha justiça, prestes a manifestar-se. 2 Bem-aventurado o homem que faz isto, e o filho do homem que nisto se firma, que se guarda de profanar o sábado e guarda a sua mão de cometer algum mal. 3 Não fale o estrangeiro que se houver chegado ao SENHOR, dizendo: O SENHOR, com efeito, me separará do seu povo; nem tampouco diga o eunuco: Eis que eu sou uma árvore seca. 4 Porque assim diz o SENHOR: Aos eunucos que guardam os meus sábados, escolhem aquilo que me agrada e abraçam a minha aliança, 5 darei na minha casa e dentro dos meus muros, um memorial e um nome melhor do que filhos e filhas; um nome eterno darei a cada um deles, que nunca se apagará. 6 Aos estrangeiros que se chegam ao SENHOR, para o servirem e para amarem o nome do SENHOR, sendo deste modo servos seus, sim, todos os que guardam o sábado, não o profanando, e abraçam a minha aliança, 7 também os levarei ao meu santo monte e os alegrarei na minha Casa de Oração; os seus holocaustos e os seus sacrifícios serão aceitos no meu altar, porque a minha casa será chamada Casa de Oração para todos os povos. 8 Assim diz o SENHOR Deus, que congrega os dispersos de Israel: Ainda congregarei outros aos que já se acham reunidos. 9 Vós, todos os animais do campo, todas as feras dos bosques, vinde comer. 10 Os seus atalaias são cegos, nada sabem; todos são cães mudos, não podem ladrar; sonhadores preguiçosos, gostam de dormir. 11 Tais cães são gulosos, nunca se fartam; são pastores que nada compreendem, e todos se tornam para o seu caminho, cada um para a sua ganância, todos sem exceção. 12 Vinde, dizem eles, trarei vinho, e nos encharcaremos de bebida forte; o dia de amanhã será como este e ainda maior e mais famoso.</div>
+<header class="header">
+  <div class="header-inner">
+    <a class="logo" href="../../index.html"><h1>Voltemos à Palavra</h1><span>Bíblia Strong Interativa</span></a>
+    <div class="search-wrap">
+      <input type="text" id="searchInput" placeholder="Ex: Gênesis 1 1 · João 3 16" onkeypress="if(event.key==='Enter')doSearch()">
+      <button class="btn-search" onclick="doSearch()">🔍 Buscar</button>
+    </div>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar"><div class="sidebar-head">✦ Livros</div><ul class="book-list" id="bookList"></ul></aside>
+  <section class="main">
+    <div class="toolbar">
+      <div class="vg"><span class="vg-lbl">Versão</span>
+        <input type="radio" class="r" name="ver" id="rAlm" value="ara" checked onchange="render()"><label class="r" for="rAlm">🇧🇷 ARA</label>
+        <input type="radio" class="r" name="ver" id="rKJV" value="kjv" onchange="render()"><label class="r" for="rKJV">🇬🇧 KJV</label>
+      </div>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkPar" onchange="render()"> Vista Paralela</label>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkStr" checked onchange="render()"> Códigos Strong</label>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkRef" checked onchange="render()"> Referências</label>
+    </div>
+    <div class="chap-bar">
+      <div><h2 id="chapTitle">Isaías 56</h2><div class="sub" id="chapSub">Almeida Revista e Atualizada</div></div>
+      <div class="nav-btns"><a class="nav-btn" href="../../isaias/55.html">← Isaías 55</a><select class="cap-sel" id="capSel" onchange="onCapSel()"></select><a class="nav-btn" href="../../isaias/57.html">Isaías 57 →</a></div>
+    </div>
+    <div class="par-heads" id="parHeads">
+      <div class="col-lbl">🇧🇷 ARA — Almeida Revista e Atualizada</div>
+      <div class="col-lbl">🇬🇧 KJV — King James Version</div>
+    </div>
+    <div class="verses-panel" id="versesPanel"><div class="loading"><div class="spinner"></div><div>Carregando…</div></div></div>
+  </section>
+</div>
+<div class="overlay" id="overlay" onclick="closePopup()"></div>
+<div class="popup" id="popup">
+  <div class="pop-top"><div class="pop-code"><span id="popCode"></span><span class="badge" id="popBadge"></span></div><button class="pop-close" onclick="closePopup()">✕</button></div>
+  <div class="pop-word"><div class="original" id="popOrig"></div><div class="translit" id="popXlit"></div></div>
+  <div class="pop-body">
+    <div class="def-block"><div class="lbl">Pronunciação</div><div class="val" id="popPron"></div></div>
+    <div class="def-block"><div class="lbl">Definição</div><div class="val" id="popDesc"></div></div>
+  </div>
+</div>
+<script>var INIT_BOOK="Isaiah";var INIT_CAP=56;var BASE="../../";</script>
+<script src="../../app.js"></script>
+</body>
+</html>

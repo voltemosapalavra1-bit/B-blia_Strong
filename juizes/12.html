@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Juízes 12 — Bíblia Strong Interativa | Voltemos à Palavra</title>
+<meta name="description" content="Leia Juízes capítulo 12 com dicionário Strong em português, referências cruzadas e vista paralela ARA e KJV.">
+<link rel="canonical" href="https://voltemosapalavra1-bit.github.io/B-blia_Strong/juizes/12.html">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<div class="seo-text" aria-hidden="true">1 Então, foram convocados os homens de Efraim, e passaram para Zafom, e disseram a Jefté: Por que foste combater contra os filhos de Amom e não nos chamaste para ir contigo? Queimaremos a tua casa, estando tu dentro dela. 2 E Jefté lhes disse: Eu e o meu povo tivemos grande contenda com os filhos de Amom; chamei-vos, e não me livrastes das suas mãos. 3 Vendo eu que não me livráveis, arrisquei a minha vida e passei contra os filhos de Amom, e o SENHOR os entregou nas minhas mãos; por que, pois, subistes, hoje, contra mim, para me combaterdes? 4 Ajuntou Jefté todos os homens de Gileade e pelejou contra Efraim; e os homens de Gileade feriram Efraim, porque este dissera: Fugitivos sois de Efraim, vós, gileaditas, que morais no meio de Efraim e Manassés. 5 Porém os gileaditas tomaram os vaus do Jordão que conduzem a Efraim; de sorte que, quando qualquer fugitivo de Efraim dizia: Quero passar; então, os homens de Gileade lhe perguntavam: És tu efraimita? Se respondia: Não; 6 então, lhe tornavam: Dize, pois, chibolete; quando dizia sibolete, não podendo exprimir bem a palavra, então, pegavam dele e o matavam nos vaus do Jordão. E caíram de Efraim, naquele tempo, quarenta e dois mil. 7 Jefté, o gileadita, julgou a Israel seis anos; e morreu e foi sepultado numa das cidades de Gileade. 8 Depois dele, julgou a Israel Ibsã, de Belém. 9 Tinha este trinta filhos e trinta filhas; a estas, casou fora; e, de fora, trouxe trinta mulheres para seus filhos. Julgou a Israel sete anos. 10 Então, faleceu Ibsã e foi sepultado em Belém. 11 Depois dele, veio Elom, o zebulonita, que julgou a Israel dez anos. 12 Faleceu Elom, o zebulonita, e foi sepultado em Aijalom, na terra de Zebulom. 13 Depois dele, julgou a Israel Abdom, filho de Hilel, o piratonita. 14 Tinha este quarenta filhos e trinta netos, que cavalgavam setenta jumentos. Julgou a Israel oito anos. 15 Então, faleceu Abdom, filho de Hilel, o piratonita; e foi sepultado em Piratom, na terra de Efraim, na região montanhosa dos amalequitas.</div>
+<header class="header">
+  <div class="header-inner">
+    <a class="logo" href="../../index.html"><h1>Voltemos à Palavra</h1><span>Bíblia Strong Interativa</span></a>
+    <div class="search-wrap">
+      <input type="text" id="searchInput" placeholder="Ex: Gênesis 1 1 · João 3 16" onkeypress="if(event.key==='Enter')doSearch()">
+      <button class="btn-search" onclick="doSearch()">🔍 Buscar</button>
+    </div>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar"><div class="sidebar-head">✦ Livros</div><ul class="book-list" id="bookList"></ul></aside>
+  <section class="main">
+    <div class="toolbar">
+      <div class="vg"><span class="vg-lbl">Versão</span>
+        <input type="radio" class="r" name="ver" id="rAlm" value="ara" checked onchange="render()"><label class="r" for="rAlm">🇧🇷 ARA</label>
+        <input type="radio" class="r" name="ver" id="rKJV" value="kjv" onchange="render()"><label class="r" for="rKJV">🇬🇧 KJV</label>
+      </div>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkPar" onchange="render()"> Vista Paralela</label>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkStr" checked onchange="render()"> Códigos Strong</label>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkRef" checked onchange="render()"> Referências</label>
+    </div>
+    <div class="chap-bar">
+      <div><h2 id="chapTitle">Juízes 12</h2><div class="sub" id="chapSub">Almeida Revista e Atualizada</div></div>
+      <div class="nav-btns"><a class="nav-btn" href="../../juizes/11.html">← Juízes 11</a><select class="cap-sel" id="capSel" onchange="onCapSel()"></select><a class="nav-btn" href="../../juizes/13.html">Juízes 13 →</a></div>
+    </div>
+    <div class="par-heads" id="parHeads">
+      <div class="col-lbl">🇧🇷 ARA — Almeida Revista e Atualizada</div>
+      <div class="col-lbl">🇬🇧 KJV — King James Version</div>
+    </div>
+    <div class="verses-panel" id="versesPanel"><div class="loading"><div class="spinner"></div><div>Carregando…</div></div></div>
+  </section>
+</div>
+<div class="overlay" id="overlay" onclick="closePopup()"></div>
+<div class="popup" id="popup">
+  <div class="pop-top"><div class="pop-code"><span id="popCode"></span><span class="badge" id="popBadge"></span></div><button class="pop-close" onclick="closePopup()">✕</button></div>
+  <div class="pop-word"><div class="original" id="popOrig"></div><div class="translit" id="popXlit"></div></div>
+  <div class="pop-body">
+    <div class="def-block"><div class="lbl">Pronunciação</div><div class="val" id="popPron"></div></div>
+    <div class="def-block"><div class="lbl">Definição</div><div class="val" id="popDesc"></div></div>
+  </div>
+</div>
+<script>var INIT_BOOK="Judges";var INIT_CAP=12;var BASE="../../";</script>
+<script src="../../app.js"></script>
+</body>
+</html>

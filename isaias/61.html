@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Isaías 61 — Bíblia Strong Interativa | Voltemos à Palavra</title>
+<meta name="description" content="Leia Isaías capítulo 61 com dicionário Strong em português, referências cruzadas e vista paralela ARA e KJV.">
+<link rel="canonical" href="https://voltemosapalavra1-bit.github.io/B-blia_Strong/isaias/61.html">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<div class="seo-text" aria-hidden="true">1 O Espírito do SENHOR Deus está sobre mim, porque o SENHOR me ungiu para pregar boas-novas aos quebrantados, enviou-me a curar os quebrantados de coração, a proclamar libertação aos cativos e a pôr em liberdade os algemados; 2 a apregoar o ano aceitável do SENHOR e o dia da vingança do nosso Deus; a consolar todos os que choram 3 e a pôr sobre os que em Sião estão de luto uma coroa em vez de cinzas, óleo de alegria, em vez de pranto, veste de louvor, em vez de espírito angustiado; a fim de que se chamem carvalhos de justiça, plantados pelo SENHOR para a sua glória. 4 Edificarão os lugares antigamente assolados, restaurarão os de antes destruídos e renovarão as cidades arruinadas, destruídas de geração em geração. 5 Estranhos se apresentarão e apascentarão os vossos rebanhos; estrangeiros serão os vossos lavradores e os vossos vinhateiros. 6 Mas vós sereis chamados sacerdotes do SENHOR, e vos chamarão ministros de nosso Deus; comereis as riquezas das nações e na sua glória vos gloriareis. 7 Em lugar da vossa vergonha, tereis dupla honra; em lugar da afronta, exultareis na vossa herança; por isso, na vossa terra possuireis o dobro e tereis perpétua alegria. 8 Porque eu, o SENHOR, amo o juízo e odeio a iniqüidade do roubo; dar-lhes-ei fielmente a sua recompensa e com eles farei aliança eterna. 9 A sua posteridade será conhecida entre as nações, os seus descendentes, no meio dos povos; todos quantos os virem os reconhecerão como família bendita do SENHOR. 10 Regozijar-me-ei muito no SENHOR, a minha alma se alegra no meu Deus; porque me cobriu de vestes de salvação e me envolveu com o manto de justiça, como noivo que se adorna de turbante, como noiva que se enfeita com as suas jóias. 11 Porque, como a terra produz os seus renovos, e como o jardim faz brotar o que nele se semeia, assim o SENHOR Deus fará brotar a justiça e o louvor perante todas as nações.</div>
+<header class="header">
+  <div class="header-inner">
+    <a class="logo" href="../../index.html"><h1>Voltemos à Palavra</h1><span>Bíblia Strong Interativa</span></a>
+    <div class="search-wrap">
+      <input type="text" id="searchInput" placeholder="Ex: Gênesis 1 1 · João 3 16" onkeypress="if(event.key==='Enter')doSearch()">
+      <button class="btn-search" onclick="doSearch()">🔍 Buscar</button>
+    </div>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar"><div class="sidebar-head">✦ Livros</div><ul class="book-list" id="bookList"></ul></aside>
+  <section class="main">
+    <div class="toolbar">
+      <div class="vg"><span class="vg-lbl">Versão</span>
+        <input type="radio" class="r" name="ver" id="rAlm" value="ara" checked onchange="render()"><label class="r" for="rAlm">🇧🇷 ARA</label>
+        <input type="radio" class="r" name="ver" id="rKJV" value="kjv" onchange="render()"><label class="r" for="rKJV">🇬🇧 KJV</label>
+      </div>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkPar" onchange="render()"> Vista Paralela</label>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkStr" checked onchange="render()"> Códigos Strong</label>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkRef" checked onchange="render()"> Referências</label>
+    </div>
+    <div class="chap-bar">
+      <div><h2 id="chapTitle">Isaías 61</h2><div class="sub" id="chapSub">Almeida Revista e Atualizada</div></div>
+      <div class="nav-btns"><a class="nav-btn" href="../../isaias/60.html">← Isaías 60</a><select class="cap-sel" id="capSel" onchange="onCapSel()"></select><a class="nav-btn" href="../../isaias/62.html">Isaías 62 →</a></div>
+    </div>
+    <div class="par-heads" id="parHeads">
+      <div class="col-lbl">🇧🇷 ARA — Almeida Revista e Atualizada</div>
+      <div class="col-lbl">🇬🇧 KJV — King James Version</div>
+    </div>
+    <div class="verses-panel" id="versesPanel"><div class="loading"><div class="spinner"></div><div>Carregando…</div></div></div>
+  </section>
+</div>
+<div class="overlay" id="overlay" onclick="closePopup()"></div>
+<div class="popup" id="popup">
+  <div class="pop-top"><div class="pop-code"><span id="popCode"></span><span class="badge" id="popBadge"></span></div><button class="pop-close" onclick="closePopup()">✕</button></div>
+  <div class="pop-word"><div class="original" id="popOrig"></div><div class="translit" id="popXlit"></div></div>
+  <div class="pop-body">
+    <div class="def-block"><div class="lbl">Pronunciação</div><div class="val" id="popPron"></div></div>
+    <div class="def-block"><div class="lbl">Definição</div><div class="val" id="popDesc"></div></div>
+  </div>
+</div>
+<script>var INIT_BOOK="Isaiah";var INIT_CAP=61;var BASE="../../";</script>
+<script src="../../app.js"></script>
+</body>
+</html>

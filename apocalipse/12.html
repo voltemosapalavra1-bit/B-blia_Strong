@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apocalipse 12 — Bíblia Strong Interativa | Voltemos à Palavra</title>
+<meta name="description" content="Leia Apocalipse capítulo 12 com dicionário Strong em português, referências cruzadas e vista paralela ARA e KJV.">
+<link rel="canonical" href="https://voltemosapalavra1-bit.github.io/B-blia_Strong/apocalipse/12.html">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<div class="seo-text" aria-hidden="true">1 Viu-se grande sinal no céu, a saber, uma mulher vestida do sol com a lua debaixo dos pés e uma coroa de doze estrelas na cabeça, 2 que, achando-se grávida, grita com as dores de parto, sofrendo tormentos para dar à luz. 3 Viu-se, também, outro sinal no céu, e eis um dragão, grande, vermelho, com sete cabeças, dez chifres e, nas cabeças, sete diademas. 4 A sua cauda arrastava a terça parte das estrelas do céu, as quais lançou para a terra; e o dragão se deteve em frente da mulher que estava para dar à luz, a fim de lhe devorar o filho quando nascesse. 5 Nasceu-lhe, pois, um filho varão, que há de reger todas as nações com cetro de ferro. E o seu filho foi arrebatado para Deus até ao seu trono. 6 A mulher, porém, fugiu para o deserto, onde lhe havia Deus preparado lugar para que nele a sustentem durante mil duzentos e sessenta dias. 7 Houve peleja no céu. Miguel e os seus anjos pelejaram contra o dragão. Também pelejaram o dragão e seus anjos; 8 todavia, não prevaleceram; nem mais se achou no céu o lugar deles. 9 E foi expulso o grande dragão, a antiga serpente, que se chama diabo e Satanás, o sedutor de todo o mundo, sim, foi atirado para a terra, e, com ele, os seus anjos. 10 Então, ouvi grande voz do céu, proclamando: Agora, veio a salvação, o poder, o reino do nosso Deus e a autoridade do seu Cristo, pois foi expulso o acusador de nossos irmãos, o mesmo que os acusa de dia e de noite, diante do nosso Deus. 11 Eles, pois, o venceram por causa do sangue do Cordeiro e por causa da palavra do testemunho que deram e, mesmo em face da morte, não amaram a própria vida. 12 Por isso, festejai, ó céus, e vós, os que neles habitais. Ai da terra e do mar, pois o diabo desceu até vós, cheio de grande cólera, sabendo que pouco tempo lhe resta. 13 Quando, pois, o dragão se viu atirado para a terra, perseguiu a mulher que dera à luz o filho varão; 14 e foram dadas à mulher as duas asas da grande águia, para que voasse até ao deserto, ao seu lugar, aí onde é sustentada durante um tempo, tempos e metade de um tempo, fora da vista da serpente. 15 Então, a serpente arrojou da sua boca, atrás da mulher, água como um rio, a fim de fazer com que ela fosse arrebatada pelo rio. 16 A terra, porém, socorreu a mulher; e a terra abriu a boca e engoliu o rio que o dragão tinha arrojado de sua boca. 17 Irou-se o dragão contra a mulher e foi pelejar com os restantes da sua descendência, os que guardam os mandamentos de Deus e têm o testemunho de Jesus; e se pôs em pé sobre a areia do mar.</div>
+<header class="header">
+  <div class="header-inner">
+    <a class="logo" href="../../index.html"><h1>Voltemos à Palavra</h1><span>Bíblia Strong Interativa</span></a>
+    <div class="search-wrap">
+      <input type="text" id="searchInput" placeholder="Ex: Gênesis 1 1 · João 3 16" onkeypress="if(event.key==='Enter')doSearch()">
+      <button class="btn-search" onclick="doSearch()">🔍 Buscar</button>
+    </div>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar"><div class="sidebar-head">✦ Livros</div><ul class="book-list" id="bookList"></ul></aside>
+  <section class="main">
+    <div class="toolbar">
+      <div class="vg"><span class="vg-lbl">Versão</span>
+        <input type="radio" class="r" name="ver" id="rAlm" value="ara" checked onchange="render()"><label class="r" for="rAlm">🇧🇷 ARA</label>
+        <input type="radio" class="r" name="ver" id="rKJV" value="kjv" onchange="render()"><label class="r" for="rKJV">🇬🇧 KJV</label>
+      </div>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkPar" onchange="render()"> Vista Paralela</label>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkStr" checked onchange="render()"> Códigos Strong</label>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkRef" checked onchange="render()"> Referências</label>
+    </div>
+    <div class="chap-bar">
+      <div><h2 id="chapTitle">Apocalipse 12</h2><div class="sub" id="chapSub">Almeida Revista e Atualizada</div></div>
+      <div class="nav-btns"><a class="nav-btn" href="../../apocalipse/11.html">← Apocalipse 11</a><select class="cap-sel" id="capSel" onchange="onCapSel()"></select><a class="nav-btn" href="../../apocalipse/13.html">Apocalipse 13 →</a></div>
+    </div>
+    <div class="par-heads" id="parHeads">
+      <div class="col-lbl">🇧🇷 ARA — Almeida Revista e Atualizada</div>
+      <div class="col-lbl">🇬🇧 KJV — King James Version</div>
+    </div>
+    <div class="verses-panel" id="versesPanel"><div class="loading"><div class="spinner"></div><div>Carregando…</div></div></div>
+  </section>
+</div>
+<div class="overlay" id="overlay" onclick="closePopup()"></div>
+<div class="popup" id="popup">
+  <div class="pop-top"><div class="pop-code"><span id="popCode"></span><span class="badge" id="popBadge"></span></div><button class="pop-close" onclick="closePopup()">✕</button></div>
+  <div class="pop-word"><div class="original" id="popOrig"></div><div class="translit" id="popXlit"></div></div>
+  <div class="pop-body">
+    <div class="def-block"><div class="lbl">Pronunciação</div><div class="val" id="popPron"></div></div>
+    <div class="def-block"><div class="lbl">Definição</div><div class="val" id="popDesc"></div></div>
+  </div>
+</div>
+<script>var INIT_BOOK="Revelation";var INIT_CAP=12;var BASE="../../";</script>
+<script src="../../app.js"></script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zacarias 4 — Bíblia Strong Interativa | Voltemos à Palavra</title>
+<meta name="description" content="Leia Zacarias capítulo 4 com dicionário Strong em português, referências cruzadas e vista paralela ARA e KJV.">
+<link rel="canonical" href="https://voltemosapalavra1-bit.github.io/B-blia_Strong/zacarias/4.html">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<div class="seo-text" aria-hidden="true">1 Tornou o anjo que falava comigo e me despertou, como a um homem que é despertado do seu sono, 2 e me perguntou: Que vês? Respondi: olho, e eis um candelabro todo de ouro e um vaso de azeite em cima com as suas sete lâmpadas e sete tubos, um para cada uma das lâmpadas que estão em cima do candelabro. 3 Junto a este, duas oliveiras, uma à direita do vaso de azeite, e a outra à sua esquerda. 4 Então, perguntei ao anjo que falava comigo: meu senhor, que é isto? 5 Respondeu-me o anjo que falava comigo: Não sabes tu que é isto? Respondi: não, meu senhor. 6 Prosseguiu ele e me disse: Esta é a palavra do SENHOR a Zorobabel: Não por força nem por poder, mas pelo meu Espírito, diz o SENHOR dos Exércitos. 7 Quem és tu, ó grande monte? Diante de Zorobabel serás uma campina; porque ele colocará a pedra de remate, em meio a aclamações: Haja graça e graça para ela! 8 Novamente, me veio a palavra do SENHOR, dizendo: 9 As mãos de Zorobabel lançaram os fundamentos desta casa, elas mesmas a acabarão, para que saibais que o SENHOR dos Exércitos é quem me enviou a vós outros. 10 Pois quem despreza o dia dos humildes começos, esse alegrar-se-á vendo o prumo na mão de Zorobabel. Aqueles sete olhos são os olhos do SENHOR, que percorrem toda a terra. 11 Prossegui e lhe perguntei: que são as duas oliveiras à direita e à esquerda do candelabro? 12 Tornando a falar-lhe, perguntei: que são aqueles dois raminhos de oliveira que estão junto aos dois tubos de ouro, que vertem de si azeite dourado? 13 Ele me respondeu: Não sabes que é isto? Eu disse: não, meu senhor. 14 Então, ele disse: São os dois ungidos, que assistem junto ao Senhor de toda a terra.</div>
+<header class="header">
+  <div class="header-inner">
+    <a class="logo" href="../../index.html"><h1>Voltemos à Palavra</h1><span>Bíblia Strong Interativa</span></a>
+    <div class="search-wrap">
+      <input type="text" id="searchInput" placeholder="Ex: Gênesis 1 1 · João 3 16" onkeypress="if(event.key==='Enter')doSearch()">
+      <button class="btn-search" onclick="doSearch()">🔍 Buscar</button>
+    </div>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar"><div class="sidebar-head">✦ Livros</div><ul class="book-list" id="bookList"></ul></aside>
+  <section class="main">
+    <div class="toolbar">
+      <div class="vg"><span class="vg-lbl">Versão</span>
+        <input type="radio" class="r" name="ver" id="rAlm" value="ara" checked onchange="render()"><label class="r" for="rAlm">🇧🇷 ARA</label>
+        <input type="radio" class="r" name="ver" id="rKJV" value="kjv" onchange="render()"><label class="r" for="rKJV">🇬🇧 KJV</label>
+      </div>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkPar" onchange="render()"> Vista Paralela</label>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkStr" checked onchange="render()"> Códigos Strong</label>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkRef" checked onchange="render()"> Referências</label>
+    </div>
+    <div class="chap-bar">
+      <div><h2 id="chapTitle">Zacarias 4</h2><div class="sub" id="chapSub">Almeida Revista e Atualizada</div></div>
+      <div class="nav-btns"><a class="nav-btn" href="../../zacarias/3.html">← Zacarias 3</a><select class="cap-sel" id="capSel" onchange="onCapSel()"></select><a class="nav-btn" href="../../zacarias/5.html">Zacarias 5 →</a></div>
+    </div>
+    <div class="par-heads" id="parHeads">
+      <div class="col-lbl">🇧🇷 ARA — Almeida Revista e Atualizada</div>
+      <div class="col-lbl">🇬🇧 KJV — King James Version</div>
+    </div>
+    <div class="verses-panel" id="versesPanel"><div class="loading"><div class="spinner"></div><div>Carregando…</div></div></div>
+  </section>
+</div>
+<div class="overlay" id="overlay" onclick="closePopup()"></div>
+<div class="popup" id="popup">
+  <div class="pop-top"><div class="pop-code"><span id="popCode"></span><span class="badge" id="popBadge"></span></div><button class="pop-close" onclick="closePopup()">✕</button></div>
+  <div class="pop-word"><div class="original" id="popOrig"></div><div class="translit" id="popXlit"></div></div>
+  <div class="pop-body">
+    <div class="def-block"><div class="lbl">Pronunciação</div><div class="val" id="popPron"></div></div>
+    <div class="def-block"><div class="lbl">Definição</div><div class="val" id="popDesc"></div></div>
+  </div>
+</div>
+<script>var INIT_BOOK="Zechariah";var INIT_CAP=4;var BASE="../../";</script>
+<script src="../../app.js"></script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2 Crônicas 27 — Bíblia Strong Interativa | Voltemos à Palavra</title>
+<meta name="description" content="Leia 2 Crônicas capítulo 27 com dicionário Strong em português, referências cruzadas e vista paralela ARA e KJV.">
+<link rel="canonical" href="https://voltemosapalavra1-bit.github.io/B-blia_Strong/2-cronicas/27.html">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<div class="seo-text" aria-hidden="true">1 Tinha Jotão vinte e cinco anos de idade quando começou a reinar e dezesseis anos reinou em Jerusalém. Era o nome de sua mãe Jerusa, filha de Zadoque. 2 Fez o que era reto perante o SENHOR, segundo tudo o que fizera Uzias, seu pai, exceto que não entrou no templo do SENHOR. E o povo continuava na prática do mal. 3 Ele edificou a porta de cima da Casa do SENHOR e também edificou muitas obras sobre o Muro de Ofel. 4 Também edificou cidades na região montanhosa de Judá e nos bosques, castelos e torres. 5 Ele também guerreou contra o rei dos filhos de Amom e prevaleceu sobre eles, de modo que os filhos de Amom, naquele ano, lhe deram cem talentos de prata, dez mil coros de trigo e dez mil de cevada; isto lhe trouxeram os filhos de Amom também no segundo e no terceiro ano. 6 Assim, Jotão se foi tornando mais poderoso, porque dirigia os seus caminhos segundo a vontade do SENHOR, seu Deus. 7 Quanto aos mais atos de Jotão, todas as suas guerras e empreendimentos, eis que tudo está escrito no Livro da História dos Reis de Israel e de Judá. 8 Tinha vinte e cinco anos de idade quando começou a reinar e reinou dezesseis anos em Jerusalém. 9 Descansou Jotão com seus pais, e o sepultaram na Cidade de Davi; e Acaz, seu filho, reinou em seu lugar.</div>
+<header class="header">
+  <div class="header-inner">
+    <a class="logo" href="../../index.html"><h1>Voltemos à Palavra</h1><span>Bíblia Strong Interativa</span></a>
+    <div class="search-wrap">
+      <input type="text" id="searchInput" placeholder="Ex: Gênesis 1 1 · João 3 16" onkeypress="if(event.key==='Enter')doSearch()">
+      <button class="btn-search" onclick="doSearch()">🔍 Buscar</button>
+    </div>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar"><div class="sidebar-head">✦ Livros</div><ul class="book-list" id="bookList"></ul></aside>
+  <section class="main">
+    <div class="toolbar">
+      <div class="vg"><span class="vg-lbl">Versão</span>
+        <input type="radio" class="r" name="ver" id="rAlm" value="ara" checked onchange="render()"><label class="r" for="rAlm">🇧🇷 ARA</label>
+        <input type="radio" class="r" name="ver" id="rKJV" value="kjv" onchange="render()"><label class="r" for="rKJV">🇬🇧 KJV</label>
+      </div>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkPar" onchange="render()"> Vista Paralela</label>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkStr" checked onchange="render()"> Códigos Strong</label>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkRef" checked onchange="render()"> Referências</label>
+    </div>
+    <div class="chap-bar">
+      <div><h2 id="chapTitle">2 Crônicas 27</h2><div class="sub" id="chapSub">Almeida Revista e Atualizada</div></div>
+      <div class="nav-btns"><a class="nav-btn" href="../../2-cronicas/26.html">← 2 Crônicas 26</a><select class="cap-sel" id="capSel" onchange="onCapSel()"></select><a class="nav-btn" href="../../2-cronicas/28.html">2 Crônicas 28 →</a></div>
+    </div>
+    <div class="par-heads" id="parHeads">
+      <div class="col-lbl">🇧🇷 ARA — Almeida Revista e Atualizada</div>
+      <div class="col-lbl">🇬🇧 KJV — King James Version</div>
+    </div>
+    <div class="verses-panel" id="versesPanel"><div class="loading"><div class="spinner"></div><div>Carregando…</div></div></div>
+  </section>
+</div>
+<div class="overlay" id="overlay" onclick="closePopup()"></div>
+<div class="popup" id="popup">
+  <div class="pop-top"><div class="pop-code"><span id="popCode"></span><span class="badge" id="popBadge"></span></div><button class="pop-close" onclick="closePopup()">✕</button></div>
+  <div class="pop-word"><div class="original" id="popOrig"></div><div class="translit" id="popXlit"></div></div>
+  <div class="pop-body">
+    <div class="def-block"><div class="lbl">Pronunciação</div><div class="val" id="popPron"></div></div>
+    <div class="def-block"><div class="lbl">Definição</div><div class="val" id="popDesc"></div></div>
+  </div>
+</div>
+<script>var INIT_BOOK="2 Chronicles";var INIT_CAP=27;var BASE="../../";</script>
+<script src="../../app.js"></script>
+</body>
+</html>

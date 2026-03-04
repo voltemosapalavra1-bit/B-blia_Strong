@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eclesiastes 1 — Bíblia Strong Interativa | Voltemos à Palavra</title>
+<meta name="description" content="Leia Eclesiastes capítulo 1 com dicionário Strong em português, referências cruzadas e vista paralela ARA e KJV.">
+<link rel="canonical" href="https://voltemosapalavra1-bit.github.io/B-blia_Strong/eclesiastes/1.html">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<div class="seo-text" aria-hidden="true">1 Palavra do Pregador, filho de Davi, rei de Jerusalém: 2 Vaidade de vaidades, diz o Pregador; vaidade de vaidades, tudo é vaidade. 3 Que proveito tem o homem de todo o seu trabalho, com que se afadiga debaixo do sol? 4 Geração vai e geração vem; mas a terra permanece para sempre. 5 Levanta-se o sol, e põe-se o sol, e volta ao seu lugar, onde nasce de novo. 6 O vento vai para o sul e faz o seu giro para o norte; volve-se, e revolve-se, na sua carreira, e retorna aos seus circuitos. 7 Todos os rios correm para o mar, e o mar não se enche; ao lugar para onde correm os rios, para lá tornam eles a correr. 8 Todas as coisas são canseiras tais, que ninguém as pode exprimir; os olhos não se fartam de ver, nem se enchem os ouvidos de ouvir. 9 O que foi é o que há de ser; e o que se fez, isso se tornará a fazer; nada há, pois, novo debaixo do sol. 10 Há alguma coisa de que se possa dizer: Vê, isto é novo? Não! Já foi nos séculos que foram antes de nós. 11 Já não há lembrança das coisas que precederam; e das coisas posteriores também não haverá memória entre os que hão de vir depois delas. 12 Eu, o Pregador, venho sendo rei de Israel, em Jerusalém. 13 Apliquei o coração a esquadrinhar e a informar-me com sabedoria de tudo quanto sucede debaixo do céu; este enfadonho trabalho impôs Deus aos filhos dos homens, para nele os afligir. 14 Atentei para todas as obras que se fazem debaixo do sol, e eis que tudo era vaidade e correr atrás do vento. 15 Aquilo que é torto não se pode endireitar; e o que falta não se pode calcular. 16 Disse comigo: eis que me engrandeci e sobrepujei em sabedoria a todos os que antes de mim existiram em Jerusalém; com efeito, o meu coração tem tido larga experiência da sabedoria e do conhecimento. 17 Apliquei o coração a conhecer a sabedoria e a saber o que é loucura e o que é estultícia; e vim a saber que também isto é correr atrás do vento. 18 Porque na muita sabedoria há muito enfado; e quem aumenta ciência aumenta tristeza.</div>
+<header class="header">
+  <div class="header-inner">
+    <a class="logo" href="../../index.html"><h1>Voltemos à Palavra</h1><span>Bíblia Strong Interativa</span></a>
+    <div class="search-wrap">
+      <input type="text" id="searchInput" placeholder="Ex: Gênesis 1 1 · João 3 16" onkeypress="if(event.key==='Enter')doSearch()">
+      <button class="btn-search" onclick="doSearch()">🔍 Buscar</button>
+    </div>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar"><div class="sidebar-head">✦ Livros</div><ul class="book-list" id="bookList"></ul></aside>
+  <section class="main">
+    <div class="toolbar">
+      <div class="vg"><span class="vg-lbl">Versão</span>
+        <input type="radio" class="r" name="ver" id="rAlm" value="ara" checked onchange="render()"><label class="r" for="rAlm">🇧🇷 ARA</label>
+        <input type="radio" class="r" name="ver" id="rKJV" value="kjv" onchange="render()"><label class="r" for="rKJV">🇬🇧 KJV</label>
+      </div>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkPar" onchange="render()"> Vista Paralela</label>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkStr" checked onchange="render()"> Códigos Strong</label>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkRef" checked onchange="render()"> Referências</label>
+    </div>
+    <div class="chap-bar">
+      <div><h2 id="chapTitle">Eclesiastes 1</h2><div class="sub" id="chapSub">Almeida Revista e Atualizada</div></div>
+      <div class="nav-btns"><a class="nav-btn" href="../../proverbios/31.html">← Provérbios 31</a><select class="cap-sel" id="capSel" onchange="onCapSel()"></select><a class="nav-btn" href="../../eclesiastes/2.html">Eclesiastes 2 →</a></div>
+    </div>
+    <div class="par-heads" id="parHeads">
+      <div class="col-lbl">🇧🇷 ARA — Almeida Revista e Atualizada</div>
+      <div class="col-lbl">🇬🇧 KJV — King James Version</div>
+    </div>
+    <div class="verses-panel" id="versesPanel"><div class="loading"><div class="spinner"></div><div>Carregando…</div></div></div>
+  </section>
+</div>
+<div class="overlay" id="overlay" onclick="closePopup()"></div>
+<div class="popup" id="popup">
+  <div class="pop-top"><div class="pop-code"><span id="popCode"></span><span class="badge" id="popBadge"></span></div><button class="pop-close" onclick="closePopup()">✕</button></div>
+  <div class="pop-word"><div class="original" id="popOrig"></div><div class="translit" id="popXlit"></div></div>
+  <div class="pop-body">
+    <div class="def-block"><div class="lbl">Pronunciação</div><div class="val" id="popPron"></div></div>
+    <div class="def-block"><div class="lbl">Definição</div><div class="val" id="popDesc"></div></div>
+  </div>
+</div>
+<script>var INIT_BOOK="Ecclesiastes";var INIT_CAP=1;var BASE="../../";</script>
+<script src="../../app.js"></script>
+</body>
+</html>

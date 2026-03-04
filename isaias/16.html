@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Isaías 16 — Bíblia Strong Interativa | Voltemos à Palavra</title>
+<meta name="description" content="Leia Isaías capítulo 16 com dicionário Strong em português, referências cruzadas e vista paralela ARA e KJV.">
+<link rel="canonical" href="https://voltemosapalavra1-bit.github.io/B-blia_Strong/isaias/16.html">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<div class="seo-text" aria-hidden="true">1 Enviai cordeiros ao dominador da terra, desde Sela, pelo deserto, até ao monte da filha de Sião. 2 Como pássaro espantado, lançado fora do ninho, assim são as filhas de Moabe nos vaus do Arnom, que dizem: 3 Dá conselhos, executa o juízo e faze a tua sombra no pino do meio-dia como a noite; esconde os desterrados e não descubras os fugitivos. 4 Habitem entre ti os desterrados de Moabe, serve-lhes de esconderijo contra o destruidor. Quando o homem violento tiver fim, a destruição for desfeita e o opressor deixar a terra, 5 então, um trono se firmará em benignidade, e sobre ele no tabernáculo de Davi se assentará com fidelidade um que julgue, busque o juízo e não tarde em fazer justiça. 6 Temos ouvido da soberba de Moabe, soberbo em extremo; da sua arrogância, do seu orgulho e do seu furor; a sua jactância é vã. 7 Portanto, uivará Moabe, cada um por Moabe; gemereis profundamente abatidos pelas pastas de uvas de Quir-Haresete. 8 Porque os campos de Hesbom estão murchos; os senhores das nações talaram os melhores ramos da vinha de Sibma, que se estenderam até Jazer e se perderam no deserto, sarmentos que se estenderam e passaram além do mar. 9 Pelo que prantearei, com o pranto de Jazer, a vinha de Sibma; regar-te-ei com as minhas lágrimas, ó Hesbom, ó Eleale; pois, sobre os teus frutos de verão e sobre a tua vindima, caiu já dos inimigos o eia, como o de pisadores. 10 Fugiu a alegria e o regozijo do pomar; nas vinhas já não se canta, nem há júbilo algum; já não se pisarão as uvas nos lagares. Eu fiz cessar o eia dos pisadores. 11 Pelo que por Moabe vibra como harpa o meu íntimo, e o meu coração, por Quir-Heres. 12 Ver-se-á como Moabe se cansa nos altos, como entra no santuário a orar e nada alcança. 13 Esta é a palavra que o SENHOR há muito pronunciou contra Moabe. 14 Agora, porém, o SENHOR fala e diz: Dentro de três anos, tais como os de jornaleiros, será envilecida a glória de Moabe, com toda a sua grande multidão; e o restante será pouco, pequeno e débil.</div>
+<header class="header">
+  <div class="header-inner">
+    <a class="logo" href="../../index.html"><h1>Voltemos à Palavra</h1><span>Bíblia Strong Interativa</span></a>
+    <div class="search-wrap">
+      <input type="text" id="searchInput" placeholder="Ex: Gênesis 1 1 · João 3 16" onkeypress="if(event.key==='Enter')doSearch()">
+      <button class="btn-search" onclick="doSearch()">🔍 Buscar</button>
+    </div>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar"><div class="sidebar-head">✦ Livros</div><ul class="book-list" id="bookList"></ul></aside>
+  <section class="main">
+    <div class="toolbar">
+      <div class="vg"><span class="vg-lbl">Versão</span>
+        <input type="radio" class="r" name="ver" id="rAlm" value="ara" checked onchange="render()"><label class="r" for="rAlm">🇧🇷 ARA</label>
+        <input type="radio" class="r" name="ver" id="rKJV" value="kjv" onchange="render()"><label class="r" for="rKJV">🇬🇧 KJV</label>
+      </div>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkPar" onchange="render()"> Vista Paralela</label>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkStr" checked onchange="render()"> Códigos Strong</label>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkRef" checked onchange="render()"> Referências</label>
+    </div>
+    <div class="chap-bar">
+      <div><h2 id="chapTitle">Isaías 16</h2><div class="sub" id="chapSub">Almeida Revista e Atualizada</div></div>
+      <div class="nav-btns"><a class="nav-btn" href="../../isaias/15.html">← Isaías 15</a><select class="cap-sel" id="capSel" onchange="onCapSel()"></select><a class="nav-btn" href="../../isaias/17.html">Isaías 17 →</a></div>
+    </div>
+    <div class="par-heads" id="parHeads">
+      <div class="col-lbl">🇧🇷 ARA — Almeida Revista e Atualizada</div>
+      <div class="col-lbl">🇬🇧 KJV — King James Version</div>
+    </div>
+    <div class="verses-panel" id="versesPanel"><div class="loading"><div class="spinner"></div><div>Carregando…</div></div></div>
+  </section>
+</div>
+<div class="overlay" id="overlay" onclick="closePopup()"></div>
+<div class="popup" id="popup">
+  <div class="pop-top"><div class="pop-code"><span id="popCode"></span><span class="badge" id="popBadge"></span></div><button class="pop-close" onclick="closePopup()">✕</button></div>
+  <div class="pop-word"><div class="original" id="popOrig"></div><div class="translit" id="popXlit"></div></div>
+  <div class="pop-body">
+    <div class="def-block"><div class="lbl">Pronunciação</div><div class="val" id="popPron"></div></div>
+    <div class="def-block"><div class="lbl">Definição</div><div class="val" id="popDesc"></div></div>
+  </div>
+</div>
+<script>var INIT_BOOK="Isaiah";var INIT_CAP=16;var BASE="../../";</script>
+<script src="../../app.js"></script>
+</body>
+</html>

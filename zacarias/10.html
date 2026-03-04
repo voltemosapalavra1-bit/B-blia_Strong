@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zacarias 10 — Bíblia Strong Interativa | Voltemos à Palavra</title>
+<meta name="description" content="Leia Zacarias capítulo 10 com dicionário Strong em português, referências cruzadas e vista paralela ARA e KJV.">
+<link rel="canonical" href="https://voltemosapalavra1-bit.github.io/B-blia_Strong/zacarias/10.html">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<div class="seo-text" aria-hidden="true">1 Pedi ao SENHOR chuva no tempo das chuvas serôdias, ao SENHOR, que faz as nuvens de chuva, dá aos homens aguaceiro e a cada um, erva no campo. 2 Porque os ídolos do lar falam coisas vãs, e os adivinhos vêem mentiras, contam sonhos enganadores e oferecem consolações vazias; por isso, anda o povo como ovelhas, aflito, porque não há pastor. 3 Contra os pastores se acendeu a minha ira, e castigarei os bodes-guias; mas o SENHOR dos Exércitos tomará a seu cuidado o rebanho, a casa de Judá, e fará desta o seu cavalo de glória na batalha. 4 De Judá sairá a pedra angular; dele, a estaca da tenda; dele, o arco de guerra; dele sairão todos os chefes juntos. 5 E serão como valentes que, na batalha, pisam aos pés os seus inimigos na lama das ruas; pelejarão, porque o SENHOR está com eles, e envergonharão os que andam montados em cavalos. 6 Fortalecerei a casa de Judá, e salvarei a casa de José, e fá-los-ei voltar, porque me compadeço deles; e serão como se eu não os tivera rejeitado, porque eu sou o SENHOR, seu Deus, e os ouvirei. 7 Os de Efraim serão como um valente, e o seu coração se alegrará como pelo vinho; seus filhos o verão e se alegrarão; o seu coração se regozijará no SENHOR. 8 Eu lhes assobiarei e os ajuntarei, porque os tenho remido; multiplicar-se-ão como antes se tinham multiplicado. 9 Ainda que os espalhei por entre os povos, eles se lembram de mim em lugares remotos; viverão com seus filhos e voltarão. 10 Porque eu os farei voltar da terra do Egito e os congregarei da Assíria; trá-los-ei à terra de Gileade e do Líbano, e não se achará lugar para eles. 11 Passarão o mar de angústia, as ondas do mar serão feridas, e todas as profundezas do Nilo se secarão; então, será derribada a soberba da Assíria, e o cetro do Egito se retirará. 12 Eu os fortalecerei no SENHOR, e andarão no seu nome, diz o SENHOR.</div>
+<header class="header">
+  <div class="header-inner">
+    <a class="logo" href="../../index.html"><h1>Voltemos à Palavra</h1><span>Bíblia Strong Interativa</span></a>
+    <div class="search-wrap">
+      <input type="text" id="searchInput" placeholder="Ex: Gênesis 1 1 · João 3 16" onkeypress="if(event.key==='Enter')doSearch()">
+      <button class="btn-search" onclick="doSearch()">🔍 Buscar</button>
+    </div>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar"><div class="sidebar-head">✦ Livros</div><ul class="book-list" id="bookList"></ul></aside>
+  <section class="main">
+    <div class="toolbar">
+      <div class="vg"><span class="vg-lbl">Versão</span>
+        <input type="radio" class="r" name="ver" id="rAlm" value="ara" checked onchange="render()"><label class="r" for="rAlm">🇧🇷 ARA</label>
+        <input type="radio" class="r" name="ver" id="rKJV" value="kjv" onchange="render()"><label class="r" for="rKJV">🇬🇧 KJV</label>
+      </div>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkPar" onchange="render()"> Vista Paralela</label>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkStr" checked onchange="render()"> Códigos Strong</label>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkRef" checked onchange="render()"> Referências</label>
+    </div>
+    <div class="chap-bar">
+      <div><h2 id="chapTitle">Zacarias 10</h2><div class="sub" id="chapSub">Almeida Revista e Atualizada</div></div>
+      <div class="nav-btns"><a class="nav-btn" href="../../zacarias/9.html">← Zacarias 9</a><select class="cap-sel" id="capSel" onchange="onCapSel()"></select><a class="nav-btn" href="../../zacarias/11.html">Zacarias 11 →</a></div>
+    </div>
+    <div class="par-heads" id="parHeads">
+      <div class="col-lbl">🇧🇷 ARA — Almeida Revista e Atualizada</div>
+      <div class="col-lbl">🇬🇧 KJV — King James Version</div>
+    </div>
+    <div class="verses-panel" id="versesPanel"><div class="loading"><div class="spinner"></div><div>Carregando…</div></div></div>
+  </section>
+</div>
+<div class="overlay" id="overlay" onclick="closePopup()"></div>
+<div class="popup" id="popup">
+  <div class="pop-top"><div class="pop-code"><span id="popCode"></span><span class="badge" id="popBadge"></span></div><button class="pop-close" onclick="closePopup()">✕</button></div>
+  <div class="pop-word"><div class="original" id="popOrig"></div><div class="translit" id="popXlit"></div></div>
+  <div class="pop-body">
+    <div class="def-block"><div class="lbl">Pronunciação</div><div class="val" id="popPron"></div></div>
+    <div class="def-block"><div class="lbl">Definição</div><div class="val" id="popDesc"></div></div>
+  </div>
+</div>
+<script>var INIT_BOOK="Zechariah";var INIT_CAP=10;var BASE="../../";</script>
+<script src="../../app.js"></script>
+</body>
+</html>

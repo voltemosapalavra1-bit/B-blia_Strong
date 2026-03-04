@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://voltemosapalavra1-bit.github.io/B-blia_Strong/sitemap.xml

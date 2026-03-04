@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oséias 12 — Bíblia Strong Interativa | Voltemos à Palavra</title>
+<meta name="description" content="Leia Oséias capítulo 12 com dicionário Strong em português, referências cruzadas e vista paralela ARA e KJV.">
+<link rel="canonical" href="https://voltemosapalavra1-bit.github.io/B-blia_Strong/oseias/12.html">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<div class="seo-text" aria-hidden="true">1 Efraim apascenta o vento e persegue o vento leste todo o dia; multiplica mentiras e destruição e faz aliança com a Assíria, e o azeite se leva ao Egito. 2 O SENHOR também com Judá tem contenda e castigará Jacó segundo o seu proceder; segundo as suas obras, o recompensará. 3 No ventre, pegou do calcanhar de seu irmão; no vigor da sua idade, lutou com Deus; 4 lutou com o anjo e prevaleceu; chorou e lhe pediu mercê; em Betel, achou a Deus, e ali falou Deus conosco. 5 O SENHOR, o Deus dos Exércitos, o SENHOR é o seu nome; 6 converte-te a teu Deus, guarda o amor e o juízo e no teu Deus espera sempre. 7 Efraim, mercador, tem nas mãos balança enganosa e ama a opressão; 8 mas diz: Contudo, me tenho enriquecido e adquirido grandes bens; em todos esses meus esforços, não acharão em mim iniqüidade alguma, nada que seja pecado. 9 Mas eu sou o SENHOR, teu Deus, desde a terra do Egito; eu ainda te farei habitar em tendas, como nos dias da festa. 10 Falei aos profetas e multipliquei as visões; e, pelo ministério dos profetas, propus símiles. 11 Se há em Gileade transgressão, pura vaidade são eles; se em Gilgal sacrificam bois, os seus altares são como montões de pedra nos sulcos dos campos. 12 Jacó fugiu para a terra da Síria, e Israel serviu por uma mulher e por ela guardou o gado. 13 Mas o SENHOR, por meio de um profeta, fez subir a Israel do Egito e, por um profeta, foi ele guardado. 14 Efraim mui amargamente provocou à ira; portanto, o SENHOR deixará ficar sobre ele o sangue por ele derramado; e fará cair sobre ele o seu opróbrio.</div>
+<header class="header">
+  <div class="header-inner">
+    <a class="logo" href="../../index.html"><h1>Voltemos à Palavra</h1><span>Bíblia Strong Interativa</span></a>
+    <div class="search-wrap">
+      <input type="text" id="searchInput" placeholder="Ex: Gênesis 1 1 · João 3 16" onkeypress="if(event.key==='Enter')doSearch()">
+      <button class="btn-search" onclick="doSearch()">🔍 Buscar</button>
+    </div>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar"><div class="sidebar-head">✦ Livros</div><ul class="book-list" id="bookList"></ul></aside>
+  <section class="main">
+    <div class="toolbar">
+      <div class="vg"><span class="vg-lbl">Versão</span>
+        <input type="radio" class="r" name="ver" id="rAlm" value="ara" checked onchange="render()"><label class="r" for="rAlm">🇧🇷 ARA</label>
+        <input type="radio" class="r" name="ver" id="rKJV" value="kjv" onchange="render()"><label class="r" for="rKJV">🇬🇧 KJV</label>
+      </div>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkPar" onchange="render()"> Vista Paralela</label>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkStr" checked onchange="render()"> Códigos Strong</label>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkRef" checked onchange="render()"> Referências</label>
+    </div>
+    <div class="chap-bar">
+      <div><h2 id="chapTitle">Oséias 12</h2><div class="sub" id="chapSub">Almeida Revista e Atualizada</div></div>
+      <div class="nav-btns"><a class="nav-btn" href="../../oseias/11.html">← Oséias 11</a><select class="cap-sel" id="capSel" onchange="onCapSel()"></select><a class="nav-btn" href="../../oseias/13.html">Oséias 13 →</a></div>
+    </div>
+    <div class="par-heads" id="parHeads">
+      <div class="col-lbl">🇧🇷 ARA — Almeida Revista e Atualizada</div>
+      <div class="col-lbl">🇬🇧 KJV — King James Version</div>
+    </div>
+    <div class="verses-panel" id="versesPanel"><div class="loading"><div class="spinner"></div><div>Carregando…</div></div></div>
+  </section>
+</div>
+<div class="overlay" id="overlay" onclick="closePopup()"></div>
+<div class="popup" id="popup">
+  <div class="pop-top"><div class="pop-code"><span id="popCode"></span><span class="badge" id="popBadge"></span></div><button class="pop-close" onclick="closePopup()">✕</button></div>
+  <div class="pop-word"><div class="original" id="popOrig"></div><div class="translit" id="popXlit"></div></div>
+  <div class="pop-body">
+    <div class="def-block"><div class="lbl">Pronunciação</div><div class="val" id="popPron"></div></div>
+    <div class="def-block"><div class="lbl">Definição</div><div class="val" id="popDesc"></div></div>
+  </div>
+</div>
+<script>var INIT_BOOK="Hosea";var INIT_CAP=12;var BASE="../../";</script>
+<script src="../../app.js"></script>
+</body>
+</html>

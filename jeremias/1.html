@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jeremias 1 — Bíblia Strong Interativa | Voltemos à Palavra</title>
+<meta name="description" content="Leia Jeremias capítulo 1 com dicionário Strong em português, referências cruzadas e vista paralela ARA e KJV.">
+<link rel="canonical" href="https://voltemosapalavra1-bit.github.io/B-blia_Strong/jeremias/1.html">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<div class="seo-text" aria-hidden="true">1 Palavras de Jeremias, filho de Hilquias, um dos sacerdotes que estavam em Anatote, na terra de Benjamim; 2 a ele veio a palavra do SENHOR, nos dias de Josias, filho de Amom e rei de Judá, no décimo terceiro ano do seu reinado; 3 e também nos dias de Jeoaquim, filho de Josias, rei de Judá, até ao fim do ano undécimo de Zedequias, filho de Josias, rei de Judá, e ainda até ao quinto mês do exílio de Jerusalém. 4 A mim me veio, pois, a palavra do SENHOR, dizendo: 5 Antes que eu te formasse no ventre materno, eu te conheci, e, antes que saísses da madre, te consagrei, e te constituí profeta às nações. 6 Então, lhe disse eu: ah! SENHOR Deus! Eis que não sei falar, porque não passo de uma criança. 7 Mas o SENHOR me disse: Não digas: Não passo de uma criança; porque a todos a quem eu te enviar irás; e tudo quanto eu te mandar falarás. 8 Não temas diante deles, porque eu sou contigo para te livrar, diz o SENHOR. 9 Depois, estendeu o SENHOR a mão, tocou-me na boca e o SENHOR me disse: Eis que ponho na tua boca as minhas palavras. 10 Olha que hoje te constituo sobre as nações e sobre os reinos, para arrancares e derribares, para destruíres e arruinares e também para edificares e para plantares. 11 Veio ainda a palavra do SENHOR, dizendo: Que vês tu, Jeremias? Respondi: vejo uma vara de amendoeira. 12 Disse-me o SENHOR: Viste bem, porque eu velo sobre a minha palavra para a cumprir. 13 Outra vez, me veio a palavra do SENHOR, dizendo: Que vês? Eu respondi: vejo uma panela ao fogo, cuja boca se inclina do Norte. 14 Disse-me o SENHOR: Do Norte se derramará o mal sobre todos os habitantes da terra. 15 Pois eis que convoco todas as tribos dos reinos do Norte, diz o SENHOR; e virão, e cada reino porá o seu trono à entrada das portas de Jerusalém e contra todos os seus muros em redor e contra todas as cidades de Judá. 16 Pronunciarei contra os moradores destas as minhas sentenças, por causa de toda a malícia deles; pois me deixaram a mim, e queimaram incenso a deuses estranhos, e adoraram as obras das suas próprias mãos. 17 Tu, pois, cinge os lombos, dispõe-te e dize-lhes tudo quanto eu te mandar; não te espantes diante deles, para que eu não te infunda espanto na sua presença. 18 Eis que hoje te ponho por cidade fortificada, por coluna de ferro e por muros de bronze, contra todo o país, contra os reis de Judá, contra os seus príncipes, contra os seus sacerdotes e contra o seu povo. 19 Pelejarão contra ti, mas não prevalecerão; porque eu sou contigo, diz o SENHOR, para te livrar.</div>
+<header class="header">
+  <div class="header-inner">
+    <a class="logo" href="../../index.html"><h1>Voltemos à Palavra</h1><span>Bíblia Strong Interativa</span></a>
+    <div class="search-wrap">
+      <input type="text" id="searchInput" placeholder="Ex: Gênesis 1 1 · João 3 16" onkeypress="if(event.key==='Enter')doSearch()">
+      <button class="btn-search" onclick="doSearch()">🔍 Buscar</button>
+    </div>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar"><div class="sidebar-head">✦ Livros</div><ul class="book-list" id="bookList"></ul></aside>
+  <section class="main">
+    <div class="toolbar">
+      <div class="vg"><span class="vg-lbl">Versão</span>
+        <input type="radio" class="r" name="ver" id="rAlm" value="ara" checked onchange="render()"><label class="r" for="rAlm">🇧🇷 ARA</label>
+        <input type="radio" class="r" name="ver" id="rKJV" value="kjv" onchange="render()"><label class="r" for="rKJV">🇬🇧 KJV</label>
+      </div>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkPar" onchange="render()"> Vista Paralela</label>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkStr" checked onchange="render()"> Códigos Strong</label>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkRef" checked onchange="render()"> Referências</label>
+    </div>
+    <div class="chap-bar">
+      <div><h2 id="chapTitle">Jeremias 1</h2><div class="sub" id="chapSub">Almeida Revista e Atualizada</div></div>
+      <div class="nav-btns"><a class="nav-btn" href="../../isaias/66.html">← Isaías 66</a><select class="cap-sel" id="capSel" onchange="onCapSel()"></select><a class="nav-btn" href="../../jeremias/2.html">Jeremias 2 →</a></div>
+    </div>
+    <div class="par-heads" id="parHeads">
+      <div class="col-lbl">🇧🇷 ARA — Almeida Revista e Atualizada</div>
+      <div class="col-lbl">🇬🇧 KJV — King James Version</div>
+    </div>
+    <div class="verses-panel" id="versesPanel"><div class="loading"><div class="spinner"></div><div>Carregando…</div></div></div>
+  </section>
+</div>
+<div class="overlay" id="overlay" onclick="closePopup()"></div>
+<div class="popup" id="popup">
+  <div class="pop-top"><div class="pop-code"><span id="popCode"></span><span class="badge" id="popBadge"></span></div><button class="pop-close" onclick="closePopup()">✕</button></div>
+  <div class="pop-word"><div class="original" id="popOrig"></div><div class="translit" id="popXlit"></div></div>
+  <div class="pop-body">
+    <div class="def-block"><div class="lbl">Pronunciação</div><div class="val" id="popPron"></div></div>
+    <div class="def-block"><div class="lbl">Definição</div><div class="val" id="popDesc"></div></div>
+  </div>
+</div>
+<script>var INIT_BOOK="Jeremiah";var INIT_CAP=1;var BASE="../../";</script>
+<script src="../../app.js"></script>
+</body>
+</html>

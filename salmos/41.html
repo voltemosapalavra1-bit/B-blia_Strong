@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Salmos 41 — Bíblia Strong Interativa | Voltemos à Palavra</title>
+<meta name="description" content="Leia Salmos capítulo 41 com dicionário Strong em português, referências cruzadas e vista paralela ARA e KJV.">
+<link rel="canonical" href="https://voltemosapalavra1-bit.github.io/B-blia_Strong/salmos/41.html">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<div class="seo-text" aria-hidden="true">1 « Ao mestre de canto. Salmo de Davi » Bem-aventurado o que acode ao necessitado; o SENHOR o livra no dia do mal. 2 O SENHOR o protege, preserva-lhe a vida e o faz feliz na terra; não o entrega à discrição dos seus inimigos. 3 O SENHOR o assiste no leito da enfermidade; na doença, tu lhe afofas a cama. 4 Disse eu: compadece-te de mim, SENHOR; sara a minha alma, porque pequei contra ti. 5 Os meus inimigos falam mal de mim: Quando morrerá e lhe perecerá o nome? 6 Se algum deles me vem visitar, diz coisas vãs, amontoando no coração malícias; em saindo, é disso que fala. 7 De mim rosnam à uma todos os que me odeiam; engendram males contra mim, dizendo: 8 Peste maligna deu nele, e: Caiu de cama, já não há de levantar-se. 9 Até o meu amigo íntimo, em quem eu confiava, que comia do meu pão, levantou contra mim o calcanhar. 10 Tu, porém, SENHOR, compadece-te de mim e levanta-me, para que eu lhes pague segundo merecem. 11 Com isto conheço que tu te agradas de mim: em não triunfar contra mim o meu inimigo. 12 Quanto a mim, tu me susténs na minha integridade e me pões à tua presença para sempre. 13 Bendito seja o SENHOR, Deus de Israel, da eternidade para a eternidade! Amém e amém!</div>
+<header class="header">
+  <div class="header-inner">
+    <a class="logo" href="../../index.html"><h1>Voltemos à Palavra</h1><span>Bíblia Strong Interativa</span></a>
+    <div class="search-wrap">
+      <input type="text" id="searchInput" placeholder="Ex: Gênesis 1 1 · João 3 16" onkeypress="if(event.key==='Enter')doSearch()">
+      <button class="btn-search" onclick="doSearch()">🔍 Buscar</button>
+    </div>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar"><div class="sidebar-head">✦ Livros</div><ul class="book-list" id="bookList"></ul></aside>
+  <section class="main">
+    <div class="toolbar">
+      <div class="vg"><span class="vg-lbl">Versão</span>
+        <input type="radio" class="r" name="ver" id="rAlm" value="ara" checked onchange="render()"><label class="r" for="rAlm">🇧🇷 ARA</label>
+        <input type="radio" class="r" name="ver" id="rKJV" value="kjv" onchange="render()"><label class="r" for="rKJV">🇬🇧 KJV</label>
+      </div>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkPar" onchange="render()"> Vista Paralela</label>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkStr" checked onchange="render()"> Códigos Strong</label>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkRef" checked onchange="render()"> Referências</label>
+    </div>
+    <div class="chap-bar">
+      <div><h2 id="chapTitle">Salmos 41</h2><div class="sub" id="chapSub">Almeida Revista e Atualizada</div></div>
+      <div class="nav-btns"><a class="nav-btn" href="../../salmos/40.html">← Salmos 40</a><select class="cap-sel" id="capSel" onchange="onCapSel()"></select><a class="nav-btn" href="../../salmos/42.html">Salmos 42 →</a></div>
+    </div>
+    <div class="par-heads" id="parHeads">
+      <div class="col-lbl">🇧🇷 ARA — Almeida Revista e Atualizada</div>
+      <div class="col-lbl">🇬🇧 KJV — King James Version</div>
+    </div>
+    <div class="verses-panel" id="versesPanel"><div class="loading"><div class="spinner"></div><div>Carregando…</div></div></div>
+  </section>
+</div>
+<div class="overlay" id="overlay" onclick="closePopup()"></div>
+<div class="popup" id="popup">
+  <div class="pop-top"><div class="pop-code"><span id="popCode"></span><span class="badge" id="popBadge"></span></div><button class="pop-close" onclick="closePopup()">✕</button></div>
+  <div class="pop-word"><div class="original" id="popOrig"></div><div class="translit" id="popXlit"></div></div>
+  <div class="pop-body">
+    <div class="def-block"><div class="lbl">Pronunciação</div><div class="val" id="popPron"></div></div>
+    <div class="def-block"><div class="lbl">Definição</div><div class="val" id="popDesc"></div></div>
+  </div>
+</div>
+<script>var INIT_BOOK="Psalms";var INIT_CAP=41;var BASE="../../";</script>
+<script src="../../app.js"></script>
+</body>
+</html>

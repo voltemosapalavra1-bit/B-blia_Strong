@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1 Pedro 5 — Bíblia Strong Interativa | Voltemos à Palavra</title>
+<meta name="description" content="Leia 1 Pedro capítulo 5 com dicionário Strong em português, referências cruzadas e vista paralela ARA e KJV.">
+<link rel="canonical" href="https://voltemosapalavra1-bit.github.io/B-blia_Strong/1-pedro/5.html">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<div class="seo-text" aria-hidden="true">1 Rogo, pois, aos presbíteros que há entre vós, eu, presbítero como eles, e testemunha dos sofrimentos de Cristo, e ainda co-participante da glória que há de ser revelada: 2 pastoreai o rebanho de Deus que há entre vós, não por constrangimento, mas espontaneamente, como Deus quer; nem por sórdida ganância, mas de boa vontade; 3 nem como dominadores dos que vos foram confiados, antes, tornando-vos modelos do rebanho. 4 Ora, logo que o Supremo Pastor se manifestar, recebereis a imarcescível coroa da glória. 5 Rogo igualmente aos jovens: sede submissos aos que são mais velhos; outrossim, no trato de uns com os outros, cingi-vos todos de humildade, porque Deus resiste aos soberbos, contudo, aos humildes concede a sua graça. 6 Humilhai-vos, portanto, sob a poderosa mão de Deus, para que ele, em tempo oportuno, vos exalte, 7 lançando sobre ele toda a vossa ansiedade, porque ele tem cuidado de vós. 8 Sede sóbrios e vigilantes. O diabo, vosso adversário, anda em derredor, como leão que ruge procurando alguém para devorar; 9 resisti-lhe firmes na fé, certos de que sofrimentos iguais aos vossos estão-se cumprindo na vossa irmandade espalhada pelo mundo. 10 Ora, o Deus de toda a graça, que em Cristo vos chamou à sua eterna glória, depois de terdes sofrido por um pouco, ele mesmo vos há de aperfeiçoar, firmar, fortificar e fundamentar. 11 A ele seja o domínio, pelos séculos dos séculos. Amém! 12 Por meio de Silvano, que para vós outros é fiel irmão, como também o considero, vos escrevo resumidamente, exortando e testificando, de novo, que esta é a genuína graça de Deus; nela estai firmes. 13 Aquela que se encontra em Babilônia, também eleita, vos saúda, como igualmente meu filho Marcos. 14 Saudai-vos uns aos outros com ósculo de amor. Paz a todos vós que vos achais em Cristo.</div>
+<header class="header">
+  <div class="header-inner">
+    <a class="logo" href="../../index.html"><h1>Voltemos à Palavra</h1><span>Bíblia Strong Interativa</span></a>
+    <div class="search-wrap">
+      <input type="text" id="searchInput" placeholder="Ex: Gênesis 1 1 · João 3 16" onkeypress="if(event.key==='Enter')doSearch()">
+      <button class="btn-search" onclick="doSearch()">🔍 Buscar</button>
+    </div>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar"><div class="sidebar-head">✦ Livros</div><ul class="book-list" id="bookList"></ul></aside>
+  <section class="main">
+    <div class="toolbar">
+      <div class="vg"><span class="vg-lbl">Versão</span>
+        <input type="radio" class="r" name="ver" id="rAlm" value="ara" checked onchange="render()"><label class="r" for="rAlm">🇧🇷 ARA</label>
+        <input type="radio" class="r" name="ver" id="rKJV" value="kjv" onchange="render()"><label class="r" for="rKJV">🇬🇧 KJV</label>
+      </div>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkPar" onchange="render()"> Vista Paralela</label>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkStr" checked onchange="render()"> Códigos Strong</label>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkRef" checked onchange="render()"> Referências</label>
+    </div>
+    <div class="chap-bar">
+      <div><h2 id="chapTitle">1 Pedro 5</h2><div class="sub" id="chapSub">Almeida Revista e Atualizada</div></div>
+      <div class="nav-btns"><a class="nav-btn" href="../../1-pedro/4.html">← 1 Pedro 4</a><select class="cap-sel" id="capSel" onchange="onCapSel()"></select><a class="nav-btn" href="../../2-pedro/1.html">2 Pedro 1 →</a></div>
+    </div>
+    <div class="par-heads" id="parHeads">
+      <div class="col-lbl">🇧🇷 ARA — Almeida Revista e Atualizada</div>
+      <div class="col-lbl">🇬🇧 KJV — King James Version</div>
+    </div>
+    <div class="verses-panel" id="versesPanel"><div class="loading"><div class="spinner"></div><div>Carregando…</div></div></div>
+  </section>
+</div>
+<div class="overlay" id="overlay" onclick="closePopup()"></div>
+<div class="popup" id="popup">
+  <div class="pop-top"><div class="pop-code"><span id="popCode"></span><span class="badge" id="popBadge"></span></div><button class="pop-close" onclick="closePopup()">✕</button></div>
+  <div class="pop-word"><div class="original" id="popOrig"></div><div class="translit" id="popXlit"></div></div>
+  <div class="pop-body">
+    <div class="def-block"><div class="lbl">Pronunciação</div><div class="val" id="popPron"></div></div>
+    <div class="def-block"><div class="lbl">Definição</div><div class="val" id="popDesc"></div></div>
+  </div>
+</div>
+<script>var INIT_BOOK="1 Peter";var INIT_CAP=5;var BASE="../../";</script>
+<script src="../../app.js"></script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apocalipse 20 — Bíblia Strong Interativa | Voltemos à Palavra</title>
+<meta name="description" content="Leia Apocalipse capítulo 20 com dicionário Strong em português, referências cruzadas e vista paralela ARA e KJV.">
+<link rel="canonical" href="https://voltemosapalavra1-bit.github.io/B-blia_Strong/apocalipse/20.html">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<div class="seo-text" aria-hidden="true">1 Então, vi descer do céu um anjo; tinha na mão a chave do abismo e uma grande corrente. 2 Ele segurou o dragão, a antiga serpente, que é o diabo, Satanás, e o prendeu por mil anos; 3 lançou-o no abismo, fechou-o e pôs selo sobre ele, para que não mais enganasse as nações até se completarem os mil anos. Depois disto, é necessário que ele seja solto pouco tempo. 4 Vi também tronos, e nestes sentaram-se aqueles aos quais foi dada autoridade de julgar. Vi ainda as almas dos decapitados por causa do testemunho de Jesus, bem como por causa da palavra de Deus, tantos quantos não adoraram a besta, nem tampouco a sua imagem, e não receberam a marca na fronte e na mão; e viveram e reinaram com Cristo durante mil anos. 5 Os restantes dos mortos não reviveram até que se completassem os mil anos. Esta é a primeira ressurreição. 6 Bem-aventurado e santo é aquele que tem parte na primeira ressurreição; sobre esses a segunda morte não tem autoridade; pelo contrário, serão sacerdotes de Deus e de Cristo e reinarão com ele os mil anos. 7 Quando, porém, se completarem os mil anos, Satanás será solto da sua prisão 8 e sairá a seduzir as nações que há nos quatro cantos da terra, Gogue e Magogue, a fim de reuni-las para a peleja. O número dessas é como a areia do mar. 9 Marcharam, então, pela superfície da terra e sitiaram o acampamento dos santos e a cidade querida; desceu, porém, fogo do céu e os consumiu. 10 O diabo, o sedutor deles, foi lançado para dentro do lago de fogo e enxofre, onde já se encontram não só a besta como também o falso profeta; e serão atormentados de dia e de noite, pelos séculos dos séculos. 11 Vi um grande trono branco e aquele que nele se assenta, de cuja presença fugiram a terra e o céu, e não se achou lugar para eles. 12 Vi também os mortos, os grandes e os pequenos, postos em pé diante do trono. Então, se abriram livros. Ainda outro livro, o Livro da Vida, foi aberto. E os mortos foram julgados, segundo as suas obras, conforme o que se achava escrito nos livros. 13 Deu o mar os mortos que nele estavam. A morte e o além entregaram os mortos que neles havia. E foram julgados, um por um, segundo as suas obras. 14 Então, a morte e o inferno foram lançados para dentro do lago de fogo. Esta é a segunda morte, o lago de fogo. 15 E, se alguém não foi achado inscrito no Livro da Vida, esse foi lançado para dentro do lago de fogo.</div>
+<header class="header">
+  <div class="header-inner">
+    <a class="logo" href="../../index.html"><h1>Voltemos à Palavra</h1><span>Bíblia Strong Interativa</span></a>
+    <div class="search-wrap">
+      <input type="text" id="searchInput" placeholder="Ex: Gênesis 1 1 · João 3 16" onkeypress="if(event.key==='Enter')doSearch()">
+      <button class="btn-search" onclick="doSearch()">🔍 Buscar</button>
+    </div>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar"><div class="sidebar-head">✦ Livros</div><ul class="book-list" id="bookList"></ul></aside>
+  <section class="main">
+    <div class="toolbar">
+      <div class="vg"><span class="vg-lbl">Versão</span>
+        <input type="radio" class="r" name="ver" id="rAlm" value="ara" checked onchange="render()"><label class="r" for="rAlm">🇧🇷 ARA</label>
+        <input type="radio" class="r" name="ver" id="rKJV" value="kjv" onchange="render()"><label class="r" for="rKJV">🇬🇧 KJV</label>
+      </div>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkPar" onchange="render()"> Vista Paralela</label>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkStr" checked onchange="render()"> Códigos Strong</label>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkRef" checked onchange="render()"> Referências</label>
+    </div>
+    <div class="chap-bar">
+      <div><h2 id="chapTitle">Apocalipse 20</h2><div class="sub" id="chapSub">Almeida Revista e Atualizada</div></div>
+      <div class="nav-btns"><a class="nav-btn" href="../../apocalipse/19.html">← Apocalipse 19</a><select class="cap-sel" id="capSel" onchange="onCapSel()"></select><a class="nav-btn" href="../../apocalipse/21.html">Apocalipse 21 →</a></div>
+    </div>
+    <div class="par-heads" id="parHeads">
+      <div class="col-lbl">🇧🇷 ARA — Almeida Revista e Atualizada</div>
+      <div class="col-lbl">🇬🇧 KJV — King James Version</div>
+    </div>
+    <div class="verses-panel" id="versesPanel"><div class="loading"><div class="spinner"></div><div>Carregando…</div></div></div>
+  </section>
+</div>
+<div class="overlay" id="overlay" onclick="closePopup()"></div>
+<div class="popup" id="popup">
+  <div class="pop-top"><div class="pop-code"><span id="popCode"></span><span class="badge" id="popBadge"></span></div><button class="pop-close" onclick="closePopup()">✕</button></div>
+  <div class="pop-word"><div class="original" id="popOrig"></div><div class="translit" id="popXlit"></div></div>
+  <div class="pop-body">
+    <div class="def-block"><div class="lbl">Pronunciação</div><div class="val" id="popPron"></div></div>
+    <div class="def-block"><div class="lbl">Definição</div><div class="val" id="popDesc"></div></div>
+  </div>
+</div>
+<script>var INIT_BOOK="Revelation";var INIT_CAP=20;var BASE="../../";</script>
+<script src="../../app.js"></script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jó 5 — Bíblia Strong Interativa | Voltemos à Palavra</title>
+<meta name="description" content="Leia Jó capítulo 5 com dicionário Strong em português, referências cruzadas e vista paralela ARA e KJV.">
+<link rel="canonical" href="https://voltemosapalavra1-bit.github.io/B-blia_Strong/jo/5.html">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<div class="seo-text" aria-hidden="true">1 Chama agora! Haverá alguém que te atenda? E para qual dos santos anjos te virarás? 2 Porque a ira do louco o destrói, e o zelo do tolo o mata. 3 Bem vi eu o louco lançar raízes; mas logo declarei maldita a sua habitação. 4 Seus filhos estão longe do socorro, são espezinhados às portas, e não há quem os livre. 5 A sua messe, o faminto a devora e até do meio dos espinhos a arrebata; e o intrigante abocanha os seus bens. 6 Porque a aflição não vem do pó, e não é da terra que brota o enfado. 7 Mas o homem nasce para o enfado, como as faíscas das brasas voam para cima. 8 Quanto a mim, eu buscaria a Deus e a ele entregaria a minha causa; 9 ele faz coisas grandes e inescrutáveis e maravilhas que não se podem contar; 10 faz chover sobre a terra e envia águas sobre os campos, 11 para pôr os abatidos num lugar alto e para que os enlutados se alegrem da maior ventura. 12 Ele frustra as maquinações dos astutos, para que as suas mãos não possam realizar seus projetos. 13 Ele apanha os sábios na sua própria astúcia; e o conselho dos que tramam se precipita. 14 Eles de dia encontram as trevas; ao meio-dia andam como de noite, às apalpadelas. 15 Porém Deus salva da espada que lhes sai da boca, salva o necessitado da mão do poderoso. 16 Assim, há esperança para o pobre, e a iniqüidade tapa a sua própria boca. 17 Bem-aventurado é o homem a quem Deus disciplina; não desprezes, pois, a disciplina do Todo-Poderoso. 18 Porque ele faz a ferida e ele mesmo a ata; ele fere, e as suas mãos curam. 19 De seis angústias te livrará, e na sétima o mal te não tocará. 20 Na fome te livrará da morte; na guerra, do poder da espada. 21 Do açoite da língua estarás abrigado e, quando vier a assolação, não a temerás. 22 Da assolação e da fome te rirás e das feras da terra não terás medo. 23 Porque até com as pedras do campo terás a tua aliança, e os animais da terra viverão em paz contigo. 24 Saberás que a paz é a tua tenda, percorrerás as tuas possessões, e nada te faltará. 25 Saberás também que se multiplicará a tua descendência, e a tua posteridade, como a erva da terra. 26 Em robusta velhice entrarás para a sepultura, como se recolhe o feixe de trigo a seu tempo. 27 Eis que isto já o havemos inquirido, e assim é; ouve-o e medita nisso para teu bem.</div>
+<header class="header">
+  <div class="header-inner">
+    <a class="logo" href="../../index.html"><h1>Voltemos à Palavra</h1><span>Bíblia Strong Interativa</span></a>
+    <div class="search-wrap">
+      <input type="text" id="searchInput" placeholder="Ex: Gênesis 1 1 · João 3 16" onkeypress="if(event.key==='Enter')doSearch()">
+      <button class="btn-search" onclick="doSearch()">🔍 Buscar</button>
+    </div>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar"><div class="sidebar-head">✦ Livros</div><ul class="book-list" id="bookList"></ul></aside>
+  <section class="main">
+    <div class="toolbar">
+      <div class="vg"><span class="vg-lbl">Versão</span>
+        <input type="radio" class="r" name="ver" id="rAlm" value="ara" checked onchange="render()"><label class="r" for="rAlm">🇧🇷 ARA</label>
+        <input type="radio" class="r" name="ver" id="rKJV" value="kjv" onchange="render()"><label class="r" for="rKJV">🇬🇧 KJV</label>
+      </div>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkPar" onchange="render()"> Vista Paralela</label>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkStr" checked onchange="render()"> Códigos Strong</label>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkRef" checked onchange="render()"> Referências</label>
+    </div>
+    <div class="chap-bar">
+      <div><h2 id="chapTitle">Jó 5</h2><div class="sub" id="chapSub">Almeida Revista e Atualizada</div></div>
+      <div class="nav-btns"><a class="nav-btn" href="../../jo/4.html">← Jó 4</a><select class="cap-sel" id="capSel" onchange="onCapSel()"></select><a class="nav-btn" href="../../jo/6.html">Jó 6 →</a></div>
+    </div>
+    <div class="par-heads" id="parHeads">
+      <div class="col-lbl">🇧🇷 ARA — Almeida Revista e Atualizada</div>
+      <div class="col-lbl">🇬🇧 KJV — King James Version</div>
+    </div>
+    <div class="verses-panel" id="versesPanel"><div class="loading"><div class="spinner"></div><div>Carregando…</div></div></div>
+  </section>
+</div>
+<div class="overlay" id="overlay" onclick="closePopup()"></div>
+<div class="popup" id="popup">
+  <div class="pop-top"><div class="pop-code"><span id="popCode"></span><span class="badge" id="popBadge"></span></div><button class="pop-close" onclick="closePopup()">✕</button></div>
+  <div class="pop-word"><div class="original" id="popOrig"></div><div class="translit" id="popXlit"></div></div>
+  <div class="pop-body">
+    <div class="def-block"><div class="lbl">Pronunciação</div><div class="val" id="popPron"></div></div>
+    <div class="def-block"><div class="lbl">Definição</div><div class="val" id="popDesc"></div></div>
+  </div>
+</div>
+<script>var INIT_BOOK="Job";var INIT_CAP=5;var BASE="../../";</script>
+<script src="../../app.js"></script>
+</body>
+</html>

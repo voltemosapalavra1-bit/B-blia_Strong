@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ezequiel 35 — Bíblia Strong Interativa | Voltemos à Palavra</title>
+<meta name="description" content="Leia Ezequiel capítulo 35 com dicionário Strong em português, referências cruzadas e vista paralela ARA e KJV.">
+<link rel="canonical" href="https://voltemosapalavra1-bit.github.io/B-blia_Strong/ezequiel/35.html">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<div class="seo-text" aria-hidden="true">1 Veio a mim a palavra do SENHOR, dizendo: 2 Filho do homem, volve o rosto contra o monte Seir e profetiza contra ele. 3 Dize-lhe: Assim diz o SENHOR Deus: Eis que eu estou contra ti, ó monte Seir, e estenderei a mão contra ti, e te farei desolação e espanto. 4 Farei desertas as tuas cidades, e tu serás desolado; e saberás que eu sou o SENHOR. 5 Pois guardaste inimizade perpétua e abandonaste os filhos de Israel à violência da espada, no tempo da calamidade e do castigo final. 6 Por isso, diz o SENHOR Deus, tão certo como eu vivo, eu te fiz sangrar, e sangue te perseguirá; visto que não aborreceste o sangue, o sangue te perseguirá. 7 Farei do monte Seir extrema desolação e eliminarei dele o que por ele passa e o que por ele volta. 8 Encherei os seus montes dos seus traspassados; nos teus outeiros, nos teus vales e em todas as tuas correntes, cairão os traspassados à espada. 9 Em perpétuas desolações, te porei, e as tuas cidades jamais serão habitadas; assim sabereis que eu sou o SENHOR. 10 Visto que dizes: Os dois povos e as duas terras serão meus, e os possuirei, ainda que o SENHOR se achava ali, 11 por isso, tão certo como eu vivo, diz o SENHOR Deus, procederei segundo a tua ira e segundo a tua inveja, com que, no teu ódio, os trataste; e serei conhecido deles, quando te julgar. 12 Saberás que eu, o SENHOR, ouvi todas as blasfêmias que proferiste contra os montes de Israel, dizendo: Já estão desolados, a nós nos são entregues por pasto. 13 Vós vos engrandecestes contra mim com a vossa boca e multiplicastes as vossas palavras contra mim; eu o ouvi. 14 Assim diz o SENHOR Deus: Ao alegrar-se toda a terra, eu te reduzirei à desolação. 15 Como te alegraste com a sorte da casa de Israel, porque foi desolada, assim também farei a ti; desolado serás, ó monte Seir e todo o Edom, sim, todo; e saberão que eu sou o SENHOR.</div>
+<header class="header">
+  <div class="header-inner">
+    <a class="logo" href="../../index.html"><h1>Voltemos à Palavra</h1><span>Bíblia Strong Interativa</span></a>
+    <div class="search-wrap">
+      <input type="text" id="searchInput" placeholder="Ex: Gênesis 1 1 · João 3 16" onkeypress="if(event.key==='Enter')doSearch()">
+      <button class="btn-search" onclick="doSearch()">🔍 Buscar</button>
+    </div>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar"><div class="sidebar-head">✦ Livros</div><ul class="book-list" id="bookList"></ul></aside>
+  <section class="main">
+    <div class="toolbar">
+      <div class="vg"><span class="vg-lbl">Versão</span>
+        <input type="radio" class="r" name="ver" id="rAlm" value="ara" checked onchange="render()"><label class="r" for="rAlm">🇧🇷 ARA</label>
+        <input type="radio" class="r" name="ver" id="rKJV" value="kjv" onchange="render()"><label class="r" for="rKJV">🇬🇧 KJV</label>
+      </div>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkPar" onchange="render()"> Vista Paralela</label>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkStr" checked onchange="render()"> Códigos Strong</label>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkRef" checked onchange="render()"> Referências</label>
+    </div>
+    <div class="chap-bar">
+      <div><h2 id="chapTitle">Ezequiel 35</h2><div class="sub" id="chapSub">Almeida Revista e Atualizada</div></div>
+      <div class="nav-btns"><a class="nav-btn" href="../../ezequiel/34.html">← Ezequiel 34</a><select class="cap-sel" id="capSel" onchange="onCapSel()"></select><a class="nav-btn" href="../../ezequiel/36.html">Ezequiel 36 →</a></div>
+    </div>
+    <div class="par-heads" id="parHeads">
+      <div class="col-lbl">🇧🇷 ARA — Almeida Revista e Atualizada</div>
+      <div class="col-lbl">🇬🇧 KJV — King James Version</div>
+    </div>
+    <div class="verses-panel" id="versesPanel"><div class="loading"><div class="spinner"></div><div>Carregando…</div></div></div>
+  </section>
+</div>
+<div class="overlay" id="overlay" onclick="closePopup()"></div>
+<div class="popup" id="popup">
+  <div class="pop-top"><div class="pop-code"><span id="popCode"></span><span class="badge" id="popBadge"></span></div><button class="pop-close" onclick="closePopup()">✕</button></div>
+  <div class="pop-word"><div class="original" id="popOrig"></div><div class="translit" id="popXlit"></div></div>
+  <div class="pop-body">
+    <div class="def-block"><div class="lbl">Pronunciação</div><div class="val" id="popPron"></div></div>
+    <div class="def-block"><div class="lbl">Definição</div><div class="val" id="popDesc"></div></div>
+  </div>
+</div>
+<script>var INIT_BOOK="Ezekiel";var INIT_CAP=35;var BASE="../../";</script>
+<script src="../../app.js"></script>
+</body>
+</html>

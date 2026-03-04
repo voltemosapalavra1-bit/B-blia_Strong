@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2 Crônicas 5 — Bíblia Strong Interativa | Voltemos à Palavra</title>
+<meta name="description" content="Leia 2 Crônicas capítulo 5 com dicionário Strong em português, referências cruzadas e vista paralela ARA e KJV.">
+<link rel="canonical" href="https://voltemosapalavra1-bit.github.io/B-blia_Strong/2-cronicas/5.html">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<div class="seo-text" aria-hidden="true">1 Assim, se acabou toda a obra que fez o rei Salomão para a Casa do SENHOR; então, trouxe Salomão as coisas que Davi, seu pai, havia dedicado; a prata, o ouro e os utensílios, ele os pôs entre os tesouros da Casa de Deus. 2 Congregou Salomão os anciãos de Israel e todos os cabeças das tribos, os príncipes das famílias dos israelitas, em Jerusalém, para fazerem subir a arca da Aliança do SENHOR, da Cidade de Davi, que é Sião, para o templo. 3 Todos os homens de Israel se congregaram junto ao rei, na ocasião da festa, que foi no sétimo mês. 4 Vieram todos os anciãos de Israel, e os levitas tomaram a arca 5 e a levaram para cima, com a tenda da congregação, e também os utensílios sagrados que nela havia; os levitas-sacerdotes é que os fizeram subir. 6 O rei Salomão e toda a congregação de Israel, que se reunira a ele, estavam diante da arca, sacrificando ovelhas e bois, que, de tão numerosos, não se podiam contar. 7 Puseram os sacerdotes a arca da Aliança do SENHOR no seu lugar, no santuário mais interior do templo, no Santo dos Santos, debaixo das asas dos querubins. 8 (Pois os querubins estendiam as asas sobre o lugar da arca e, do alto, cobriam a arca e os seus varais. 9 Os varais sobressaíam tanto, que suas pontas eram vistas do Santo Lugar, defronte do Santo dos Santos, porém de fora não se viam. 10 Aí estão os varais até ao dia de hoje.) Nada havia na arca senão as duas tábuas que Moisés ali pusera junto a Horebe, quando o SENHOR fez aliança com os filhos de Israel, ao saírem do Egito. 11 Quando saíram os sacerdotes do santuário (porque todos os sacerdotes, que estavam presentes, se santificaram, sem respeitarem os seus turnos); 12 e quando todos os levitas que eram cantores, isto é, Asafe, Hemã, Jedutum e os filhos e irmãos deles, vestidos de linho fino, estavam de pé, para o oriente do altar, com címbalos, alaúdes e harpas, e com eles até cento e vinte sacerdotes, que tocavam as trombetas; 13 e quando em uníssono, a um tempo, tocaram as trombetas e cantaram para se fazerem ouvir, para louvarem o SENHOR e render-lhe graças; e quando levantaram eles a voz com trombetas, címbalos e outros instrumentos músicos para louvarem o SENHOR, porque ele é bom, porque a sua misericórdia dura para sempre, então, sucedeu que a casa, a saber, a Casa do SENHOR, se encheu de uma nuvem; 14 de maneira que os sacerdotes não podiam estar ali para ministrar, por causa da nuvem, porque a glória do SENHOR encheu a Casa de Deus.</div>
+<header class="header">
+  <div class="header-inner">
+    <a class="logo" href="../../index.html"><h1>Voltemos à Palavra</h1><span>Bíblia Strong Interativa</span></a>
+    <div class="search-wrap">
+      <input type="text" id="searchInput" placeholder="Ex: Gênesis 1 1 · João 3 16" onkeypress="if(event.key==='Enter')doSearch()">
+      <button class="btn-search" onclick="doSearch()">🔍 Buscar</button>
+    </div>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar"><div class="sidebar-head">✦ Livros</div><ul class="book-list" id="bookList"></ul></aside>
+  <section class="main">
+    <div class="toolbar">
+      <div class="vg"><span class="vg-lbl">Versão</span>
+        <input type="radio" class="r" name="ver" id="rAlm" value="ara" checked onchange="render()"><label class="r" for="rAlm">🇧🇷 ARA</label>
+        <input type="radio" class="r" name="ver" id="rKJV" value="kjv" onchange="render()"><label class="r" for="rKJV">🇬🇧 KJV</label>
+      </div>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkPar" onchange="render()"> Vista Paralela</label>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkStr" checked onchange="render()"> Códigos Strong</label>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkRef" checked onchange="render()"> Referências</label>
+    </div>
+    <div class="chap-bar">
+      <div><h2 id="chapTitle">2 Crônicas 5</h2><div class="sub" id="chapSub">Almeida Revista e Atualizada</div></div>
+      <div class="nav-btns"><a class="nav-btn" href="../../2-cronicas/4.html">← 2 Crônicas 4</a><select class="cap-sel" id="capSel" onchange="onCapSel()"></select><a class="nav-btn" href="../../2-cronicas/6.html">2 Crônicas 6 →</a></div>
+    </div>
+    <div class="par-heads" id="parHeads">
+      <div class="col-lbl">🇧🇷 ARA — Almeida Revista e Atualizada</div>
+      <div class="col-lbl">🇬🇧 KJV — King James Version</div>
+    </div>
+    <div class="verses-panel" id="versesPanel"><div class="loading"><div class="spinner"></div><div>Carregando…</div></div></div>
+  </section>
+</div>
+<div class="overlay" id="overlay" onclick="closePopup()"></div>
+<div class="popup" id="popup">
+  <div class="pop-top"><div class="pop-code"><span id="popCode"></span><span class="badge" id="popBadge"></span></div><button class="pop-close" onclick="closePopup()">✕</button></div>
+  <div class="pop-word"><div class="original" id="popOrig"></div><div class="translit" id="popXlit"></div></div>
+  <div class="pop-body">
+    <div class="def-block"><div class="lbl">Pronunciação</div><div class="val" id="popPron"></div></div>
+    <div class="def-block"><div class="lbl">Definição</div><div class="val" id="popDesc"></div></div>
+  </div>
+</div>
+<script>var INIT_BOOK="2 Chronicles";var INIT_CAP=5;var BASE="../../";</script>
+<script src="../../app.js"></script>
+</body>
+</html>

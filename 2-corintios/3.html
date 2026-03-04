@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2 Coríntios 3 — Bíblia Strong Interativa | Voltemos à Palavra</title>
+<meta name="description" content="Leia 2 Coríntios capítulo 3 com dicionário Strong em português, referências cruzadas e vista paralela ARA e KJV.">
+<link rel="canonical" href="https://voltemosapalavra1-bit.github.io/B-blia_Strong/2-corintios/3.html">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<div class="seo-text" aria-hidden="true">1 Começamos, porventura, outra vez a recomendar-nos a nós mesmos? Ou temos necessidade, como alguns, de cartas de recomendação para vós outros ou de vós? 2 Vós sois a nossa carta, escrita em nosso coração, conhecida e lida por todos os homens, 3 estando já manifestos como carta de Cristo, produzida pelo nosso ministério, escrita não com tinta, mas pelo Espírito do Deus vivente, não em tábuas de pedra, mas em tábuas de carne, isto é, nos corações. 4 E é por intermédio de Cristo que temos tal confiança em Deus; 5 não que, por nós mesmos, sejamos capazes de pensar alguma coisa, como se partisse de nós; pelo contrário, a nossa suficiência vem de Deus, 6 o qual nos habilitou para sermos ministros de uma nova aliança, não da letra, mas do espírito; porque a letra mata, mas o espírito vivifica. 7 E, se o ministério da morte, gravado com letras em pedras, se revestiu de glória, a ponto de os filhos de Israel não poderem fitar a face de Moisés, por causa da glória do seu rosto, ainda que desvanecente, 8 como não será de maior glória o ministério do Espírito! 9 Porque, se o ministério da condenação foi glória, em muito maior proporção será glorioso o ministério da justiça. 10 Porquanto, na verdade, o que, outrora, foi glorificado, neste respeito, já não resplandece, diante da atual sobreexcelente glória. 11 Porque, se o que se desvanecia teve sua glória, muito mais glória tem o que é permanente. 12 Tendo, pois, tal esperança, servimo-nos de muita ousadia no falar. 13 E não somos como Moisés, que punha véu sobre a face, para que os filhos de Israel não atentassem na terminação do que se desvanecia. 14 Mas os sentidos deles se embotaram. Pois até ao dia de hoje, quando fazem a leitura da antiga aliança, o mesmo véu permanece, não lhes sendo revelado que, em Cristo, é removido. 15 Mas até hoje, quando é lido Moisés, o véu está posto sobre o coração deles. 16 Quando, porém, algum deles se converte ao Senhor, o véu lhe é retirado. 17 Ora, o Senhor é o Espírito; e, onde está o Espírito do Senhor, aí há liberdade. 18 E todos nós, com o rosto desvendado, contemplando, como por espelho, a glória do Senhor, somos transformados, de glória em glória, na sua própria imagem, como pelo Senhor, o Espírito.</div>
+<header class="header">
+  <div class="header-inner">
+    <a class="logo" href="../../index.html"><h1>Voltemos à Palavra</h1><span>Bíblia Strong Interativa</span></a>
+    <div class="search-wrap">
+      <input type="text" id="searchInput" placeholder="Ex: Gênesis 1 1 · João 3 16" onkeypress="if(event.key==='Enter')doSearch()">
+      <button class="btn-search" onclick="doSearch()">🔍 Buscar</button>
+    </div>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar"><div class="sidebar-head">✦ Livros</div><ul class="book-list" id="bookList"></ul></aside>
+  <section class="main">
+    <div class="toolbar">
+      <div class="vg"><span class="vg-lbl">Versão</span>
+        <input type="radio" class="r" name="ver" id="rAlm" value="ara" checked onchange="render()"><label class="r" for="rAlm">🇧🇷 ARA</label>
+        <input type="radio" class="r" name="ver" id="rKJV" value="kjv" onchange="render()"><label class="r" for="rKJV">🇬🇧 KJV</label>
+      </div>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkPar" onchange="render()"> Vista Paralela</label>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkStr" checked onchange="render()"> Códigos Strong</label>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkRef" checked onchange="render()"> Referências</label>
+    </div>
+    <div class="chap-bar">
+      <div><h2 id="chapTitle">2 Coríntios 3</h2><div class="sub" id="chapSub">Almeida Revista e Atualizada</div></div>
+      <div class="nav-btns"><a class="nav-btn" href="../../2-corintios/2.html">← 2 Coríntios 2</a><select class="cap-sel" id="capSel" onchange="onCapSel()"></select><a class="nav-btn" href="../../2-corintios/4.html">2 Coríntios 4 →</a></div>
+    </div>
+    <div class="par-heads" id="parHeads">
+      <div class="col-lbl">🇧🇷 ARA — Almeida Revista e Atualizada</div>
+      <div class="col-lbl">🇬🇧 KJV — King James Version</div>
+    </div>
+    <div class="verses-panel" id="versesPanel"><div class="loading"><div class="spinner"></div><div>Carregando…</div></div></div>
+  </section>
+</div>
+<div class="overlay" id="overlay" onclick="closePopup()"></div>
+<div class="popup" id="popup">
+  <div class="pop-top"><div class="pop-code"><span id="popCode"></span><span class="badge" id="popBadge"></span></div><button class="pop-close" onclick="closePopup()">✕</button></div>
+  <div class="pop-word"><div class="original" id="popOrig"></div><div class="translit" id="popXlit"></div></div>
+  <div class="pop-body">
+    <div class="def-block"><div class="lbl">Pronunciação</div><div class="val" id="popPron"></div></div>
+    <div class="def-block"><div class="lbl">Definição</div><div class="val" id="popDesc"></div></div>
+  </div>
+</div>
+<script>var INIT_BOOK="2 Corinthians";var INIT_CAP=3;var BASE="../../";</script>
+<script src="../../app.js"></script>
+</body>
+</html>

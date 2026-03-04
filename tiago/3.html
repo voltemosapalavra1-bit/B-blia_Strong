@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tiago 3 — Bíblia Strong Interativa | Voltemos à Palavra</title>
+<meta name="description" content="Leia Tiago capítulo 3 com dicionário Strong em português, referências cruzadas e vista paralela ARA e KJV.">
+<link rel="canonical" href="https://voltemosapalavra1-bit.github.io/B-blia_Strong/tiago/3.html">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<div class="seo-text" aria-hidden="true">1 Meus irmãos, não vos torneis, muitos de vós, mestres, sabendo que havemos de receber maior juízo. 2 Porque todos tropeçamos em muitas coisas. Se alguém não tropeça no falar, é perfeito varão, capaz de refrear também todo o corpo. 3 Ora, se pomos freio na boca dos cavalos, para nos obedecerem, também lhes dirigimos o corpo inteiro. 4 Observai, igualmente, os navios que, sendo tão grandes e batidos de rijos ventos, por um pequeníssimo leme são dirigidos para onde queira o impulso do timoneiro. 5 Assim, também a língua, pequeno órgão, se gaba de grandes coisas. Vede como uma fagulha põe em brasas tão grande selva! 6 Ora, a língua é fogo; é mundo de iniqüidade; a língua está situada entre os membros de nosso corpo, e contamina o corpo inteiro, e não só põe em chamas toda a carreira da existência humana, como também é posta ela mesma em chamas pelo inferno. 7 Pois toda espécie de feras, de aves, de répteis e de seres marinhos se doma e tem sido domada pelo gênero humano; 8 a língua, porém, nenhum dos homens é capaz de domar; é mal incontido, carregado de veneno mortífero. 9 Com ela, bendizemos ao Senhor e Pai; também, com ela, amaldiçoamos os homens, feitos à semelhança de Deus. 10 De uma só boca procede bênção e maldição. Meus irmãos, não é conveniente que estas coisas sejam assim. 11 Acaso, pode a fonte jorrar do mesmo lugar o que é doce e o que é amargoso? 12 Acaso, meus irmãos, pode a figueira produzir azeitonas ou a videira, figos? Tampouco fonte de água salgada pode dar água doce. 13 Quem entre vós é sábio e inteligente? Mostre em mansidão de sabedoria, mediante condigno proceder, as suas obras. 14 Se, pelo contrário, tendes em vosso coração inveja amargurada e sentimento faccioso, nem vos glorieis disso, nem mintais contra a verdade. 15 Esta não é a sabedoria que desce lá do alto; antes, é terrena, animal e demoníaca. 16 Pois, onde há inveja e sentimento faccioso, aí há confusão e toda espécie de coisas ruins. 17 A sabedoria, porém, lá do alto é, primeiramente, pura; depois, pacífica, indulgente, tratável, plena de misericórdia e de bons frutos, imparcial, sem fingimento. 18 Ora, é em paz que se semeia o fruto da justiça, para os que promovem a paz.</div>
+<header class="header">
+  <div class="header-inner">
+    <a class="logo" href="../../index.html"><h1>Voltemos à Palavra</h1><span>Bíblia Strong Interativa</span></a>
+    <div class="search-wrap">
+      <input type="text" id="searchInput" placeholder="Ex: Gênesis 1 1 · João 3 16" onkeypress="if(event.key==='Enter')doSearch()">
+      <button class="btn-search" onclick="doSearch()">🔍 Buscar</button>
+    </div>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar"><div class="sidebar-head">✦ Livros</div><ul class="book-list" id="bookList"></ul></aside>
+  <section class="main">
+    <div class="toolbar">
+      <div class="vg"><span class="vg-lbl">Versão</span>
+        <input type="radio" class="r" name="ver" id="rAlm" value="ara" checked onchange="render()"><label class="r" for="rAlm">🇧🇷 ARA</label>
+        <input type="radio" class="r" name="ver" id="rKJV" value="kjv" onchange="render()"><label class="r" for="rKJV">🇬🇧 KJV</label>
+      </div>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkPar" onchange="render()"> Vista Paralela</label>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkStr" checked onchange="render()"> Códigos Strong</label>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkRef" checked onchange="render()"> Referências</label>
+    </div>
+    <div class="chap-bar">
+      <div><h2 id="chapTitle">Tiago 3</h2><div class="sub" id="chapSub">Almeida Revista e Atualizada</div></div>
+      <div class="nav-btns"><a class="nav-btn" href="../../tiago/2.html">← Tiago 2</a><select class="cap-sel" id="capSel" onchange="onCapSel()"></select><a class="nav-btn" href="../../tiago/4.html">Tiago 4 →</a></div>
+    </div>
+    <div class="par-heads" id="parHeads">
+      <div class="col-lbl">🇧🇷 ARA — Almeida Revista e Atualizada</div>
+      <div class="col-lbl">🇬🇧 KJV — King James Version</div>
+    </div>
+    <div class="verses-panel" id="versesPanel"><div class="loading"><div class="spinner"></div><div>Carregando…</div></div></div>
+  </section>
+</div>
+<div class="overlay" id="overlay" onclick="closePopup()"></div>
+<div class="popup" id="popup">
+  <div class="pop-top"><div class="pop-code"><span id="popCode"></span><span class="badge" id="popBadge"></span></div><button class="pop-close" onclick="closePopup()">✕</button></div>
+  <div class="pop-word"><div class="original" id="popOrig"></div><div class="translit" id="popXlit"></div></div>
+  <div class="pop-body">
+    <div class="def-block"><div class="lbl">Pronunciação</div><div class="val" id="popPron"></div></div>
+    <div class="def-block"><div class="lbl">Definição</div><div class="val" id="popDesc"></div></div>
+  </div>
+</div>
+<script>var INIT_BOOK="James";var INIT_CAP=3;var BASE="../../";</script>
+<script src="../../app.js"></script>
+</body>
+</html>

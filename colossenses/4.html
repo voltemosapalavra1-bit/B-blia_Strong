@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Colossenses 4 — Bíblia Strong Interativa | Voltemos à Palavra</title>
+<meta name="description" content="Leia Colossenses capítulo 4 com dicionário Strong em português, referências cruzadas e vista paralela ARA e KJV.">
+<link rel="canonical" href="https://voltemosapalavra1-bit.github.io/B-blia_Strong/colossenses/4.html">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<div class="seo-text" aria-hidden="true">1 Senhores, tratai os servos com justiça e com eqüidade, certos de que também vós tendes Senhor no céu. 2 Perseverai na oração, vigiando com ações de graças. 3 Suplicai, ao mesmo tempo, também por nós, para que Deus nos abra porta à palavra, a fim de falarmos do mistério de Cristo, pelo qual também estou algemado; 4 para que eu o manifeste, como devo fazer. 5 Portai-vos com sabedoria para com os que são de fora; aproveitai as oportunidades. 6 A vossa palavra seja sempre agradável, temperada com sal, para saberdes como deveis responder a cada um. 7 Quanto à minha situação, Tíquico, irmão amado, e fiel ministro, e conservo no Senhor, de tudo vos informará. 8 Eu vo-lo envio com o expresso propósito de vos dar conhecimento da nossa situação e de alentar o vosso coração. 9 Em sua companhia, vos envio Onésimo, o fiel e amado irmão, que é do vosso meio. Eles vos farão saber tudo o que por aqui ocorre. 10 Saúda-vos Aristarco, prisioneiro comigo, e Marcos, primo de Barnabé (sobre quem recebestes instruções; se ele for ter convosco, acolhei-o), 11 e Jesus, conhecido por Justo, os quais são os únicos da circuncisão que cooperam pessoalmente comigo pelo reino de Deus. Eles têm sido o meu lenitivo. 12 Saúda-vos Epafras, que é dentre vós, servo de Cristo Jesus, o qual se esforça sobremaneira, continuamente, por vós nas orações, para que vos conserveis perfeitos e plenamente convictos em toda a vontade de Deus. 13 E dele dou testemunho de que muito se preocupa por vós, pelos de Laodicéia e pelos de Hierápolis. 14 Saúda-vos Lucas, o médico amado, e também Demas. 15 Saudai os irmãos de Laodicéia, e Ninfa, e à igreja que ela hospeda em sua casa. 16 E, uma vez lida esta epístola perante vós, providenciai por que seja também lida na igreja dos laodicenses; e a dos de Laodicéia, lede-a igualmente perante vós. 17 Também dizei a Arquipo: atenta para o ministério que recebeste no Senhor, para o cumprires. 18 A saudação é de próprio punho: Paulo. Lembrai-vos das minhas algemas. A graça seja convosco.</div>
+<header class="header">
+  <div class="header-inner">
+    <a class="logo" href="../../index.html"><h1>Voltemos à Palavra</h1><span>Bíblia Strong Interativa</span></a>
+    <div class="search-wrap">
+      <input type="text" id="searchInput" placeholder="Ex: Gênesis 1 1 · João 3 16" onkeypress="if(event.key==='Enter')doSearch()">
+      <button class="btn-search" onclick="doSearch()">🔍 Buscar</button>
+    </div>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar"><div class="sidebar-head">✦ Livros</div><ul class="book-list" id="bookList"></ul></aside>
+  <section class="main">
+    <div class="toolbar">
+      <div class="vg"><span class="vg-lbl">Versão</span>
+        <input type="radio" class="r" name="ver" id="rAlm" value="ara" checked onchange="render()"><label class="r" for="rAlm">🇧🇷 ARA</label>
+        <input type="radio" class="r" name="ver" id="rKJV" value="kjv" onchange="render()"><label class="r" for="rKJV">🇬🇧 KJV</label>
+      </div>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkPar" onchange="render()"> Vista Paralela</label>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkStr" checked onchange="render()"> Códigos Strong</label>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkRef" checked onchange="render()"> Referências</label>
+    </div>
+    <div class="chap-bar">
+      <div><h2 id="chapTitle">Colossenses 4</h2><div class="sub" id="chapSub">Almeida Revista e Atualizada</div></div>
+      <div class="nav-btns"><a class="nav-btn" href="../../colossenses/3.html">← Colossenses 3</a><select class="cap-sel" id="capSel" onchange="onCapSel()"></select><a class="nav-btn" href="../../1-tessalonicenses/1.html">1 Tessalonicenses 1 →</a></div>
+    </div>
+    <div class="par-heads" id="parHeads">
+      <div class="col-lbl">🇧🇷 ARA — Almeida Revista e Atualizada</div>
+      <div class="col-lbl">🇬🇧 KJV — King James Version</div>
+    </div>
+    <div class="verses-panel" id="versesPanel"><div class="loading"><div class="spinner"></div><div>Carregando…</div></div></div>
+  </section>
+</div>
+<div class="overlay" id="overlay" onclick="closePopup()"></div>
+<div class="popup" id="popup">
+  <div class="pop-top"><div class="pop-code"><span id="popCode"></span><span class="badge" id="popBadge"></span></div><button class="pop-close" onclick="closePopup()">✕</button></div>
+  <div class="pop-word"><div class="original" id="popOrig"></div><div class="translit" id="popXlit"></div></div>
+  <div class="pop-body">
+    <div class="def-block"><div class="lbl">Pronunciação</div><div class="val" id="popPron"></div></div>
+    <div class="def-block"><div class="lbl">Definição</div><div class="val" id="popDesc"></div></div>
+  </div>
+</div>
+<script>var INIT_BOOK="Colossians";var INIT_CAP=4;var BASE="../../";</script>
+<script src="../../app.js"></script>
+</body>
+</html>

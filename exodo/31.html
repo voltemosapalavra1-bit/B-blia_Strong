@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Êxodo 31 — Bíblia Strong Interativa | Voltemos à Palavra</title>
+<meta name="description" content="Leia Êxodo capítulo 31 com dicionário Strong em português, referências cruzadas e vista paralela ARA e KJV.">
+<link rel="canonical" href="https://voltemosapalavra1-bit.github.io/B-blia_Strong/exodo/31.html">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<div class="seo-text" aria-hidden="true">1 Disse mais o SENHOR a Moisés: 2 Eis que chamei pelo nome a Bezalel, filho de Uri, filho de Hur, da tribo de Judá, 3 e o enchi do Espírito de Deus, de habilidade, de inteligência e de conhecimento, em todo artifício, 4 para elaborar desenhos e trabalhar em ouro, em prata, em bronze, 5 para lapidação de pedras de engaste, para entalho de madeira, para toda sorte de lavores. 6 Eis que lhe dei por companheiro Aoliabe, filho de Aisamaque, da tribo de Dã; e dei habilidade a todos os homens hábeis, para que me façam tudo o que tenho ordenado: 7 a tenda da congregação, e a arca do Testemunho, e o propiciatório que está por cima dela, e todos os pertences da tenda; 8 e a mesa com os seus utensílios, e o candelabro de ouro puro com todos os seus utensílios, e o altar do incenso; 9 e o altar do holocausto com todos os seus utensílios e a bacia com seu suporte; 10 e as vestes finamente tecidas, e as vestes sagradas do sacerdote Arão, e as vestes de seus filhos, para oficiarem como sacerdotes; 11 e o óleo da unção e o incenso aromático para o santuário; eles farão tudo segundo tenho ordenado. 12 Disse mais o SENHOR a Moisés: 13 Tu, pois, falarás aos filhos de Israel e lhes dirás: Certamente, guardareis os meus sábados; pois é sinal entre mim e vós nas vossas gerações; para que saibais que eu sou o SENHOR, que vos santifica. 14 Portanto, guardareis o sábado, porque é santo para vós outros; aquele que o profanar morrerá; pois qualquer que nele fizer alguma obra será eliminado do meio do seu povo. 15 Seis dias se trabalhará, porém o sétimo dia é o sábado do repouso solene, santo ao SENHOR; qualquer que no dia do sábado fizer alguma obra morrerá. 16 Pelo que os filhos de Israel guardarão o sábado, celebrando-o por aliança perpétua nas suas gerações. 17 Entre mim e os filhos de Israel é sinal para sempre; porque, em seis dias, fez o SENHOR os céus e a terra, e, ao sétimo dia, descansou, e tomou alento. 18 E, tendo acabado de falar com ele no monte Sinai, deu a Moisés as duas tábuas do Testemunho, tábuas de pedra, escritas pelo dedo de Deus.</div>
+<header class="header">
+  <div class="header-inner">
+    <a class="logo" href="../../index.html"><h1>Voltemos à Palavra</h1><span>Bíblia Strong Interativa</span></a>
+    <div class="search-wrap">
+      <input type="text" id="searchInput" placeholder="Ex: Gênesis 1 1 · João 3 16" onkeypress="if(event.key==='Enter')doSearch()">
+      <button class="btn-search" onclick="doSearch()">🔍 Buscar</button>
+    </div>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar"><div class="sidebar-head">✦ Livros</div><ul class="book-list" id="bookList"></ul></aside>
+  <section class="main">
+    <div class="toolbar">
+      <div class="vg"><span class="vg-lbl">Versão</span>
+        <input type="radio" class="r" name="ver" id="rAlm" value="ara" checked onchange="render()"><label class="r" for="rAlm">🇧🇷 ARA</label>
+        <input type="radio" class="r" name="ver" id="rKJV" value="kjv" onchange="render()"><label class="r" for="rKJV">🇬🇧 KJV</label>
+      </div>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkPar" onchange="render()"> Vista Paralela</label>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkStr" checked onchange="render()"> Códigos Strong</label>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkRef" checked onchange="render()"> Referências</label>
+    </div>
+    <div class="chap-bar">
+      <div><h2 id="chapTitle">Êxodo 31</h2><div class="sub" id="chapSub">Almeida Revista e Atualizada</div></div>
+      <div class="nav-btns"><a class="nav-btn" href="../../exodo/30.html">← Êxodo 30</a><select class="cap-sel" id="capSel" onchange="onCapSel()"></select><a class="nav-btn" href="../../exodo/32.html">Êxodo 32 →</a></div>
+    </div>
+    <div class="par-heads" id="parHeads">
+      <div class="col-lbl">🇧🇷 ARA — Almeida Revista e Atualizada</div>
+      <div class="col-lbl">🇬🇧 KJV — King James Version</div>
+    </div>
+    <div class="verses-panel" id="versesPanel"><div class="loading"><div class="spinner"></div><div>Carregando…</div></div></div>
+  </section>
+</div>
+<div class="overlay" id="overlay" onclick="closePopup()"></div>
+<div class="popup" id="popup">
+  <div class="pop-top"><div class="pop-code"><span id="popCode"></span><span class="badge" id="popBadge"></span></div><button class="pop-close" onclick="closePopup()">✕</button></div>
+  <div class="pop-word"><div class="original" id="popOrig"></div><div class="translit" id="popXlit"></div></div>
+  <div class="pop-body">
+    <div class="def-block"><div class="lbl">Pronunciação</div><div class="val" id="popPron"></div></div>
+    <div class="def-block"><div class="lbl">Definição</div><div class="val" id="popDesc"></div></div>
+  </div>
+</div>
+<script>var INIT_BOOK="Exodus";var INIT_CAP=31;var BASE="../../";</script>
+<script src="../../app.js"></script>
+</body>
+</html>

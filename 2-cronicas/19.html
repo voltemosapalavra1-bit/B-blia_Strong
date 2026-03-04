@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2 Crônicas 19 — Bíblia Strong Interativa | Voltemos à Palavra</title>
+<meta name="description" content="Leia 2 Crônicas capítulo 19 com dicionário Strong em português, referências cruzadas e vista paralela ARA e KJV.">
+<link rel="canonical" href="https://voltemosapalavra1-bit.github.io/B-blia_Strong/2-cronicas/19.html">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<div class="seo-text" aria-hidden="true">1 Josafá, rei de Judá, voltou para sua casa em paz, para Jerusalém. 2 O vidente Jeú, filho de Hanani, saiu ao encontro do rei Josafá e lhe disse: Devias tu ajudar ao perverso e amar aqueles que aborrecem o SENHOR? Por isso, caiu sobre ti a ira da parte do SENHOR. 3 Boas coisas, contudo, se acharam em ti; porque tiraste os postes-ídolos da terra e dispuseste o coração para buscares a Deus. 4 Habitou, pois, Josafá em Jerusalém; tornou a passar pelo povo desde Berseba até à região montanhosa de Efraim e fez que ele tornasse ao SENHOR, Deus de seus pais. 5 Estabeleceu juízes no país, em todas as cidades fortificadas, de cidade em cidade. 6 Disse aos juízes: Vede o que fazeis, porque não julgais da parte do homem, e sim da parte do SENHOR, e, no julgardes, ele está convosco. 7 Agora, pois, seja o temor do SENHOR convosco; tomai cuidado e fazei-o, porque não há no SENHOR, nosso Deus, injustiça, nem parcialidade, nem aceita ele suborno. 8 Também, depois de terem voltado para Jerusalém, estabeleceu aí Josafá alguns dos levitas, e dos sacerdotes, e dos cabeças das famílias de Israel para julgarem da parte do SENHOR e decidirem as sentenças contestadas. 9 Deu-lhes ordem, dizendo: Assim, andai no temor do SENHOR, com fidelidade e inteireza de coração. 10 Toda vez que vier a vós outros sentença contestada de vossos irmãos que habitam nas suas cidades: entre sangue e sangue, lei e mandamento, estatutos e juízos, admoestai-os, que não se façam culpados para com o SENHOR, para que não venha grande ira sobre vós e sobre vossos irmãos; fazei assim e não vos tornareis culpados. 11 Eis que Amarias, o sumo sacerdote, presidirá nas coisas que dizem respeito ao SENHOR; e Zebadias, filho de Ismael, príncipe da casa de Judá, nas que dizem respeito ao rei. Também os levitas serão oficiais à vossa disposição. Sede fortes no cumprimento disso, e o SENHOR será com os bons.</div>
+<header class="header">
+  <div class="header-inner">
+    <a class="logo" href="../../index.html"><h1>Voltemos à Palavra</h1><span>Bíblia Strong Interativa</span></a>
+    <div class="search-wrap">
+      <input type="text" id="searchInput" placeholder="Ex: Gênesis 1 1 · João 3 16" onkeypress="if(event.key==='Enter')doSearch()">
+      <button class="btn-search" onclick="doSearch()">🔍 Buscar</button>
+    </div>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar"><div class="sidebar-head">✦ Livros</div><ul class="book-list" id="bookList"></ul></aside>
+  <section class="main">
+    <div class="toolbar">
+      <div class="vg"><span class="vg-lbl">Versão</span>
+        <input type="radio" class="r" name="ver" id="rAlm" value="ara" checked onchange="render()"><label class="r" for="rAlm">🇧🇷 ARA</label>
+        <input type="radio" class="r" name="ver" id="rKJV" value="kjv" onchange="render()"><label class="r" for="rKJV">🇬🇧 KJV</label>
+      </div>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkPar" onchange="render()"> Vista Paralela</label>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkStr" checked onchange="render()"> Códigos Strong</label>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkRef" checked onchange="render()"> Referências</label>
+    </div>
+    <div class="chap-bar">
+      <div><h2 id="chapTitle">2 Crônicas 19</h2><div class="sub" id="chapSub">Almeida Revista e Atualizada</div></div>
+      <div class="nav-btns"><a class="nav-btn" href="../../2-cronicas/18.html">← 2 Crônicas 18</a><select class="cap-sel" id="capSel" onchange="onCapSel()"></select><a class="nav-btn" href="../../2-cronicas/20.html">2 Crônicas 20 →</a></div>
+    </div>
+    <div class="par-heads" id="parHeads">
+      <div class="col-lbl">🇧🇷 ARA — Almeida Revista e Atualizada</div>
+      <div class="col-lbl">🇬🇧 KJV — King James Version</div>
+    </div>
+    <div class="verses-panel" id="versesPanel"><div class="loading"><div class="spinner"></div><div>Carregando…</div></div></div>
+  </section>
+</div>
+<div class="overlay" id="overlay" onclick="closePopup()"></div>
+<div class="popup" id="popup">
+  <div class="pop-top"><div class="pop-code"><span id="popCode"></span><span class="badge" id="popBadge"></span></div><button class="pop-close" onclick="closePopup()">✕</button></div>
+  <div class="pop-word"><div class="original" id="popOrig"></div><div class="translit" id="popXlit"></div></div>
+  <div class="pop-body">
+    <div class="def-block"><div class="lbl">Pronunciação</div><div class="val" id="popPron"></div></div>
+    <div class="def-block"><div class="lbl">Definição</div><div class="val" id="popDesc"></div></div>
+  </div>
+</div>
+<script>var INIT_BOOK="2 Chronicles";var INIT_CAP=19;var BASE="../../";</script>
+<script src="../../app.js"></script>
+</body>
+</html>

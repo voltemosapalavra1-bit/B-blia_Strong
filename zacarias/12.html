@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zacarias 12 — Bíblia Strong Interativa | Voltemos à Palavra</title>
+<meta name="description" content="Leia Zacarias capítulo 12 com dicionário Strong em português, referências cruzadas e vista paralela ARA e KJV.">
+<link rel="canonical" href="https://voltemosapalavra1-bit.github.io/B-blia_Strong/zacarias/12.html">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<div class="seo-text" aria-hidden="true">1 Sentença pronunciada pelo SENHOR contra Israel. Fala o SENHOR, o que estendeu o céu, fundou a terra e formou o espírito do homem dentro dele. 2 Eis que eu farei de Jerusalém um cálice de tontear para todos os povos em redor e também para Judá, durante o sítio contra Jerusalém. 3 Naquele dia, farei de Jerusalém uma pedra pesada para todos os povos; todos os que a erguerem se ferirão gravemente; e, contra ela, se ajuntarão todas as nações da terra. 4 Naquele dia, diz o SENHOR, ferirei de espanto a todos os cavalos e de loucura os que os montam; sobre a casa de Judá abrirei os olhos e ferirei de cegueira a todos os cavalos dos povos. 5 Então, os chefes de Judá pensarão assim: Os habitantes de Jerusalém têm a força do SENHOR dos Exércitos, seu Deus. 6 Naquele dia, porei os chefes de Judá como um braseiro ardente debaixo da lenha e como uma tocha entre a palha; eles devorarão, à direita e à esquerda, a todos os povos em redor, e Jerusalém será habitada outra vez no seu próprio lugar, em Jerusalém mesma. 7 O SENHOR salvará primeiramente as tendas de Judá, para que a glória da casa de Davi e a glória dos habitantes de Jerusalém não sejam exaltadas acima de Judá. 8 Naquele dia, o SENHOR protegerá os habitantes de Jerusalém; e o mais fraco dentre eles, naquele dia, será como Davi, e a casa de Davi será como Deus, como o Anjo do SENHOR diante deles. 9 Naquele dia, procurarei destruir todas as nações que vierem contra Jerusalém. 10 E sobre a casa de Davi e sobre os habitantes de Jerusalém derramarei o espírito da graça e de súplicas; olharão para aquele a quem traspassaram; pranteá-lo-ão como quem pranteia por um unigênito e chorarão por ele como se chora amargamente pelo primogênito. 11 Naquele dia, será grande o pranto em Jerusalém, como o pranto de Hadade-Rimom, no vale de Megido. 12 A terra pranteará, cada família à parte; a família da casa de Davi à parte, e suas mulheres à parte; a família da casa de Natã à parte, e suas mulheres à parte; 13 a família da casa de Levi à parte, e suas mulheres à parte; a família dos simeítas à parte, e suas mulheres à parte. 14 Todas as mais famílias, cada família à parte, e suas mulheres à parte.</div>
+<header class="header">
+  <div class="header-inner">
+    <a class="logo" href="../../index.html"><h1>Voltemos à Palavra</h1><span>Bíblia Strong Interativa</span></a>
+    <div class="search-wrap">
+      <input type="text" id="searchInput" placeholder="Ex: Gênesis 1 1 · João 3 16" onkeypress="if(event.key==='Enter')doSearch()">
+      <button class="btn-search" onclick="doSearch()">🔍 Buscar</button>
+    </div>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar"><div class="sidebar-head">✦ Livros</div><ul class="book-list" id="bookList"></ul></aside>
+  <section class="main">
+    <div class="toolbar">
+      <div class="vg"><span class="vg-lbl">Versão</span>
+        <input type="radio" class="r" name="ver" id="rAlm" value="ara" checked onchange="render()"><label class="r" for="rAlm">🇧🇷 ARA</label>
+        <input type="radio" class="r" name="ver" id="rKJV" value="kjv" onchange="render()"><label class="r" for="rKJV">🇬🇧 KJV</label>
+      </div>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkPar" onchange="render()"> Vista Paralela</label>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkStr" checked onchange="render()"> Códigos Strong</label>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkRef" checked onchange="render()"> Referências</label>
+    </div>
+    <div class="chap-bar">
+      <div><h2 id="chapTitle">Zacarias 12</h2><div class="sub" id="chapSub">Almeida Revista e Atualizada</div></div>
+      <div class="nav-btns"><a class="nav-btn" href="../../zacarias/11.html">← Zacarias 11</a><select class="cap-sel" id="capSel" onchange="onCapSel()"></select><a class="nav-btn" href="../../zacarias/13.html">Zacarias 13 →</a></div>
+    </div>
+    <div class="par-heads" id="parHeads">
+      <div class="col-lbl">🇧🇷 ARA — Almeida Revista e Atualizada</div>
+      <div class="col-lbl">🇬🇧 KJV — King James Version</div>
+    </div>
+    <div class="verses-panel" id="versesPanel"><div class="loading"><div class="spinner"></div><div>Carregando…</div></div></div>
+  </section>
+</div>
+<div class="overlay" id="overlay" onclick="closePopup()"></div>
+<div class="popup" id="popup">
+  <div class="pop-top"><div class="pop-code"><span id="popCode"></span><span class="badge" id="popBadge"></span></div><button class="pop-close" onclick="closePopup()">✕</button></div>
+  <div class="pop-word"><div class="original" id="popOrig"></div><div class="translit" id="popXlit"></div></div>
+  <div class="pop-body">
+    <div class="def-block"><div class="lbl">Pronunciação</div><div class="val" id="popPron"></div></div>
+    <div class="def-block"><div class="lbl">Definição</div><div class="val" id="popDesc"></div></div>
+  </div>
+</div>
+<script>var INIT_BOOK="Zechariah";var INIT_CAP=12;var BASE="../../";</script>
+<script src="../../app.js"></script>
+</body>
+</html>

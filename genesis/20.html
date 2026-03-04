@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gênesis 20 — Bíblia Strong Interativa | Voltemos à Palavra</title>
+<meta name="description" content="Leia Gênesis capítulo 20 com dicionário Strong em português, referências cruzadas e vista paralela ARA e KJV.">
+<link rel="canonical" href="https://voltemosapalavra1-bit.github.io/B-blia_Strong/genesis/20.html">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<div class="seo-text" aria-hidden="true">1 Partindo Abraão dali para a terra do Neguebe, habitou entre Cades e Sur e morou em Gerar. 2 Disse Abraão de Sara, sua mulher: Ela é minha irmã; assim, pois, Abimeleque, rei de Gerar, mandou buscá-la. 3 Deus, porém, veio a Abimeleque em sonhos de noite e lhe disse: Vais ser punido de morte por causa da mulher que tomaste, porque ela tem marido. 4 Ora, Abimeleque ainda não a havia possuído; por isso, disse: Senhor, matarás até uma nação inocente? 5 Não foi ele mesmo que me disse: É minha irmã? E ela também me disse: Ele é meu irmão. Com sinceridade de coração e na minha inocência, foi que eu fiz isso. 6 Respondeu-lhe Deus em sonho: Bem sei que com sinceridade de coração fizeste isso; daí o ter impedido eu de pecares contra mim e não te permiti que a tocasses. 7 Agora, pois, restitui a mulher a seu marido, pois ele é profeta e intercederá por ti, e viverás; se, porém, não lha restituíres, sabe que certamente morrerás, tu e tudo o que é teu. 8 Levantou-se Abimeleque de madrugada, e chamou todos os seus servos, e lhes contou todas essas coisas; e os homens ficaram muito atemorizados. 9 Então, chamou Abimeleque a Abraão e lhe disse: Que é isso que nos fizeste? Em que pequei eu contra ti, para trazeres tamanho pecado sobre mim e sobre o meu reino? Tu me fizeste o que não se deve fazer. 10 Disse mais Abimeleque a Abraão: Que estavas pensando para fazeres tal coisa? 11 Respondeu Abraão: Eu dizia comigo mesmo: Certamente não há temor de Deus neste lugar, e eles me matarão por causa de minha mulher. 12 Por outro lado, ela, de fato, é também minha irmã, filha de meu pai e não de minha mãe; e veio a ser minha mulher. 13 Quando Deus me fez andar errante da casa de meu pai, eu disse a ela: Este favor me farás: em todo lugar em que entrarmos, dirás a meu respeito: Ele é meu irmão. 14 Então, Abimeleque tomou ovelhas e bois, e servos e servas e os deu a Abraão; e lhe restituiu a Sara, sua mulher. 15 Disse Abimeleque: A minha terra está diante de ti; habita onde melhor te parecer. 16 E a Sara disse: Dei mil siclos de prata a teu irmão; será isto compensação por tudo quanto se deu contigo; e perante todos estás justificada. 17 E, orando Abraão, sarou Deus Abimeleque, sua mulher e suas servas, de sorte que elas pudessem ter filhos; 18 porque o SENHOR havia tornado estéreis todas as mulheres da casa de Abimeleque, por causa de Sara, mulher de Abraão.</div>
+<header class="header">
+  <div class="header-inner">
+    <a class="logo" href="../../index.html"><h1>Voltemos à Palavra</h1><span>Bíblia Strong Interativa</span></a>
+    <div class="search-wrap">
+      <input type="text" id="searchInput" placeholder="Ex: Gênesis 1 1 · João 3 16" onkeypress="if(event.key==='Enter')doSearch()">
+      <button class="btn-search" onclick="doSearch()">🔍 Buscar</button>
+    </div>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar"><div class="sidebar-head">✦ Livros</div><ul class="book-list" id="bookList"></ul></aside>
+  <section class="main">
+    <div class="toolbar">
+      <div class="vg"><span class="vg-lbl">Versão</span>
+        <input type="radio" class="r" name="ver" id="rAlm" value="ara" checked onchange="render()"><label class="r" for="rAlm">🇧🇷 ARA</label>
+        <input type="radio" class="r" name="ver" id="rKJV" value="kjv" onchange="render()"><label class="r" for="rKJV">🇬🇧 KJV</label>
+      </div>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkPar" onchange="render()"> Vista Paralela</label>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkStr" checked onchange="render()"> Códigos Strong</label>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkRef" checked onchange="render()"> Referências</label>
+    </div>
+    <div class="chap-bar">
+      <div><h2 id="chapTitle">Gênesis 20</h2><div class="sub" id="chapSub">Almeida Revista e Atualizada</div></div>
+      <div class="nav-btns"><a class="nav-btn" href="../../genesis/19.html">← Gênesis 19</a><select class="cap-sel" id="capSel" onchange="onCapSel()"></select><a class="nav-btn" href="../../genesis/21.html">Gênesis 21 →</a></div>
+    </div>
+    <div class="par-heads" id="parHeads">
+      <div class="col-lbl">🇧🇷 ARA — Almeida Revista e Atualizada</div>
+      <div class="col-lbl">🇬🇧 KJV — King James Version</div>
+    </div>
+    <div class="verses-panel" id="versesPanel"><div class="loading"><div class="spinner"></div><div>Carregando…</div></div></div>
+  </section>
+</div>
+<div class="overlay" id="overlay" onclick="closePopup()"></div>
+<div class="popup" id="popup">
+  <div class="pop-top"><div class="pop-code"><span id="popCode"></span><span class="badge" id="popBadge"></span></div><button class="pop-close" onclick="closePopup()">✕</button></div>
+  <div class="pop-word"><div class="original" id="popOrig"></div><div class="translit" id="popXlit"></div></div>
+  <div class="pop-body">
+    <div class="def-block"><div class="lbl">Pronunciação</div><div class="val" id="popPron"></div></div>
+    <div class="def-block"><div class="lbl">Definição</div><div class="val" id="popDesc"></div></div>
+  </div>
+</div>
+<script>var INIT_BOOK="Genesis";var INIT_CAP=20;var BASE="../../";</script>
+<script src="../../app.js"></script>
+</body>
+</html>

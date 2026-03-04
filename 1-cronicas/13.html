@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1 Crônicas 13 — Bíblia Strong Interativa | Voltemos à Palavra</title>
+<meta name="description" content="Leia 1 Crônicas capítulo 13 com dicionário Strong em português, referências cruzadas e vista paralela ARA e KJV.">
+<link rel="canonical" href="https://voltemosapalavra1-bit.github.io/B-blia_Strong/1-cronicas/13.html">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<div class="seo-text" aria-hidden="true">1 Consultou Davi os capitães de mil, e os de cem, e todos os príncipes; 2 e disse a toda a congregação de Israel: Se bem vos parece, e se vem isso do SENHOR, nosso Deus, enviemos depressa mensageiros a todos os nossos outros irmãos em todas as terras de Israel, e aos sacerdotes, e aos levitas com eles nas cidades e nos seus arredores, para que se reúnam conosco; 3 tornemos a trazer para nós a arca do nosso Deus; porque nos dias de Saul não nos valemos dela. 4 Então, toda a congregação concordou em que assim se fizesse; porque isso pareceu justo aos olhos de todo o povo. 5 Reuniu, pois, Davi a todo o Israel, desde Sior do Egito até à entrada de Hamate, para trazer a arca de Deus de Quiriate-Jearim. 6 Então, Davi, com todo o Israel, subiu a Baalá, isto é, a Quiriate-Jearim, que está em Judá, para fazer subir dali a arca de Deus, diante da qual é invocado o nome do SENHOR, que se assenta acima dos querubins. 7 Puseram a arca de Deus num carro novo e a levaram da casa de Abinadabe; e Uzá e Aiô guiavam o carro. 8 Davi e todo o Israel alegravam-se perante Deus, com todo o seu empenho; em cânticos, com harpas, com alaúdes, com tamboris, com címbalos e com trombetas. 9 Quando chegaram à eira de Quidom, estendeu Uzá a mão à arca para a segurar, porque os bois tropeçaram. 10 Então, a ira do SENHOR se acendeu contra Uzá e o feriu, por ter estendido a mão à arca; e morreu ali perante Deus. 11 Desgostou-se Davi, porque o SENHOR irrompera contra Uzá; pelo que chamou àquele lugar Perez-Uzá, até ao dia de hoje. 12 Temeu Davi a Deus, naquele dia, e disse: Como trarei a mim a arca de Deus? 13 Pelo que Davi não trouxe a arca para si, para a Cidade de Davi; mas a fez levar à casa de Obede-Edom, o geteu. 14 Assim, ficou a arca de Deus com a família de Obede-Edom, três meses em sua casa; e o SENHOR abençoou a casa de Obede-Edom e tudo o que ele tinha.</div>
+<header class="header">
+  <div class="header-inner">
+    <a class="logo" href="../../index.html"><h1>Voltemos à Palavra</h1><span>Bíblia Strong Interativa</span></a>
+    <div class="search-wrap">
+      <input type="text" id="searchInput" placeholder="Ex: Gênesis 1 1 · João 3 16" onkeypress="if(event.key==='Enter')doSearch()">
+      <button class="btn-search" onclick="doSearch()">🔍 Buscar</button>
+    </div>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar"><div class="sidebar-head">✦ Livros</div><ul class="book-list" id="bookList"></ul></aside>
+  <section class="main">
+    <div class="toolbar">
+      <div class="vg"><span class="vg-lbl">Versão</span>
+        <input type="radio" class="r" name="ver" id="rAlm" value="ara" checked onchange="render()"><label class="r" for="rAlm">🇧🇷 ARA</label>
+        <input type="radio" class="r" name="ver" id="rKJV" value="kjv" onchange="render()"><label class="r" for="rKJV">🇬🇧 KJV</label>
+      </div>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkPar" onchange="render()"> Vista Paralela</label>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkStr" checked onchange="render()"> Códigos Strong</label>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkRef" checked onchange="render()"> Referências</label>
+    </div>
+    <div class="chap-bar">
+      <div><h2 id="chapTitle">1 Crônicas 13</h2><div class="sub" id="chapSub">Almeida Revista e Atualizada</div></div>
+      <div class="nav-btns"><a class="nav-btn" href="../../1-cronicas/12.html">← 1 Crônicas 12</a><select class="cap-sel" id="capSel" onchange="onCapSel()"></select><a class="nav-btn" href="../../1-cronicas/14.html">1 Crônicas 14 →</a></div>
+    </div>
+    <div class="par-heads" id="parHeads">
+      <div class="col-lbl">🇧🇷 ARA — Almeida Revista e Atualizada</div>
+      <div class="col-lbl">🇬🇧 KJV — King James Version</div>
+    </div>
+    <div class="verses-panel" id="versesPanel"><div class="loading"><div class="spinner"></div><div>Carregando…</div></div></div>
+  </section>
+</div>
+<div class="overlay" id="overlay" onclick="closePopup()"></div>
+<div class="popup" id="popup">
+  <div class="pop-top"><div class="pop-code"><span id="popCode"></span><span class="badge" id="popBadge"></span></div><button class="pop-close" onclick="closePopup()">✕</button></div>
+  <div class="pop-word"><div class="original" id="popOrig"></div><div class="translit" id="popXlit"></div></div>
+  <div class="pop-body">
+    <div class="def-block"><div class="lbl">Pronunciação</div><div class="val" id="popPron"></div></div>
+    <div class="def-block"><div class="lbl">Definição</div><div class="val" id="popDesc"></div></div>
+  </div>
+</div>
+<script>var INIT_BOOK="1 Chronicles";var INIT_CAP=13;var BASE="../../";</script>
+<script src="../../app.js"></script>
+</body>
+</html>

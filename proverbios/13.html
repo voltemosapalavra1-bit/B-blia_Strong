@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Provérbios 13 — Bíblia Strong Interativa | Voltemos à Palavra</title>
+<meta name="description" content="Leia Provérbios capítulo 13 com dicionário Strong em português, referências cruzadas e vista paralela ARA e KJV.">
+<link rel="canonical" href="https://voltemosapalavra1-bit.github.io/B-blia_Strong/proverbios/13.html">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<div class="seo-text" aria-hidden="true">1 O filho sábio ouve a instrução do pai, mas o escarnecedor não atende à repreensão. 2 Do fruto da boca o homem comerá o bem, mas o desejo dos pérfidos é a violência. 3 O que guarda a boca conserva a sua alma, mas o que muito abre os lábios a si mesmo se arruína. 4 O preguiçoso deseja e nada tem, mas a alma dos diligentes se farta. 5 O justo aborrece a palavra de mentira, mas o perverso faz vergonha e se desonra. 6 A justiça guarda ao que anda em integridade, mas a malícia subverte ao pecador. 7 Uns se dizem ricos sem terem nada; outros se dizem pobres, sendo mui ricos. 8 Com as suas riquezas se resgata o homem, mas ao pobre não ocorre ameaça. 9 A luz dos justos brilha intensamente, mas a lâmpada dos perversos se apagará. 10 Da soberba só resulta a contenda, mas com os que se aconselham se acha a sabedoria. 11 Os bens que facilmente se ganham, esses diminuem, mas o que ajunta à força do trabalho terá aumento. 12 A esperança que se adia faz adoecer o coração, mas o desejo cumprido é árvore de vida. 13 O que despreza a palavra a ela se apenhora, mas o que teme o mandamento será galardoado. 14 O ensino do sábio é fonte de vida, para que se evitem os laços da morte. 15 A boa inteligência consegue favor, mas o caminho dos pérfidos é intransitável. 16 Todo prudente procede com conhecimento, mas o insensato espraia a sua loucura. 17 O mau mensageiro se precipita no mal, mas o embaixador fiel é medicina. 18 Pobreza e afronta sobrevêm ao que rejeita a instrução, mas o que guarda a repreensão será honrado. 19 O desejo que se cumpre agrada a alma, mas apartar-se do mal é abominável para os insensatos. 20 Quem anda com os sábios será sábio, mas o companheiro dos insensatos se tornará mau. 21 A desventura persegue os pecadores, mas os justos serão galardoados com o bem. 22 O homem de bem deixa herança aos filhos de seus filhos, mas a riqueza do pecador é depositada para o justo. 23 A terra virgem dos pobres dá mantimento em abundância, mas a falta de justiça o dissipa. 24 O que retém a vara aborrece a seu filho, mas o que o ama, cedo, o disciplina. 25 O justo tem o bastante para satisfazer o seu apetite, mas o estômago dos perversos passa fome.</div>
+<header class="header">
+  <div class="header-inner">
+    <a class="logo" href="../../index.html"><h1>Voltemos à Palavra</h1><span>Bíblia Strong Interativa</span></a>
+    <div class="search-wrap">
+      <input type="text" id="searchInput" placeholder="Ex: Gênesis 1 1 · João 3 16" onkeypress="if(event.key==='Enter')doSearch()">
+      <button class="btn-search" onclick="doSearch()">🔍 Buscar</button>
+    </div>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar"><div class="sidebar-head">✦ Livros</div><ul class="book-list" id="bookList"></ul></aside>
+  <section class="main">
+    <div class="toolbar">
+      <div class="vg"><span class="vg-lbl">Versão</span>
+        <input type="radio" class="r" name="ver" id="rAlm" value="ara" checked onchange="render()"><label class="r" for="rAlm">🇧🇷 ARA</label>
+        <input type="radio" class="r" name="ver" id="rKJV" value="kjv" onchange="render()"><label class="r" for="rKJV">🇬🇧 KJV</label>
+      </div>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkPar" onchange="render()"> Vista Paralela</label>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkStr" checked onchange="render()"> Códigos Strong</label>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkRef" checked onchange="render()"> Referências</label>
+    </div>
+    <div class="chap-bar">
+      <div><h2 id="chapTitle">Provérbios 13</h2><div class="sub" id="chapSub">Almeida Revista e Atualizada</div></div>
+      <div class="nav-btns"><a class="nav-btn" href="../../proverbios/12.html">← Provérbios 12</a><select class="cap-sel" id="capSel" onchange="onCapSel()"></select><a class="nav-btn" href="../../proverbios/14.html">Provérbios 14 →</a></div>
+    </div>
+    <div class="par-heads" id="parHeads">
+      <div class="col-lbl">🇧🇷 ARA — Almeida Revista e Atualizada</div>
+      <div class="col-lbl">🇬🇧 KJV — King James Version</div>
+    </div>
+    <div class="verses-panel" id="versesPanel"><div class="loading"><div class="spinner"></div><div>Carregando…</div></div></div>
+  </section>
+</div>
+<div class="overlay" id="overlay" onclick="closePopup()"></div>
+<div class="popup" id="popup">
+  <div class="pop-top"><div class="pop-code"><span id="popCode"></span><span class="badge" id="popBadge"></span></div><button class="pop-close" onclick="closePopup()">✕</button></div>
+  <div class="pop-word"><div class="original" id="popOrig"></div><div class="translit" id="popXlit"></div></div>
+  <div class="pop-body">
+    <div class="def-block"><div class="lbl">Pronunciação</div><div class="val" id="popPron"></div></div>
+    <div class="def-block"><div class="lbl">Definição</div><div class="val" id="popDesc"></div></div>
+  </div>
+</div>
+<script>var INIT_BOOK="Proverbs";var INIT_CAP=13;var BASE="../../";</script>
+<script src="../../app.js"></script>
+</body>
+</html>

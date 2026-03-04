@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Isaías 15 — Bíblia Strong Interativa | Voltemos à Palavra</title>
+<meta name="description" content="Leia Isaías capítulo 15 com dicionário Strong em português, referências cruzadas e vista paralela ARA e KJV.">
+<link rel="canonical" href="https://voltemosapalavra1-bit.github.io/B-blia_Strong/isaias/15.html">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<div class="seo-text" aria-hidden="true">1 Sentença contra Moabe. Certamente, numa noite foi assolada Ar de Moabe e ela está destruída; certamente, numa noite foi assolada Quir de Moabe e ela está destruída. 2 Sobe-se ao templo e a Dibom, aos altos, para chorar; nos montes Nebo e Medeba, lamenta Moabe; todas as cabeças se tornam calvas, e toda barba é rapada. 3 Cingem-se de panos de saco nas suas ruas; nos seus terraços e nas suas praças, andam todos uivando e choram abundantemente. 4 Tanto Hesbom como Eleale andam gritando; até Jaza se ouve a sua voz; por isso, os armados de Moabe clamam; a sua alma treme dentro dele. 5 O meu coração clama por causa de Moabe, cujos fugitivos vão até Zoar, novilha de três anos; vão chorando pela subida de Luíte e no caminho de Horonaim levantam grito de desespero; 6 porque as águas de Ninrim desaparecem; seca-se o pasto, acaba-se a erva, e já não há verdura alguma, 7 pelo que o que pouparam, o que ganharam e depositaram eles mesmos levam para além das torrentes dos salgueiros; 8 porque o pranto rodeia os limites de Moabe; até Eglaim chega o seu clamor, e ainda até Beer-Elim, o seu lamento; 9 porque as águas de Dimom estão cheias de sangue; pois ainda acrescentarei a Dimom: leões contra aqueles que escaparem de Moabe e contra os restantes da terra.</div>
+<header class="header">
+  <div class="header-inner">
+    <a class="logo" href="../../index.html"><h1>Voltemos à Palavra</h1><span>Bíblia Strong Interativa</span></a>
+    <div class="search-wrap">
+      <input type="text" id="searchInput" placeholder="Ex: Gênesis 1 1 · João 3 16" onkeypress="if(event.key==='Enter')doSearch()">
+      <button class="btn-search" onclick="doSearch()">🔍 Buscar</button>
+    </div>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar"><div class="sidebar-head">✦ Livros</div><ul class="book-list" id="bookList"></ul></aside>
+  <section class="main">
+    <div class="toolbar">
+      <div class="vg"><span class="vg-lbl">Versão</span>
+        <input type="radio" class="r" name="ver" id="rAlm" value="ara" checked onchange="render()"><label class="r" for="rAlm">🇧🇷 ARA</label>
+        <input type="radio" class="r" name="ver" id="rKJV" value="kjv" onchange="render()"><label class="r" for="rKJV">🇬🇧 KJV</label>
+      </div>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkPar" onchange="render()"> Vista Paralela</label>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkStr" checked onchange="render()"> Códigos Strong</label>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkRef" checked onchange="render()"> Referências</label>
+    </div>
+    <div class="chap-bar">
+      <div><h2 id="chapTitle">Isaías 15</h2><div class="sub" id="chapSub">Almeida Revista e Atualizada</div></div>
+      <div class="nav-btns"><a class="nav-btn" href="../../isaias/14.html">← Isaías 14</a><select class="cap-sel" id="capSel" onchange="onCapSel()"></select><a class="nav-btn" href="../../isaias/16.html">Isaías 16 →</a></div>
+    </div>
+    <div class="par-heads" id="parHeads">
+      <div class="col-lbl">🇧🇷 ARA — Almeida Revista e Atualizada</div>
+      <div class="col-lbl">🇬🇧 KJV — King James Version</div>
+    </div>
+    <div class="verses-panel" id="versesPanel"><div class="loading"><div class="spinner"></div><div>Carregando…</div></div></div>
+  </section>
+</div>
+<div class="overlay" id="overlay" onclick="closePopup()"></div>
+<div class="popup" id="popup">
+  <div class="pop-top"><div class="pop-code"><span id="popCode"></span><span class="badge" id="popBadge"></span></div><button class="pop-close" onclick="closePopup()">✕</button></div>
+  <div class="pop-word"><div class="original" id="popOrig"></div><div class="translit" id="popXlit"></div></div>
+  <div class="pop-body">
+    <div class="def-block"><div class="lbl">Pronunciação</div><div class="val" id="popPron"></div></div>
+    <div class="def-block"><div class="lbl">Definição</div><div class="val" id="popDesc"></div></div>
+  </div>
+</div>
+<script>var INIT_BOOK="Isaiah";var INIT_CAP=15;var BASE="../../";</script>
+<script src="../../app.js"></script>
+</body>
+</html>

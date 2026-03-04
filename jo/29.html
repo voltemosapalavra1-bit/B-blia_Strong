@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jó 29 — Bíblia Strong Interativa | Voltemos à Palavra</title>
+<meta name="description" content="Leia Jó capítulo 29 com dicionário Strong em português, referências cruzadas e vista paralela ARA e KJV.">
+<link rel="canonical" href="https://voltemosapalavra1-bit.github.io/B-blia_Strong/jo/29.html">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<div class="seo-text" aria-hidden="true">1 Prosseguiu Jó no seu discurso e disse: 2 Ah! Quem me dera ser como fui nos meses passados, como nos dias em que Deus me guardava! 3 Quando fazia resplandecer a sua lâmpada sobre a minha cabeça, quando eu, guiado por sua luz, caminhava pelas trevas; 4 como fui nos dias do meu vigor, quando a amizade de Deus estava sobre a minha tenda; 5 quando o Todo-Poderoso ainda estava comigo, e os meus filhos, em redor de mim; 6 quando eu lavava os pés em leite, e da rocha me corriam ribeiros de azeite. 7 Quando eu saía para a porta da cidade, e na praça me era dado sentar-me, 8 os moços me viam e se retiravam; os idosos se levantavam e se punham em pé; 9 os príncipes reprimiam as suas palavras e punham a mão sobre a boca; 10 a voz dos nobres emudecia, e a sua língua se apegava ao paladar. 11 Ouvindo-me algum ouvido, esse me chamava feliz; vendo-me algum olho, dava testemunho de mim; 12 porque eu livrava os pobres que clamavam e também o órfão que não tinha quem o socorresse. 13 A bênção do que estava a perecer vinha sobre mim, e eu fazia rejubilar-se o coração da viúva. 14 Eu me cobria de justiça, e esta me servia de veste; como manto e turbante era a minha eqüidade. 15 Eu me fazia de olhos para o cego e de pés para o coxo. 16 Dos necessitados era pai e até as causas dos desconhecidos eu examinava. 17 Eu quebrava os queixos do iníquo e dos seus dentes lhe fazia eu cair a vítima. 18 Eu dizia: no meu ninho expirarei, multiplicarei os meus dias como a areia. 19 A minha raiz se estenderá até às águas, e o orvalho ficará durante a noite sobre os meus ramos; 20 a minha honra se renovará em mim, e o meu arco se reforçará na minha mão. 21 Os que me ouviam esperavam o meu conselho e guardavam silêncio para ouvi-lo. 22 Havendo eu falado, não replicavam; as minhas palavras caíam sobre eles como orvalho. 23 Esperavam-me como à chuva, abriam a boca como à chuva de primavera. 24 Sorria-me para eles quando não tinham confiança; e a luz do meu rosto não desprezavam. 25 Eu lhes escolhia o caminho, assentava-me como chefe e habitava como rei entre as suas tropas, como quem consola os que pranteiam.</div>
+<header class="header">
+  <div class="header-inner">
+    <a class="logo" href="../../index.html"><h1>Voltemos à Palavra</h1><span>Bíblia Strong Interativa</span></a>
+    <div class="search-wrap">
+      <input type="text" id="searchInput" placeholder="Ex: Gênesis 1 1 · João 3 16" onkeypress="if(event.key==='Enter')doSearch()">
+      <button class="btn-search" onclick="doSearch()">🔍 Buscar</button>
+    </div>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar"><div class="sidebar-head">✦ Livros</div><ul class="book-list" id="bookList"></ul></aside>
+  <section class="main">
+    <div class="toolbar">
+      <div class="vg"><span class="vg-lbl">Versão</span>
+        <input type="radio" class="r" name="ver" id="rAlm" value="ara" checked onchange="render()"><label class="r" for="rAlm">🇧🇷 ARA</label>
+        <input type="radio" class="r" name="ver" id="rKJV" value="kjv" onchange="render()"><label class="r" for="rKJV">🇬🇧 KJV</label>
+      </div>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkPar" onchange="render()"> Vista Paralela</label>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkStr" checked onchange="render()"> Códigos Strong</label>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkRef" checked onchange="render()"> Referências</label>
+    </div>
+    <div class="chap-bar">
+      <div><h2 id="chapTitle">Jó 29</h2><div class="sub" id="chapSub">Almeida Revista e Atualizada</div></div>
+      <div class="nav-btns"><a class="nav-btn" href="../../jo/28.html">← Jó 28</a><select class="cap-sel" id="capSel" onchange="onCapSel()"></select><a class="nav-btn" href="../../jo/30.html">Jó 30 →</a></div>
+    </div>
+    <div class="par-heads" id="parHeads">
+      <div class="col-lbl">🇧🇷 ARA — Almeida Revista e Atualizada</div>
+      <div class="col-lbl">🇬🇧 KJV — King James Version</div>
+    </div>
+    <div class="verses-panel" id="versesPanel"><div class="loading"><div class="spinner"></div><div>Carregando…</div></div></div>
+  </section>
+</div>
+<div class="overlay" id="overlay" onclick="closePopup()"></div>
+<div class="popup" id="popup">
+  <div class="pop-top"><div class="pop-code"><span id="popCode"></span><span class="badge" id="popBadge"></span></div><button class="pop-close" onclick="closePopup()">✕</button></div>
+  <div class="pop-word"><div class="original" id="popOrig"></div><div class="translit" id="popXlit"></div></div>
+  <div class="pop-body">
+    <div class="def-block"><div class="lbl">Pronunciação</div><div class="val" id="popPron"></div></div>
+    <div class="def-block"><div class="lbl">Definição</div><div class="val" id="popDesc"></div></div>
+  </div>
+</div>
+<script>var INIT_BOOK="Job";var INIT_CAP=29;var BASE="../../";</script>
+<script src="../../app.js"></script>
+</body>
+</html>

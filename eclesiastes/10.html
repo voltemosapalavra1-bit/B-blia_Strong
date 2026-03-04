@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eclesiastes 10 — Bíblia Strong Interativa | Voltemos à Palavra</title>
+<meta name="description" content="Leia Eclesiastes capítulo 10 com dicionário Strong em português, referências cruzadas e vista paralela ARA e KJV.">
+<link rel="canonical" href="https://voltemosapalavra1-bit.github.io/B-blia_Strong/eclesiastes/10.html">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<div class="seo-text" aria-hidden="true">1 Qual a mosca morta faz o ungüento do perfumador exalar mau cheiro, assim é para a sabedoria e a honra um pouco de estultícia. 2 O coração do sábio se inclina para o lado direito, mas o do estulto, para o da esquerda. 3 Quando o tolo vai pelo caminho, falta-lhe o entendimento; e, assim, a todos mostra que é estulto. 4 Levantando-se contra ti a indignação do governador, não deixes o teu lugar, porque o ânimo sereno acalma grandes ofensores. 5 Ainda há um mal que vi debaixo do sol, erro que procede do governador: 6 o tolo posto em grandes alturas, mas os ricos assentados em lugar baixo. 7 Vi servos a cavalo e príncipes andando a pé como servos sobre a terra. 8 Quem abre uma cova nela cairá, e quem rompe um muro, mordê-lo-á uma cobra. 9 Quem arranca pedras será maltratado por elas, e o que racha lenha expõe-se ao perigo. 10 Se o ferro está embotado, e não se lhe afia o corte, é preciso redobrar a força; mas a sabedoria resolve com bom êxito. 11 Se a cobra morder antes de estar encantada, não há vantagem no encantador. 12 Nas palavras do sábio há favor, mas ao tolo os seus lábios devoram. 13 As primeiras palavras da boca do tolo são estultícia, e as últimas, loucura perversa. 14 O estulto multiplica as palavras, ainda que o homem não sabe o que sucederá; e quem lhe manifestará o que será depois dele? 15 O trabalho do tolo o fatiga, pois nem sabe ir à cidade. 16 Ai de ti, ó terra cujo rei é criança e cujos príncipes se banqueteiam já de manhã. 17 Ditosa, tu, ó terra cujo rei é filho de nobres e cujos príncipes se sentam à mesa a seu tempo para refazerem as forças e não para bebedice. 18 Pela muita preguiça desaba o teto, e pela frouxidão das mãos goteja a casa. 19 O festim faz-se para rir, o vinho alegra a vida, e o dinheiro atende a tudo. 20 Nem no teu pensamento amaldiçoes o rei, nem tampouco no mais interior do teu quarto, o rico; porque as aves dos céus poderiam levar a tua voz, e o que tem asas daria notícia das tuas palavras.</div>
+<header class="header">
+  <div class="header-inner">
+    <a class="logo" href="../../index.html"><h1>Voltemos à Palavra</h1><span>Bíblia Strong Interativa</span></a>
+    <div class="search-wrap">
+      <input type="text" id="searchInput" placeholder="Ex: Gênesis 1 1 · João 3 16" onkeypress="if(event.key==='Enter')doSearch()">
+      <button class="btn-search" onclick="doSearch()">🔍 Buscar</button>
+    </div>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar"><div class="sidebar-head">✦ Livros</div><ul class="book-list" id="bookList"></ul></aside>
+  <section class="main">
+    <div class="toolbar">
+      <div class="vg"><span class="vg-lbl">Versão</span>
+        <input type="radio" class="r" name="ver" id="rAlm" value="ara" checked onchange="render()"><label class="r" for="rAlm">🇧🇷 ARA</label>
+        <input type="radio" class="r" name="ver" id="rKJV" value="kjv" onchange="render()"><label class="r" for="rKJV">🇬🇧 KJV</label>
+      </div>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkPar" onchange="render()"> Vista Paralela</label>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkStr" checked onchange="render()"> Códigos Strong</label>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkRef" checked onchange="render()"> Referências</label>
+    </div>
+    <div class="chap-bar">
+      <div><h2 id="chapTitle">Eclesiastes 10</h2><div class="sub" id="chapSub">Almeida Revista e Atualizada</div></div>
+      <div class="nav-btns"><a class="nav-btn" href="../../eclesiastes/9.html">← Eclesiastes 9</a><select class="cap-sel" id="capSel" onchange="onCapSel()"></select><a class="nav-btn" href="../../eclesiastes/11.html">Eclesiastes 11 →</a></div>
+    </div>
+    <div class="par-heads" id="parHeads">
+      <div class="col-lbl">🇧🇷 ARA — Almeida Revista e Atualizada</div>
+      <div class="col-lbl">🇬🇧 KJV — King James Version</div>
+    </div>
+    <div class="verses-panel" id="versesPanel"><div class="loading"><div class="spinner"></div><div>Carregando…</div></div></div>
+  </section>
+</div>
+<div class="overlay" id="overlay" onclick="closePopup()"></div>
+<div class="popup" id="popup">
+  <div class="pop-top"><div class="pop-code"><span id="popCode"></span><span class="badge" id="popBadge"></span></div><button class="pop-close" onclick="closePopup()">✕</button></div>
+  <div class="pop-word"><div class="original" id="popOrig"></div><div class="translit" id="popXlit"></div></div>
+  <div class="pop-body">
+    <div class="def-block"><div class="lbl">Pronunciação</div><div class="val" id="popPron"></div></div>
+    <div class="def-block"><div class="lbl">Definição</div><div class="val" id="popDesc"></div></div>
+  </div>
+</div>
+<script>var INIT_BOOK="Ecclesiastes";var INIT_CAP=10;var BASE="../../";</script>
+<script src="../../app.js"></script>
+</body>
+</html>

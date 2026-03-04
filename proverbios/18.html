@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Provérbios 18 — Bíblia Strong Interativa | Voltemos à Palavra</title>
+<meta name="description" content="Leia Provérbios capítulo 18 com dicionário Strong em português, referências cruzadas e vista paralela ARA e KJV.">
+<link rel="canonical" href="https://voltemosapalavra1-bit.github.io/B-blia_Strong/proverbios/18.html">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<div class="seo-text" aria-hidden="true">1 O solitário busca o seu próprio interesse e insurge-se contra a verdadeira sabedoria. 2 O insensato não tem prazer no entendimento, senão em externar o seu interior. 3 Vindo a perversidade, vem também o desprezo; e, com a ignomínia, a vergonha. 4 Águas profundas são as palavras da boca do homem, e a fonte da sabedoria, ribeiros transbordantes. 5 Não é bom ser parcial com o perverso, para torcer o direito contra os justos. 6 Os lábios do insensato entram na contenda, e por açoites brada a sua boca. 7 A boca do insensato é a sua própria destruição, e os seus lábios, um laço para a sua alma. 8 As palavras do maldizente são doces bocados que descem para o mais interior do ventre. 9 Quem é negligente na sua obra já é irmão do desperdiçador. 10 Torre forte é o nome do SENHOR, à qual o justo se acolhe e está seguro. 11 Os bens do rico lhe são cidade forte e, segundo imagina, uma alta muralha. 12 Antes da ruína, gaba-se o coração do homem, e diante da honra vai a humildade. 13 Responder antes de ouvir é estultícia e vergonha. 14 O espírito firme sustém o homem na sua doença, mas o espírito abatido, quem o pode suportar? 15 O coração do sábio adquire o conhecimento, e o ouvido dos sábios procura o saber. 16 O presente que o homem faz alarga-lhe o caminho e leva-o perante os grandes. 17 O que começa o pleito parece justo, até que vem o outro e o examina. 18 Pelo lançar da sorte, cessam os pleitos, e se decide a causa entre os poderosos. 19 O irmão ofendido resiste mais que uma fortaleza; suas contendas são ferrolhos de um castelo. 20 Do fruto da boca o coração se farta, do que produzem os lábios se satisfaz. 21 A morte e a vida estão no poder da língua; o que bem a utiliza come do seu fruto. 22 O que acha uma esposa acha o bem e alcançou a benevolência do SENHOR. 23 O pobre fala com súplicas, porém o rico responde com durezas. 24 O homem que tem muitos amigos sai perdendo; mas há amigo mais chegado do que um irmão.</div>
+<header class="header">
+  <div class="header-inner">
+    <a class="logo" href="../../index.html"><h1>Voltemos à Palavra</h1><span>Bíblia Strong Interativa</span></a>
+    <div class="search-wrap">
+      <input type="text" id="searchInput" placeholder="Ex: Gênesis 1 1 · João 3 16" onkeypress="if(event.key==='Enter')doSearch()">
+      <button class="btn-search" onclick="doSearch()">🔍 Buscar</button>
+    </div>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar"><div class="sidebar-head">✦ Livros</div><ul class="book-list" id="bookList"></ul></aside>
+  <section class="main">
+    <div class="toolbar">
+      <div class="vg"><span class="vg-lbl">Versão</span>
+        <input type="radio" class="r" name="ver" id="rAlm" value="ara" checked onchange="render()"><label class="r" for="rAlm">🇧🇷 ARA</label>
+        <input type="radio" class="r" name="ver" id="rKJV" value="kjv" onchange="render()"><label class="r" for="rKJV">🇬🇧 KJV</label>
+      </div>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkPar" onchange="render()"> Vista Paralela</label>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkStr" checked onchange="render()"> Códigos Strong</label>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkRef" checked onchange="render()"> Referências</label>
+    </div>
+    <div class="chap-bar">
+      <div><h2 id="chapTitle">Provérbios 18</h2><div class="sub" id="chapSub">Almeida Revista e Atualizada</div></div>
+      <div class="nav-btns"><a class="nav-btn" href="../../proverbios/17.html">← Provérbios 17</a><select class="cap-sel" id="capSel" onchange="onCapSel()"></select><a class="nav-btn" href="../../proverbios/19.html">Provérbios 19 →</a></div>
+    </div>
+    <div class="par-heads" id="parHeads">
+      <div class="col-lbl">🇧🇷 ARA — Almeida Revista e Atualizada</div>
+      <div class="col-lbl">🇬🇧 KJV — King James Version</div>
+    </div>
+    <div class="verses-panel" id="versesPanel"><div class="loading"><div class="spinner"></div><div>Carregando…</div></div></div>
+  </section>
+</div>
+<div class="overlay" id="overlay" onclick="closePopup()"></div>
+<div class="popup" id="popup">
+  <div class="pop-top"><div class="pop-code"><span id="popCode"></span><span class="badge" id="popBadge"></span></div><button class="pop-close" onclick="closePopup()">✕</button></div>
+  <div class="pop-word"><div class="original" id="popOrig"></div><div class="translit" id="popXlit"></div></div>
+  <div class="pop-body">
+    <div class="def-block"><div class="lbl">Pronunciação</div><div class="val" id="popPron"></div></div>
+    <div class="def-block"><div class="lbl">Definição</div><div class="val" id="popDesc"></div></div>
+  </div>
+</div>
+<script>var INIT_BOOK="Proverbs";var INIT_CAP=18;var BASE="../../";</script>
+<script src="../../app.js"></script>
+</body>
+</html>

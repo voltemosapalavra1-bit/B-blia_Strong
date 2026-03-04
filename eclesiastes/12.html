@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eclesiastes 12 — Bíblia Strong Interativa | Voltemos à Palavra</title>
+<meta name="description" content="Leia Eclesiastes capítulo 12 com dicionário Strong em português, referências cruzadas e vista paralela ARA e KJV.">
+<link rel="canonical" href="https://voltemosapalavra1-bit.github.io/B-blia_Strong/eclesiastes/12.html">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<div class="seo-text" aria-hidden="true">1 Lembra-te do teu Criador nos dias da tua mocidade, antes que venham os maus dias, e cheguem os anos dos quais dirás: Não tenho neles prazer; 2 antes que se escureçam o sol, a lua e as estrelas do esplendor da tua vida, e tornem a vir as nuvens depois do aguaceiro; 3 no dia em que tremerem os guardas da casa, os teus braços, e se curvarem os homens outrora fortes, as tuas pernas, e cessarem os teus moedores da boca, por já serem poucos, e se escurecerem os teus olhos nas janelas; 4 e os teus lábios, quais portas da rua, se fecharem; no dia em que não puderes falar em alta voz, te levantares à voz das aves, e todas as harmonias, filhas da música, te diminuírem; 5 como também quando temeres o que é alto, e te espantares no caminho, e te embranqueceres, como floresce a amendoeira, e o gafanhoto te for um peso, e te perecer o apetite; porque vais à casa eterna, e os pranteadores andem rodeando pela praça; 6 antes que se rompa o fio de prata, e se despedace o copo de ouro, e se quebre o cântaro junto à fonte, e se desfaça a roda junto ao poço, 7 e o pó volte à terra, como o era, e o espírito volte a Deus, que o deu. 8 Vaidade de vaidade, diz o Pregador, tudo é vaidade. 9 O Pregador, além de sábio, ainda ensinou ao povo o conhecimento; e, atentando e esquadrinhando, compôs muitos provérbios. 10 Procurou o Pregador achar palavras agradáveis e escrever com retidão palavras de verdade. 11 As palavras dos sábios são como aguilhões, e como pregos bem fixados as sentenças coligidas, dadas pelo único Pastor. 12 Demais, filho meu, atenta: não há limite para fazer livros, e o muito estudar é enfado da carne. 13 De tudo o que se tem ouvido, a suma é: Teme a Deus e guarda os seus mandamentos; porque isto é o dever de todo homem. 14 Porque Deus há de trazer a juízo todas as obras, até as que estão escondidas, quer sejam boas, quer sejam más.</div>
+<header class="header">
+  <div class="header-inner">
+    <a class="logo" href="../../index.html"><h1>Voltemos à Palavra</h1><span>Bíblia Strong Interativa</span></a>
+    <div class="search-wrap">
+      <input type="text" id="searchInput" placeholder="Ex: Gênesis 1 1 · João 3 16" onkeypress="if(event.key==='Enter')doSearch()">
+      <button class="btn-search" onclick="doSearch()">🔍 Buscar</button>
+    </div>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar"><div class="sidebar-head">✦ Livros</div><ul class="book-list" id="bookList"></ul></aside>
+  <section class="main">
+    <div class="toolbar">
+      <div class="vg"><span class="vg-lbl">Versão</span>
+        <input type="radio" class="r" name="ver" id="rAlm" value="ara" checked onchange="render()"><label class="r" for="rAlm">🇧🇷 ARA</label>
+        <input type="radio" class="r" name="ver" id="rKJV" value="kjv" onchange="render()"><label class="r" for="rKJV">🇬🇧 KJV</label>
+      </div>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkPar" onchange="render()"> Vista Paralela</label>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkStr" checked onchange="render()"> Códigos Strong</label>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkRef" checked onchange="render()"> Referências</label>
+    </div>
+    <div class="chap-bar">
+      <div><h2 id="chapTitle">Eclesiastes 12</h2><div class="sub" id="chapSub">Almeida Revista e Atualizada</div></div>
+      <div class="nav-btns"><a class="nav-btn" href="../../eclesiastes/11.html">← Eclesiastes 11</a><select class="cap-sel" id="capSel" onchange="onCapSel()"></select><a class="nav-btn" href="../../canticos/1.html">Cânticos 1 →</a></div>
+    </div>
+    <div class="par-heads" id="parHeads">
+      <div class="col-lbl">🇧🇷 ARA — Almeida Revista e Atualizada</div>
+      <div class="col-lbl">🇬🇧 KJV — King James Version</div>
+    </div>
+    <div class="verses-panel" id="versesPanel"><div class="loading"><div class="spinner"></div><div>Carregando…</div></div></div>
+  </section>
+</div>
+<div class="overlay" id="overlay" onclick="closePopup()"></div>
+<div class="popup" id="popup">
+  <div class="pop-top"><div class="pop-code"><span id="popCode"></span><span class="badge" id="popBadge"></span></div><button class="pop-close" onclick="closePopup()">✕</button></div>
+  <div class="pop-word"><div class="original" id="popOrig"></div><div class="translit" id="popXlit"></div></div>
+  <div class="pop-body">
+    <div class="def-block"><div class="lbl">Pronunciação</div><div class="val" id="popPron"></div></div>
+    <div class="def-block"><div class="lbl">Definição</div><div class="val" id="popDesc"></div></div>
+  </div>
+</div>
+<script>var INIT_BOOK="Ecclesiastes";var INIT_CAP=12;var BASE="../../";</script>
+<script src="../../app.js"></script>
+</body>
+</html>

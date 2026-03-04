@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Habacuque 1 — Bíblia Strong Interativa | Voltemos à Palavra</title>
+<meta name="description" content="Leia Habacuque capítulo 1 com dicionário Strong em português, referências cruzadas e vista paralela ARA e KJV.">
+<link rel="canonical" href="https://voltemosapalavra1-bit.github.io/B-blia_Strong/habacuque/1.html">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<div class="seo-text" aria-hidden="true">1 Sentença revelada ao profeta Habacuque. 2 Até quando, SENHOR, clamarei eu, e tu não me escutarás? Gritar-te-ei: Violência! E não salvarás? 3 Por que me mostras a iniqüidade e me fazes ver a opressão? Pois a destruição e a violência estão diante de mim; há contendas, e o litígio se suscita. 4 Por esta causa, a lei se afrouxa, e a justiça nunca se manifesta, porque o perverso cerca o justo, a justiça é torcida. 5 Vede entre as nações, olhai, maravilhai-vos e desvanecei, porque realizo, em vossos dias, obra tal, que vós não crereis, quando vos for contada. 6 Pois eis que suscito os caldeus, nação amarga e impetuosa, que marcham pela largura da terra, para apoderar-se de moradas que não são suas. 7 Eles são pavorosos e terríveis, e criam eles mesmos o seu direito e a sua dignidade. 8 Os seus cavalos são mais ligeiros do que os leopardos, mais ferozes do que os lobos ao anoitecer são os seus cavaleiros que se espalham por toda parte; sim, os seus cavaleiros chegam de longe, voam como águia que se precipita a devorar. 9 Eles todos vêm para fazer violência; o seu rosto suspira por seguir avante; eles reúnem os cativos como areia. 10 Eles escarnecem dos reis; os príncipes são objeto do seu riso; riem-se de todas as fortalezas, porque, amontoando terra, as tomam. 11 Então, passam como passa o vento e seguem; fazem-se culpados estes cujo poder é o seu deus. 12 Não és tu desde a eternidade, ó SENHOR, meu Deus, ó meu Santo? Não morreremos. Ó SENHOR, para executar juízo, puseste aquele povo; tu, ó Rocha, o fundaste para servir de disciplina. 13 Tu és tão puro de olhos, que não podes ver o mal e a opressão não podes contemplar; por que, pois, toleras os que procedem perfidamente e te calas quando o perverso devora aquele que é mais justo do que ele? 14 Por que fazes os homens como os peixes do mar, como os répteis, que não têm quem os governe? 15 A todos levanta o inimigo com o anzol, pesca-os de arrastão e os ajunta na sua rede varredoura; por isso, ele se alegra e se regozija. 16 Por isso, oferece sacrifício à sua rede e queima incenso à sua varredoura; porque por elas enriqueceu a sua porção, e tem gordura a sua comida. 17 Acaso, continuará, por isso, esvaziando a sua rede e matando sem piedade os povos?</div>
+<header class="header">
+  <div class="header-inner">
+    <a class="logo" href="../../index.html"><h1>Voltemos à Palavra</h1><span>Bíblia Strong Interativa</span></a>
+    <div class="search-wrap">
+      <input type="text" id="searchInput" placeholder="Ex: Gênesis 1 1 · João 3 16" onkeypress="if(event.key==='Enter')doSearch()">
+      <button class="btn-search" onclick="doSearch()">🔍 Buscar</button>
+    </div>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar"><div class="sidebar-head">✦ Livros</div><ul class="book-list" id="bookList"></ul></aside>
+  <section class="main">
+    <div class="toolbar">
+      <div class="vg"><span class="vg-lbl">Versão</span>
+        <input type="radio" class="r" name="ver" id="rAlm" value="ara" checked onchange="render()"><label class="r" for="rAlm">🇧🇷 ARA</label>
+        <input type="radio" class="r" name="ver" id="rKJV" value="kjv" onchange="render()"><label class="r" for="rKJV">🇬🇧 KJV</label>
+      </div>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkPar" onchange="render()"> Vista Paralela</label>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkStr" checked onchange="render()"> Códigos Strong</label>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkRef" checked onchange="render()"> Referências</label>
+    </div>
+    <div class="chap-bar">
+      <div><h2 id="chapTitle">Habacuque 1</h2><div class="sub" id="chapSub">Almeida Revista e Atualizada</div></div>
+      <div class="nav-btns"><a class="nav-btn" href="../../naum/3.html">← Naum 3</a><select class="cap-sel" id="capSel" onchange="onCapSel()"></select><a class="nav-btn" href="../../habacuque/2.html">Habacuque 2 →</a></div>
+    </div>
+    <div class="par-heads" id="parHeads">
+      <div class="col-lbl">🇧🇷 ARA — Almeida Revista e Atualizada</div>
+      <div class="col-lbl">🇬🇧 KJV — King James Version</div>
+    </div>
+    <div class="verses-panel" id="versesPanel"><div class="loading"><div class="spinner"></div><div>Carregando…</div></div></div>
+  </section>
+</div>
+<div class="overlay" id="overlay" onclick="closePopup()"></div>
+<div class="popup" id="popup">
+  <div class="pop-top"><div class="pop-code"><span id="popCode"></span><span class="badge" id="popBadge"></span></div><button class="pop-close" onclick="closePopup()">✕</button></div>
+  <div class="pop-word"><div class="original" id="popOrig"></div><div class="translit" id="popXlit"></div></div>
+  <div class="pop-body">
+    <div class="def-block"><div class="lbl">Pronunciação</div><div class="val" id="popPron"></div></div>
+    <div class="def-block"><div class="lbl">Definição</div><div class="val" id="popDesc"></div></div>
+  </div>
+</div>
+<script>var INIT_BOOK="Habakkuk";var INIT_CAP=1;var BASE="../../";</script>
+<script src="../../app.js"></script>
+</body>
+</html>

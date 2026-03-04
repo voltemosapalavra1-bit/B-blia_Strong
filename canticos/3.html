@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cânticos 3 — Bíblia Strong Interativa | Voltemos à Palavra</title>
+<meta name="description" content="Leia Cânticos capítulo 3 com dicionário Strong em português, referências cruzadas e vista paralela ARA e KJV.">
+<link rel="canonical" href="https://voltemosapalavra1-bit.github.io/B-blia_Strong/canticos/3.html">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<div class="seo-text" aria-hidden="true">1 De noite, no meu leito, busquei o amado de minha alma, busquei-o e não o achei. 2 Levantar-me-ei, pois, e rodearei a cidade, pelas ruas e pelas praças; buscarei o amado da minha alma. Busquei-o e não o achei. 3 Encontraram-me os guardas, que rondavam pela cidade. Então, lhes perguntei: vistes o amado da minha alma? 4 Mal os deixei, encontrei logo o amado da minha alma; agarrei-me a ele e não o deixei ir embora, até que o fiz entrar em casa de minha mãe e na recâmara daquela que me concebeu. 5 Conjuro-vos, ó filhas de Jerusalém, pelas gazelas e cervas do campo, que não acordeis, nem desperteis o amor, até que este o queira. 6 Que é isso que sobe do deserto, como colunas de fumaça, perfumado de mirra, e de incenso, e de toda sorte de pós aromáticos do mercador? 7 É a liteira de Salomão; sessenta valentes estão ao redor dela, dos valentes de Israel. 8 Todos sabem manejar a espada e são destros na guerra; cada um leva a espada à cinta, por causa dos temores noturnos. 9 O rei Salomão fez para si um palanquim de madeira do Líbano. 10 Fez-lhe as colunas de prata, a espalda de ouro, o assento de púrpura, e tudo interiormente ornado com amor pelas filhas de Jerusalém. 11 Saí, ó filhas de Sião, e contemplai ao rei Salomão com a coroa com que sua mãe o coroou no dia do seu desposório, no dia do júbilo do seu coração.</div>
+<header class="header">
+  <div class="header-inner">
+    <a class="logo" href="../../index.html"><h1>Voltemos à Palavra</h1><span>Bíblia Strong Interativa</span></a>
+    <div class="search-wrap">
+      <input type="text" id="searchInput" placeholder="Ex: Gênesis 1 1 · João 3 16" onkeypress="if(event.key==='Enter')doSearch()">
+      <button class="btn-search" onclick="doSearch()">🔍 Buscar</button>
+    </div>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar"><div class="sidebar-head">✦ Livros</div><ul class="book-list" id="bookList"></ul></aside>
+  <section class="main">
+    <div class="toolbar">
+      <div class="vg"><span class="vg-lbl">Versão</span>
+        <input type="radio" class="r" name="ver" id="rAlm" value="ara" checked onchange="render()"><label class="r" for="rAlm">🇧🇷 ARA</label>
+        <input type="radio" class="r" name="ver" id="rKJV" value="kjv" onchange="render()"><label class="r" for="rKJV">🇬🇧 KJV</label>
+      </div>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkPar" onchange="render()"> Vista Paralela</label>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkStr" checked onchange="render()"> Códigos Strong</label>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkRef" checked onchange="render()"> Referências</label>
+    </div>
+    <div class="chap-bar">
+      <div><h2 id="chapTitle">Cânticos 3</h2><div class="sub" id="chapSub">Almeida Revista e Atualizada</div></div>
+      <div class="nav-btns"><a class="nav-btn" href="../../canticos/2.html">← Cânticos 2</a><select class="cap-sel" id="capSel" onchange="onCapSel()"></select><a class="nav-btn" href="../../canticos/4.html">Cânticos 4 →</a></div>
+    </div>
+    <div class="par-heads" id="parHeads">
+      <div class="col-lbl">🇧🇷 ARA — Almeida Revista e Atualizada</div>
+      <div class="col-lbl">🇬🇧 KJV — King James Version</div>
+    </div>
+    <div class="verses-panel" id="versesPanel"><div class="loading"><div class="spinner"></div><div>Carregando…</div></div></div>
+  </section>
+</div>
+<div class="overlay" id="overlay" onclick="closePopup()"></div>
+<div class="popup" id="popup">
+  <div class="pop-top"><div class="pop-code"><span id="popCode"></span><span class="badge" id="popBadge"></span></div><button class="pop-close" onclick="closePopup()">✕</button></div>
+  <div class="pop-word"><div class="original" id="popOrig"></div><div class="translit" id="popXlit"></div></div>
+  <div class="pop-body">
+    <div class="def-block"><div class="lbl">Pronunciação</div><div class="val" id="popPron"></div></div>
+    <div class="def-block"><div class="lbl">Definição</div><div class="val" id="popDesc"></div></div>
+  </div>
+</div>
+<script>var INIT_BOOK="Song of Solomon";var INIT_CAP=3;var BASE="../../";</script>
+<script src="../../app.js"></script>
+</body>
+</html>

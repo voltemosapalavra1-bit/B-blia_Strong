@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ezequiel 19 — Bíblia Strong Interativa | Voltemos à Palavra</title>
+<meta name="description" content="Leia Ezequiel capítulo 19 com dicionário Strong em português, referências cruzadas e vista paralela ARA e KJV.">
+<link rel="canonical" href="https://voltemosapalavra1-bit.github.io/B-blia_Strong/ezequiel/19.html">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<div class="seo-text" aria-hidden="true">1 E tu levanta uma lamentação sobre os príncipes de Israel 2 e dize: Quem é tua mãe? Uma leoa entre leões, a qual, deitada entre os leõezinhos, criou os seus filhotes. 3 Criou um dos seus filhotinhos, o qual veio a ser leãozinho, e aprendeu a apanhar a presa, e devorou homens. 4 As nações ouviram falar dele, e foi ele apanhado na cova que elas fizeram e levado com ganchos para a terra do Egito. 5 Vendo a leoa frustrada e perdida a sua esperança, tomou outro dos seus filhotes e o fez leãozinho. 6 Este, andando entre os leões, veio a ser um leãozinho, e aprendeu a apanhar a presa, e devorou homens. 7 Aprendeu a fazer viúvas e a tornar desertas as cidades deles; ficaram estupefatos a terra e seus habitantes, ao ouvirem o seu rugido. 8 Então, se ajuntaram contra ele as gentes das províncias em roda, estenderam sobre ele a rede, e foi apanhado na cova que elas fizeram. 9 Com gancho, meteram-no em jaula, e o levaram ao rei da Babilônia, e fizeram-no entrar nos lugares fortes, para que se não ouvisse mais a sua voz nos montes de Israel. 10 Tua mãe, de sua natureza, era qual videira plantada junto às águas; plantada à borda, ela frutificou e se encheu de ramos, por causa das muitas águas. 11 Tinha galhos fortes para cetros de dominadores; elevou-se a sua estatura entre os espessos ramos, e foi vista na sua altura com a multidão deles. 12 Mas foi arrancada com furor e lançada por terra, e o vento oriental secou-lhe o fruto; quebraram-se e secaram os seus fortes galhos, e o fogo os consumiu. 13 Agora, está plantada no deserto, numa terra seca e sedenta. 14 Dos galhos dos seus ramos saiu fogo que consumiu o seu fruto, de maneira que já não há nela galho forte que sirva de cetro para dominar. Esta é uma lamentação e ficará servindo de lamentação.</div>
+<header class="header">
+  <div class="header-inner">
+    <a class="logo" href="../../index.html"><h1>Voltemos à Palavra</h1><span>Bíblia Strong Interativa</span></a>
+    <div class="search-wrap">
+      <input type="text" id="searchInput" placeholder="Ex: Gênesis 1 1 · João 3 16" onkeypress="if(event.key==='Enter')doSearch()">
+      <button class="btn-search" onclick="doSearch()">🔍 Buscar</button>
+    </div>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar"><div class="sidebar-head">✦ Livros</div><ul class="book-list" id="bookList"></ul></aside>
+  <section class="main">
+    <div class="toolbar">
+      <div class="vg"><span class="vg-lbl">Versão</span>
+        <input type="radio" class="r" name="ver" id="rAlm" value="ara" checked onchange="render()"><label class="r" for="rAlm">🇧🇷 ARA</label>
+        <input type="radio" class="r" name="ver" id="rKJV" value="kjv" onchange="render()"><label class="r" for="rKJV">🇬🇧 KJV</label>
+      </div>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkPar" onchange="render()"> Vista Paralela</label>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkStr" checked onchange="render()"> Códigos Strong</label>
+      <div class="t-sep"></div>
+      <label class="chk-lbl"><input type="checkbox" id="chkRef" checked onchange="render()"> Referências</label>
+    </div>
+    <div class="chap-bar">
+      <div><h2 id="chapTitle">Ezequiel 19</h2><div class="sub" id="chapSub">Almeida Revista e Atualizada</div></div>
+      <div class="nav-btns"><a class="nav-btn" href="../../ezequiel/18.html">← Ezequiel 18</a><select class="cap-sel" id="capSel" onchange="onCapSel()"></select><a class="nav-btn" href="../../ezequiel/20.html">Ezequiel 20 →</a></div>
+    </div>
+    <div class="par-heads" id="parHeads">
+      <div class="col-lbl">🇧🇷 ARA — Almeida Revista e Atualizada</div>
+      <div class="col-lbl">🇬🇧 KJV — King James Version</div>
+    </div>
+    <div class="verses-panel" id="versesPanel"><div class="loading"><div class="spinner"></div><div>Carregando…</div></div></div>
+  </section>
+</div>
+<div class="overlay" id="overlay" onclick="closePopup()"></div>
+<div class="popup" id="popup">
+  <div class="pop-top"><div class="pop-code"><span id="popCode"></span><span class="badge" id="popBadge"></span></div><button class="pop-close" onclick="closePopup()">✕</button></div>
+  <div class="pop-word"><div class="original" id="popOrig"></div><div class="translit" id="popXlit"></div></div>
+  <div class="pop-body">
+    <div class="def-block"><div class="lbl">Pronunciação</div><div class="val" id="popPron"></div></div>
+    <div class="def-block"><div class="lbl">Definição</div><div class="val" id="popDesc"></div></div>
+  </div>
+</div>
+<script>var INIT_BOOK="Ezekiel";var INIT_CAP=19;var BASE="../../";</script>
+<script src="../../app.js"></script>
+</body>
+</html>
