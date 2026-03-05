@@ -1,7 +1,7 @@
 // ================================================================
-// VOLTEMOS À PALAVRA — app.js compartilhado
+// VOLTEMOS À PALAVRA — app.js
 // ================================================================
-var EN_PT = {
+var EN_PT={
   "Genesis":"Gênesis","Exodus":"Êxodo","Leviticus":"Levítico","Numbers":"Números",
   "Deuteronomy":"Deuteronômio","Joshua":"Josué","Judges":"Juízes","Ruth":"Rute",
   "1 Samuel":"1 Samuel","2 Samuel":"2 Samuel","1 Kings":"1 Reis","2 Kings":"2 Reis",
@@ -21,10 +21,8 @@ var EN_PT = {
   "Hebrews":"Hebreus","James":"Tiago","1 Peter":"1 Pedro","2 Peter":"2 Pedro",
   "1 John":"1 João","2 John":"2 João","3 John":"3 João","Jude":"Judas","Revelation":"Apocalipse"
 };
-var PT_EN = {};
-Object.keys(EN_PT).forEach(function(k){ PT_EN[EN_PT[k]]=k; });
-
-var BOOK_SLUG = {
+var PT_EN={};Object.keys(EN_PT).forEach(function(k){PT_EN[EN_PT[k]]=k;});
+var BOOK_SLUG={
   "Genesis":"genesis","Exodus":"exodo","Leviticus":"levitico","Numbers":"numeros",
   "Deuteronomy":"deuteronomio","Joshua":"josue","Judges":"juizes","Ruth":"rute",
   "1 Samuel":"1-samuel","2 Samuel":"2-samuel","1 Kings":"1-reis","2 Kings":"2-reis",
@@ -44,7 +42,7 @@ var BOOK_SLUG = {
   "Hebrews":"hebreus","James":"tiago","1 Peter":"1-pedro","2 Peter":"2-pedro",
   "1 John":"1-joao","2 John":"2-joao","3 John":"3-joao","Jude":"judas","Revelation":"apocalipse"
 };
-var ABBR = {
+var ABBR={
   "Gn":"Genesis","Ex":"Exodus","Lv":"Leviticus","Nm":"Numbers","Dt":"Deuteronomy",
   "Jos":"Joshua","Jz":"Judges","Rt":"Ruth","1S":"1 Samuel","2S":"2 Samuel",
   "1R":"1 Kings","2R":"2 Kings","1Cr":"1 Chronicles","2Cr":"2 Chronicles",
@@ -64,7 +62,7 @@ var ABBR = {
   "1Jo":"1 John","2Jo":"2 John","3Jo":"3 John","1 Jo":"1 John","2 Jo":"2 John","3 Jo":"3 John",
   "Jd":"Jude","Ap":"Revelation"
 };
-var BOOK_ABBR = {
+var BOOK_ABBR={
   "Genesis":"Gn","Exodus":"Ex","Leviticus":"Lv","Numbers":"Nm","Deuteronomy":"Dt",
   "Joshua":"Jos","Judges":"Jz","Ruth":"Rt","1 Samuel":"1S","2 Samuel":"2S",
   "1 Kings":"1R","2 Kings":"2R","1 Chronicles":"1Cr","2 Chronicles":"2Cr",
@@ -80,20 +78,17 @@ var BOOK_ABBR = {
   "Titus":"Tt","Philemon":"Fm","Hebrews":"He","James":"Tg","1 Peter":"1Pe",
   "2 Peter":"2Pe","1 John":"1Jo","2 John":"2Jo","3 John":"3Jo","Jude":"Jd","Revelation":"Ap"
 };
-var OT_LAST = "Malachi";
 
-// BASE is set per-page: "" for index.html, "../../" for chapter pages
-if(typeof BASE === 'undefined') var BASE = "";
-
-var DB = { ara:null, kjv:null, str:null, refs:null };
-var bookEN = (typeof INIT_BOOK !== 'undefined') ? INIT_BOOK : "Genesis";
-var capNum = (typeof INIT_CAP  !== 'undefined') ? INIT_CAP  : 1;
-var booksEN = [];
+if(typeof BASE==='undefined') var BASE="";
+var DB={ara:null,kjv:null,str:null,refs:null};
+var bookEN=(typeof INIT_BOOK!=='undefined')?INIT_BOOK:"Genesis";
+var capNum=(typeof INIT_CAP!=='undefined')?INIT_CAP:1;
+var booksEN=[];
 
 // Load data
 (function(){
-  var needed=4, done=0;
-  function check(){ done++; if(done>=needed) boot(); }
+  var needed=4,done=0;
+  function check(){done++;if(done>=needed)boot();}
   fetch(BASE+"data/strong.json").then(function(r){return r.json();}).then(function(d){DB.str=d;check();}).catch(function(){DB.str={};check();});
   fetch(BASE+"data/kjv.json").then(function(r){return r.json();}).then(function(d){DB.kjv=d;check();}).catch(function(){DB.kjv=null;check();});
   fetch(BASE+"data/ara.json").then(function(r){return r.json();}).then(function(d){DB.ara=d;check();}).catch(function(){DB.ara=null;check();});
@@ -109,14 +104,16 @@ function boot(){
   renderBookList();
   renderCapSelect();
   render();
+  initMobile();
+  initPWA();
 }
 
+// ── SIDEBAR ──
 function renderBookList(){
   var ul=document.getElementById("bookList");
   var html='<li class="section-lbl">Antigo Testamento</li>';
-  var passedOT=false;
   booksEN.forEach(function(en){
-    if(en==="Matthew"&&!passedOT){html+='<li class="section-lbl">Novo Testamento</li>';passedOT=true;}
+    if(en==="Matthew") html+='<li class="section-lbl">Novo Testamento</li>';
     var slug=BOOK_SLUG[en]||en.toLowerCase();
     var caps=Object.keys(DB.kjv[en]||{});
     var firstCap=caps.length?Math.min.apply(null,caps.map(Number)):1;
@@ -127,6 +124,8 @@ function renderBookList(){
   ul.innerHTML=html;
 }
 
+// ── CAPÍTULOS ──
+function getCaps(){return Object.keys(DB.kjv[bookEN]||{}).map(Number).sort(function(a,b){return a-b;});}
 function renderCapSelect(){
   var caps=getCaps();
   var sel=document.getElementById("capSel");
@@ -136,7 +135,6 @@ function renderCapSelect(){
            +' data-href="'+BASE+slug+'/'+c+'.html">Cap. '+c+'</option>';
   }).join("");
 }
-
 function onCapSel(){
   var sel=document.getElementById("capSel");
   var opt=sel.options[sel.selectedIndex];
@@ -144,10 +142,7 @@ function onCapSel(){
   if(href) window.location.href=href;
 }
 
-function getCaps(){
-  return Object.keys(DB.kjv[bookEN]||{}).map(Number).sort(function(a,b){return a-b;});
-}
-
+// ── RENDER ──
 function render(){
   var ver=document.querySelector('input[name=ver]:checked').value;
   var par=document.getElementById("chkPar").checked;
@@ -156,11 +151,10 @@ function render(){
   var capS=String(capNum);
   var kjvArr=(DB.kjv[bookEN]||{})[capS]||[];
   var araArr=(DB.ara[bookEN]||{})[capS]||[];
-  var araMap={};
-  araArr.forEach(function(v){araMap[v.v]=v.t;});
+  var araMap={};araArr.forEach(function(v){araMap[v.v]=v.t;});
   var ptName=EN_PT[bookEN]||bookEN;
   document.getElementById("chapTitle").textContent=(par?ptName+" / "+bookEN:(ver==="ara"?ptName:bookEN))+" "+capNum;
-  var subs={ara:"Almeida Revista e Atualizada + Strong",kjv:"King James Version + Strong's Numbers"};
+  var subs={ara:"Almeida Revista e Atualizada",kjv:"King James Version + Strong's Numbers"};
   document.getElementById("chapSub").textContent=par?"ARA · KJV + Strong":subs[ver];
   document.getElementById("parHeads").classList.toggle("show",par);
   var abbr=BOOK_ABBR[bookEN]||bookEN.substring(0,2);
@@ -176,9 +170,7 @@ function render(){
       var sKey=abbr+"."+capNum+"."+verso;
       var refsA=DB.refs[sKey]||[];
       if(refsA.length){
-        var pills=refsA.map(function(r){
-          return '<span class="ref-pill" onclick="navToRef(\''+r+'\')">' +r+'</span>';
-        }).join("");
+        var pills=refsA.map(function(r){return '<span class="ref-pill" onclick="navToRef(\''+r+'\')">' +r+'</span>';}).join("");
         var refId='refs-'+bookEN.replace(/[^a-zA-Z0-9]/g,'_')+'-'+capNum+'-'+verso;
         refsSideHtml='<div class="v-refs-side collapsed" id="'+refId+'">'
           +'<div class="ref-label">Ref</div>'
@@ -186,7 +178,7 @@ function render(){
           +'<div class="ref-list">'+pills+'</div></div>';
       }
     }
-    html+='<div class="verse-row" style="animation-delay:'+(i*.025)+'s">';
+    html+='<div class="verse-row" style="animation-delay:'+(i*.02)+'s">';
     html+='<div class="v-num">'+verso+'</div>';
     if(par){
       html+='<div class="v-cols par">'
@@ -199,7 +191,7 @@ function render(){
     }
     html+='</div>';
   });
-  document.getElementById("versesPanel").innerHTML=html||'<div class="loading">Nenhum versículo encontrado.</div>';
+  document.getElementById("versesPanel").innerHTML=html||'<div class="loading">Nenhum versículo.</div>';
 }
 
 function processStrong(text,showCode){
@@ -211,6 +203,7 @@ function processStrong(text,showCode){
   });
 }
 
+// ── BUSCA ──
 function doSearch(){
   var q=document.getElementById("searchInput").value.trim();
   if(!q) return;
@@ -224,6 +217,7 @@ function doSearch(){
   window.location.href=BASE+slug+"/"+cap+".html";
 }
 
+// ── POPUP STRONG ──
 function openStrong(codigo){
   var d=DB.str[codigo];
   if(!d){alert("Código não encontrado: "+codigo);return;}
@@ -242,10 +236,7 @@ function closePopup(){
 }
 document.addEventListener("keydown",function(e){if(e.key==="Escape")closePopup();});
 
-function toggleRefs(id){
-  var el=document.getElementById(id);
-  if(el)el.classList.toggle('collapsed');
-}
+function toggleRefs(id){var el=document.getElementById(id);if(el)el.classList.toggle('collapsed');}
 
 function navToRef(refStr){
   var first=refStr.split("-")[0].trim();
@@ -258,4 +249,71 @@ function navToRef(refStr){
   if(!livro){alert("Livro não reconhecido: "+abrRaw);return;}
   var slug=BOOK_SLUG[livro]||livro.toLowerCase();
   window.location.href=BASE+slug+"/"+cap+".html";
+}
+
+// ── MOBILE: drawer + bottom nav ──
+function initMobile(){
+  if(window.innerWidth>768) return;
+
+  // Inject bottom nav
+  var nav=document.createElement('nav');
+  nav.className='bottom-nav';
+  nav.innerHTML=
+    '<button class="bn-btn" id="bnBooks" onclick="toggleSidebar()">'
+    +'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>'
+    +'<span>Livros</span></button>'
+    +'<a class="bn-btn" href="'+BASE+'index.html">'
+    +'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>'
+    +'<span>Início</span></a>'
+    +'<button class="bn-btn" onclick="window.scrollTo({top:0,behavior:\'smooth\'})">'
+    +'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>'
+    +'<span>Topo</span></button>'
+    +'<button class="bn-btn" onclick="document.getElementById(\'searchInput\').focus();document.getElementById(\'searchInput\').scrollIntoView()">'
+    +'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>'
+    +'<span>Buscar</span></button>';
+  document.body.appendChild(nav);
+
+  // Overlay
+  var ov=document.createElement('div');
+  ov.className='sidebar-overlay';
+  ov.id='sidebarOverlay';
+  ov.onclick=closeSidebar;
+  document.body.appendChild(ov);
+
+  // Make sidebar head clickable to close
+  var sh=document.querySelector('.sidebar-head');
+  if(sh) sh.onclick=closeSidebar;
+}
+
+function toggleSidebar(){
+  document.querySelector('.sidebar').classList.toggle('open');
+  document.getElementById('sidebarOverlay').classList.toggle('show');
+}
+function closeSidebar(){
+  document.querySelector('.sidebar').classList.remove('open');
+  var ov=document.getElementById('sidebarOverlay');
+  if(ov) ov.classList.remove('show');
+}
+
+// ── PWA ──
+var deferredPrompt=null;
+function initPWA(){
+  window.addEventListener('beforeinstallprompt',function(e){
+    e.preventDefault();
+    deferredPrompt=e;
+    var banner=document.getElementById('pwaBanner');
+    if(banner) banner.classList.add('show');
+  });
+}
+function installPWA(){
+  if(!deferredPrompt) return;
+  deferredPrompt.prompt();
+  deferredPrompt.userChoice.then(function(){
+    deferredPrompt=null;
+    dismissPWA();
+  });
+}
+function dismissPWA(){
+  var banner=document.getElementById('pwaBanner');
+  if(banner) banner.classList.remove('show');
 }
