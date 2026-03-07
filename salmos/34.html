@@ -49,7 +49,11 @@
 <div class="overlay" id="overlay" onclick="closePopup()"></div>
 <div class="popup" id="popup">
   <div class="pop-top"><div class="pop-code"><span id="popCode"></span><span class="badge" id="popBadge"></span></div><button class="pop-close" onclick="closePopup()">✕</button></div>
-  <div class="pop-word"><div class="original" id="popOrig"></div><div class="translit" id="popXlit"></div></div>
+  <div class="pop-word"><div class="original" id="popOrig"></div><div class="translit" id="popXlit"></div>
+    <div style="display:flex;gap:8px;justify-content:center;margin-top:10px">
+      <button id="popAudioBtn" style="background:var(--gold);border:none;border-radius:20px;padding:6px 16px;font-size:.8rem;font-weight:600;color:var(--ink);cursor:pointer">🔊 Ouvir</button>
+      <a id="popStrongLink" href="#" target="_blank" style="padding:6px 16px;border:1px solid rgba(201,168,76,.3);border-radius:20px;font-size:.8rem;font-weight:600;color:var(--gold);text-decoration:none">📖 Ver página</a>
+    </div></div>
   <div class="pop-body">
     <div class="def-block"><div class="lbl">Pronunciação</div><div class="val" id="popPron"></div></div>
     <div class="def-block"><div class="lbl">Definição</div><div class="val" id="popDesc"></div></div>
