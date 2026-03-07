@@ -233,6 +233,16 @@ function openStrong(codigo){
   document.getElementById("popXlit").textContent=d.x||"—";
   document.getElementById("popPron").textContent=d.p||"—";
   document.getElementById("popDesc").textContent=d.d||"—";
+  var lnk=document.getElementById("popStrongLink");
+  var btn=document.getElementById("popAudioBtn");
+  if(lnk) lnk.href=BASE+"strong/"+codigo+".html";
+  if(btn){ var xlit=d.x||"",lang=codigo[0]==="G"?"el-GR":"he-IL";
+    btn.onclick=function(){
+      if(!window.speechSynthesis) return;
+      var u=new SpeechSynthesisUtterance(xlit); u.lang=lang; u.rate=0.8;
+      window.speechSynthesis.cancel(); window.speechSynthesis.speak(u);
+    };
+  }
   document.getElementById("overlay").style.display="block";
   document.getElementById("popup").style.display="block";
 }
