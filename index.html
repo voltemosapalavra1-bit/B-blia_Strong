@@ -13,25 +13,55 @@
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="icons/icon-192.png">
 <link rel="icon" type="image/png" href="icons/icon-192.png">
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<style>
+/* ── VERSÍCULO DO DIA ── */
+.daily-card{background:linear-gradient(135deg,var(--ink),var(--ink-l));border-radius:var(--r);padding:20px 24px;border:1px solid rgba(201,168,76,.25);margin-bottom:12px;box-shadow:var(--shadow);}
+.daily-label{font-family:"Cinzel",serif;font-size:.62rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);opacity:.7;margin-bottom:10px;}
+.dv-text{font-family:"Crimson Pro",serif;font-size:1.15rem;line-height:1.85;color:rgba(255,255,255,.9);font-style:italic;}
+.dv-ref{font-family:"Cinzel",serif;font-size:.78rem;color:var(--gold);margin-top:8px;font-weight:600;}
+.dv-ref a{color:var(--gold);text-decoration:none;}
+.dv-ref a:hover{text-decoration:underline;}
+.dv-actions{display:flex;gap:8px;margin-top:12px;}
+.dv-btn{padding:5px 14px;border:1px solid rgba(201,168,76,.3);border-radius:14px;background:transparent;color:var(--gold);font-size:.78rem;font-weight:600;cursor:pointer;transition:.2s;font-family:"DM Sans",sans-serif;}
+.dv-btn:hover{background:var(--gold);color:var(--ink);}
+/* ── BUSCA POR PALAVRA ── */
+.word-search-bar{background:var(--ink-m);border-radius:var(--r);padding:12px 18px;display:flex;gap:8px;border:1px solid rgba(201,168,76,.12);}
+.word-search-bar input{flex:1;padding:8px 16px;border:1px solid rgba(201,168,76,.2);border-radius:20px;background:rgba(255,255,255,.06);color:#fff;font-size:.88rem;font-family:"DM Sans",sans-serif;}
+.word-search-bar input::placeholder{color:rgba(255,255,255,.3);}
+.word-search-bar input:focus{outline:none;border-color:var(--gold);}
+.word-search-bar button{padding:8px 18px;background:var(--gold);color:var(--ink);border:none;border-radius:20px;font-weight:600;font-size:.84rem;cursor:pointer;font-family:"DM Sans",sans-serif;white-space:nowrap;}
+#wordResultsPanel{display:none;background:var(--parch);border-radius:var(--r);padding:16px 22px;border:1px solid var(--border);max-height:400px;overflow-y:auto;}
+</style>
 </head>
 <body>
 <header class="header">
   <div class="header-inner">
     <a class="logo" href="index.html"><h1>Voltemos à Palavra</h1><span>Bíblia Strong Interativa</span></a>
     <div class="search-wrap">
-      <input type="text" id="searchInput" placeholder="Ex: Gênesis 1 1 · João 3 16" onkeypress="if(event.key='Enter')doSearch()">
+      <input type="text" id="searchInput" placeholder="Ex: Gênesis 1 1 · João 3 16" onkeypress="if(event.key==='Enter')doSearch()">
       <button class="btn-search" onclick="doSearch()">🔍</button>
     </div>
   </div>
 </header>
 <div class="layout">
-  <aside class="sidebar">
-    <div class="sidebar-head">✦ Livros da Bíblia</div>
-    <ul class="book-list" id="bookList"></ul>
-  </aside>
+  <aside class="sidebar"><div class="sidebar-head">✦ Livros</div><ul class="book-list" id="bookList"></ul></aside>
   <section class="main">
+
+    <!-- Versículo do Dia -->
+    <div class="daily-card">
+      <div class="daily-label">✦ Versículo do Dia</div>
+      <div id="dailyVerse"><div class="loading"><div class="spinner"></div></div></div>
+    </div>
+
+    <!-- Busca por Palavra -->
+    <div class="word-search-bar">
+      <input type="text" id="wordSearchInput" placeholder="🔎 Buscar palavra na Bíblia... ex: misericórdia" onkeypress="if(event.key==='Enter')searchWord()">
+      <button onclick="searchWord()">Buscar</button>
+    </div>
+    <div id="wordResultsPanel"></div>
+
     <div class="toolbar">
       <div class="vg"><span class="vg-lbl">Versão</span>
         <input type="radio" class="r" name="ver" id="rAlm" value="ara" checked onchange="render()"><label class="r" for="rAlm">🇧🇷 ARA</label>
@@ -65,18 +95,25 @@
 <!-- PWA Banner -->
 <div class="pwa-banner" id="pwaBanner">
   <div class="pwa-icon">📖</div>
-  <div class="pwa-text">
-    <strong>Instalar como App</strong>
-    <span>Acesse offline, sem navegador</span>
-  </div>
+  <div class="pwa-text"><strong>Instalar como App</strong><span>Acesse offline, sem navegador</span></div>
   <button class="pwa-btn" onclick="installPWA()">Instalar</button>
   <button class="pwa-dismiss" onclick="dismissPWA()">✕</button>
 </div>
 
 <div class="overlay" id="overlay" onclick="closePopup()"></div>
 <div class="popup" id="popup">
-  <div class="pop-top"><div class="pop-code"><span id="popCode"></span><span class="badge" id="popBadge"></span></div><button class="pop-close" onclick="closePopup()">✕</button></div>
-  <div class="pop-word"><div class="original" id="popOrig"></div><div class="translit" id="popXlit"></div></div>
+  <div class="pop-top">
+    <div class="pop-code"><span id="popCode"></span><span class="badge" id="popBadge"></span></div>
+    <button class="pop-close" onclick="closePopup()">✕</button>
+  </div>
+  <div class="pop-word">
+    <div class="original" id="popOrig"></div>
+    <div class="translit" id="popXlit"></div>
+    <div style="display:flex;gap:8px;justify-content:center;margin-top:10px">
+      <button class="audio-btn" id="popAudioBtn" style="background:var(--gold);border:none;border-radius:20px;padding:6px 16px;font-size:.82rem;font-weight:600;color:var(--ink);cursor:pointer;font-family:DM Sans,sans-serif">🔊 Ouvir</button>
+      <a id="popStrongLink" href="#" target="_blank" style="padding:6px 16px;border:1px solid rgba(201,168,76,.3);border-radius:20px;font-size:.82rem;font-weight:600;color:var(--gold);text-decoration:none;font-family:DM Sans,sans-serif">📖 Ver página</a>
+    </div>
+  </div>
   <div class="pop-body">
     <div class="def-block"><div class="lbl">Pronunciação</div><div class="val" id="popPron"></div></div>
     <div class="def-block"><div class="lbl">Definição</div><div class="val" id="popDesc"></div></div>
@@ -85,15 +122,13 @@
 
 <script>
 var BASE="";
-// index.html specific: navCap uses JS navigation
 function navCap(dir){
   var caps=getCaps();
   var idx=caps.indexOf(capNum)+dir;
   if(idx<0||idx>=caps.length) return;
   capNum=caps[idx];
   document.getElementById("capSel").value=capNum;
-  render();
-  window.scrollTo({top:0,behavior:"smooth"});
+  render(); window.scrollTo({top:0,behavior:"smooth"});
 }
 </script>
 <script src="app.js"></script>

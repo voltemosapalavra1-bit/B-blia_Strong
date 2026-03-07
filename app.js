@@ -106,6 +106,7 @@ function boot(){
   render();
   initMobile();
   initPWA();
+  initDailyVerse();
 }
 
 // ── SIDEBAR ──
@@ -227,8 +228,21 @@ function openStrong(codigo){
   document.getElementById("popXlit").textContent=d.x||"—";
   document.getElementById("popPron").textContent=d.p||"—";
   document.getElementById("popDesc").textContent=d.d||"—";
+  // Pronunciation button
+  var pb=document.getElementById("popPronBtn");
+  if(pb){pb.onclick=function(){pronounceStrong(d.x||d.l,codigo.charAt(0)==="G"?"el-GR":"he-IL");};}
+  // Link to full page
+  var pl=document.getElementById("popPageLink");
+  if(pl){pl.href=BASE+"strong/"+codigo+".html";}
   document.getElementById("overlay").style.display="block";
   document.getElementById("popup").style.display="block";
+}
+function pronounceStrong(word,lang){
+  if(!window.speechSynthesis){alert("Seu navegador não suporta síntese de voz.");return;}
+  var u=new SpeechSynthesisUtterance(word);
+  u.lang=lang; u.rate=0.75;
+  window.speechSynthesis.cancel();
+  window.speechSynthesis.speak(u);
 }
 function closePopup(){
   document.getElementById("overlay").style.display="none";
@@ -251,6 +265,65 @@ function navToRef(refStr){
   window.location.href=BASE+slug+"/"+cap+".html";
 }
 
+
+// ── BUSCA POR PALAVRA ──
+function openWordSearch(){
+  document.getElementById('wsModal').style.display='flex';
+  document.getElementById('wsInput').focus();
+}
+function closeWordSearch(){
+  document.getElementById('wsModal').style.display='none';
+  document.getElementById('wsResults').innerHTML='';
+}
+function doWordSearch(){
+  var q=document.getElementById('wsInput').value.trim().toLowerCase();
+  if(q.length<3){document.getElementById('wsResults').innerHTML='<p style="color:var(--txt-s);padding:10px">Digite pelo menos 3 letras.</p>';return;}
+  var results=[];
+  var reAra=new RegExp(q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'),'gi');
+  var reKjv=new RegExp(q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'),'gi');
+  Object.keys(DB.ara||{}).forEach(function(book){
+    Object.keys(DB.ara[book]).forEach(function(cap){
+      DB.ara[book][cap].forEach(function(v){
+        var clean=v.t.replace(/\{[^}]+\}/g,'');
+        if(reAra.test(clean)){
+          results.push({book:book,cap:cap,ver:v.v,text:clean,lang:'ARA'});
+        }
+        reAra.lastIndex=0;
+      });
+    });
+  });
+  Object.keys(DB.kjv||{}).forEach(function(book){
+    Object.keys(DB.kjv[book]).forEach(function(cap){
+      DB.kjv[book][cap].forEach(function(v){
+        var clean=v.t.replace(/\{[^}]+\}/g,'');
+        if(reKjv.test(clean)){
+          results.push({book:book,cap:cap,ver:v.v,text:clean,lang:'KJV'});
+        }
+        reKjv.lastIndex=0;
+      });
+    });
+  });
+  // Deduplicate by book+cap+ver
+  var seen={};
+  results=results.filter(function(r){
+    var k=r.book+r.cap+r.ver;
+    if(seen[k])return false;
+    seen[k]=true;return true;
+  });
+  var total=results.length;
+  results=results.slice(0,50);
+  var html='<p class="ws-count">'+total+' resultado'+(total!==1?'s':'')+' encontrado'+(total!==1?'s':'')+(total>50?' (mostrando 50)':'')+'</p>';
+  results.forEach(function(r){
+    var pt=EN_PT[r.book]||r.book;
+    var slug=BOOK_SLUG[r.book]||r.book.toLowerCase();
+    var href=BASE+slug+'/'+r.cap+'.html';
+    var hi=r.text.replace(new RegExp('('+q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','gi'),'<mark>$1</mark>');
+    html+='<a class="ws-row" href="'+href+'"><span class="ws-ref">'+pt+' '+r.cap+':'+r.ver+'</span><span class="ws-txt">'+hi+'</span></a>';
+  });
+  if(total===0)html='<p style="color:var(--txt-s);padding:10px;text-align:center">Nenhum resultado encontrado.</p>';
+  document.getElementById('wsResults').innerHTML=html;
+}
+
 // ── MOBILE: drawer + bottom nav ──
 function initMobile(){
   if(window.innerWidth>768) return;
@@ -268,7 +341,7 @@ function initMobile(){
     +'<button class="bn-btn" onclick="window.scrollTo({top:0,behavior:\'smooth\'})">'
     +'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>'
     +'<span>Topo</span></button>'
-    +'<button class="bn-btn" onclick="document.getElementById(\'searchInput\').focus();document.getElementById(\'searchInput\').scrollIntoView()">'
+    +'<button class="bn-btn" onclick="openWordSearch()">' 
     +'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>'
     +'<span>Buscar</span></button>';
   document.body.appendChild(nav);
@@ -316,4 +389,103 @@ function installPWA(){
 function dismissPWA(){
   var banner=document.getElementById('pwaBanner');
   if(banner) banner.classList.remove('show');
+}
+
+// ── BUSCA POR PALAVRA ──
+function searchWord(){
+  var q=document.getElementById('wordSearchInput').value.trim().toLowerCase();
+  if(q.length<2){alert("Digite pelo menos 2 letras.");return;}
+  var results=[];
+  var books=Object.keys(DB.kjv||{});
+  for(var bi=0;bi<books.length;bi++){
+    var book=books[bi];
+    var caps=Object.keys(DB.kjv[book]||{});
+    for(var ci=0;ci<caps.length;ci++){
+      var cap=caps[ci];
+      var araArr=(DB.ara[book]||{})[cap]||[];
+      var kjvArr=(DB.kjv[book]||{})[cap]||[];
+      var araMap={};araArr.forEach(function(v){araMap[v.v]=v.t;});
+      for(var vi=0;vi<kjvArr.length;vi++){
+        var v=kjvArr[vi];
+        var araT=(araMap[v.v]||'').toLowerCase().replace(/\{[^}]+\}/g,'');
+        var kjvT=v.t.toLowerCase().replace(/\{[^}]+\}/g,'');
+        if(araT.includes(q)||kjvT.includes(q)){
+          var ptName=EN_PT[book]||book;
+          var slug=BOOK_SLUG[book]||book.toLowerCase();
+          results.push({book:ptName,cap:cap,verse:v.v,
+            araText:(araMap[v.v]||'').replace(/\{[^}]+\}/g,''),
+            href:BASE+slug+'/'+cap+'.html'});
+          if(results.length>=50) break;
+        }
+      }
+      if(results.length>=50) break;
+    }
+    if(results.length>=50) break;
+  }
+  renderWordResults(results,q);
+}
+
+function renderWordResults(results,q){
+  var panel=document.getElementById('wordResultsPanel');
+  if(!panel) return;
+  if(!results.length){panel.innerHTML='<p style="color:var(--txt-s);padding:20px">Nenhum resultado encontrado.</p>';return;}
+  var html='<div style="padding:10px 0 14px;font-size:.78rem;color:var(--txt-s)">'+results.length+(results.length>=50?' (primeiros 50)':'')+' resultado(s)</div>';
+  results.forEach(function(r){
+    var hi=r.araText.replace(new RegExp('('+q+')','gi'),'<mark style="background:rgba(201,168,76,.3);border-radius:2px">$1</mark>');
+    html+='<div style="padding:10px 0;border-bottom:1px solid var(--parch-dd)">'
+      +'<a href="'+r.href+'" style="font-family:Cinzel,serif;font-size:.82rem;color:var(--gold);font-weight:600;text-decoration:none">'+r.book+' '+r.cap+':'+r.verse+'</a>'
+      +'<p style="font-family:Crimson Pro,serif;font-size:1rem;line-height:1.7;color:var(--txt);margin-top:3px">'+hi+'</p>'
+      +'</div>';
+  });
+  panel.innerHTML=html;
+  panel.style.display='block';
+}
+
+// ── VERSÍCULO DO DIA ──
+var DAILY_VERSES=[
+  {b:"John",c:"3",v:"16"},{b:"Psalms",c:"23",v:"1"},{b:"Romans",c:"8",v:"28"},
+  {b:"Philippians",c:"4",v:"13"},{b:"Isaiah",c:"41",v:"10"},{b:"Jeremiah",c:"29",v:"11"},
+  {b:"Proverbs",c:"3",v:"5"},{b:"Matthew",c:"6",v:"33"},{b:"Romans",c:"5",v:"8"},
+  {b:"John",c:"14",v:"6"},{b:"Psalms",c:"119",v:"105"},{b:"Isaiah",c:"40",v:"31"},
+  {b:"Matthew",c:"11",v:"28"},{b:"John",c:"10",v:"10"},{b:"Romans",c:"12",v:"2"},
+  {b:"Ephesians",c:"2",v:"8"},{b:"Psalms",c:"46",v:"1"},{b:"1 Corinthians",c:"13",v:"4"},
+  {b:"Galatians",c:"5",v:"22"},{b:"John",c:"1",v:"1"},{b:"Genesis",c:"1",v:"1"},
+  {b:"Hebrews",c:"11",v:"1"},{b:"Matthew",c:"5",v:"3"},{b:"Romans",c:"3",v:"23"},
+  {b:"John",c:"3",v:"36"},{b:"Psalms",c:"91",v:"1"},{b:"Isaiah",c:"53",v:"5"},
+  {b:"Matthew",c:"28",v:"19"},{b:"John",c:"15",v:"5"},{b:"Romans",c:"6",v:"23"}
+];
+
+function initDailyVerse(){
+  var dv=document.getElementById('dailyVerse');
+  if(!dv||!DB.ara) return;
+  var idx=Math.floor(Math.random()*DAILY_VERSES.length);
+  var ref=DAILY_VERSES[idx];
+  var araArr=(DB.ara[ref.b]||{})[ref.c]||[];
+  var vObj=araArr.find(function(v){return v.v===ref.v;});
+  if(!vObj) return;
+  var text=vObj.t.replace(/\{[^}]+\}/g,'');
+  var ptName=EN_PT[ref.b]||ref.b;
+  var slug=BOOK_SLUG[ref.b]||ref.b.toLowerCase();
+  var href=BASE+slug+'/'+ref.c+'.html';
+  dv.innerHTML='<div class="dv-text">"'+text+'"</div>'
+    +'<div class="dv-ref"><a href="'+href+'">'+ptName+' '+ref.c+':'+ref.v+'</a></div>'
+    +'<div class="dv-actions">'
+    +'<button class="dv-btn" onclick="shareDV(''+text.replace(/'/g,"\'").substring(0,100)+'',''+ptName+' '+ref.c+':'+ref.v+'')">📤 Compartilhar</button>'
+    +'<button class="dv-btn" onclick="initDailyVerse()">🔄 Outro</button>'
+    +'</div>';
+}
+
+function shareDV(text,ref){
+  var msg='"'+text+'..."
+— '+ref+'
+
+Bíblia Strong Interativa: https://voltemosapalavra1-bit.github.io/B-blia_Strong/';
+  if(navigator.share){
+    navigator.share({title:'Versículo do Dia',text:msg}).catch(function(){});
+  } else if(navigator.clipboard){
+    navigator.clipboard.writeText(msg).then(function(){alert('Copiado! Cole onde quiser 😊');});
+  } else {
+    var wa='https://wa.me/?text='+encodeURIComponent(msg);
+    window.open(wa,'_blank');
+  }
 }
