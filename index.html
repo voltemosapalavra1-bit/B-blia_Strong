@@ -121,7 +121,6 @@
 </div>
 
 <script>
-var BASE="";
 function navCap(dir){
   var caps=getCaps();
   var idx=caps.indexOf(capNum)+dir;
@@ -131,6 +130,7 @@ function navCap(dir){
   render(); window.scrollTo({top:0,behavior:"smooth"});
 }
 </script>
+<script>var BASE="";</script>
 <script src="app.js"></script>
 <script>
 if('serviceWorker' in navigator){

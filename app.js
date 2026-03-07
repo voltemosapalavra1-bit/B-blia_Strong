@@ -86,14 +86,16 @@ var capNum=(typeof INIT_CAP!=='undefined')?INIT_CAP:1;
 var booksEN=[];
 
 // Load data
+window.addEventListener('DOMContentLoaded',function(){
 (function(){
   var needed=4,done=0;
   function check(){done++;if(done>=needed)boot();}
-  fetch(BASE+"data/strong.json").then(function(r){return r.json();}).then(function(d){DB.str=d;check();}).catch(function(){DB.str={};check();});
+  fetch((typeof BASE!=='undefined'?BASE:"")+"data/strong.json").then(function(r){return r.json();}).then(function(d){DB.str=d;check();}).catch(function(){DB.str={};check();});
   fetch(BASE+"data/kjv.json").then(function(r){return r.json();}).then(function(d){DB.kjv=d;check();}).catch(function(){DB.kjv=null;check();});
   fetch(BASE+"data/ara.json").then(function(r){return r.json();}).then(function(d){DB.ara=d;check();}).catch(function(){DB.ara=null;check();});
   fetch(BASE+"data/refs.json").then(function(r){return r.json();}).then(function(d){DB.refs=d;check();}).catch(function(){DB.refs={};check();});
 })();
+});// end DOMContentLoaded
 
 function boot(){
   if(!DB.kjv||!DB.ara){
