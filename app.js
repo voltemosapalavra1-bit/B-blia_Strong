@@ -267,136 +267,14 @@ function navToRef(refStr){
 
 
 // ── BUSCA POR PALAVRA ──
-function openWordSearch(){
-  document.getElementById('wsModal').style.display='flex';
-  document.getElementById('wsInput').focus();
-}
-function closeWordSearch(){
-  document.getElementById('wsModal').style.display='none';
-  document.getElementById('wsResults').innerHTML='';
-}
-function doWordSearch(){
-  var q=document.getElementById('wsInput').value.trim().toLowerCase();
-  if(q.length<3){document.getElementById('wsResults').innerHTML='<p style="color:var(--txt-s);padding:10px">Digite pelo menos 3 letras.</p>';return;}
-  var results=[];
-  var reAra=new RegExp(q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'),'gi');
-  var reKjv=new RegExp(q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'),'gi');
-  Object.keys(DB.ara||{}).forEach(function(book){
-    Object.keys(DB.ara[book]).forEach(function(cap){
-      DB.ara[book][cap].forEach(function(v){
-        var clean=v.t.replace(/\{[^}]+\}/g,'');
-        if(reAra.test(clean)){
-          results.push({book:book,cap:cap,ver:v.v,text:clean,lang:'ARA'});
-        }
-        reAra.lastIndex=0;
-      });
-    });
-  });
-  Object.keys(DB.kjv||{}).forEach(function(book){
-    Object.keys(DB.kjv[book]).forEach(function(cap){
-      DB.kjv[book][cap].forEach(function(v){
-        var clean=v.t.replace(/\{[^}]+\}/g,'');
-        if(reKjv.test(clean)){
-          results.push({book:book,cap:cap,ver:v.v,text:clean,lang:'KJV'});
-        }
-        reKjv.lastIndex=0;
-      });
-    });
-  });
-  // Deduplicate by book+cap+ver
-  var seen={};
-  results=results.filter(function(r){
-    var k=r.book+r.cap+r.ver;
-    if(seen[k])return false;
-    seen[k]=true;return true;
-  });
-  var total=results.length;
-  results=results.slice(0,50);
-  var html='<p class="ws-count">'+total+' resultado'+(total!==1?'s':'')+' encontrado'+(total!==1?'s':'')+(total>50?' (mostrando 50)':'')+'</p>';
-  results.forEach(function(r){
-    var pt=EN_PT[r.book]||r.book;
-    var slug=BOOK_SLUG[r.book]||r.book.toLowerCase();
-    var href=BASE+slug+'/'+r.cap+'.html';
-    var hi=r.text.replace(new RegExp('('+q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','gi'),'<mark>$1</mark>');
-    html+='<a class="ws-row" href="'+href+'"><span class="ws-ref">'+pt+' '+r.cap+':'+r.ver+'</span><span class="ws-txt">'+hi+'</span></a>';
-  });
-  if(total===0)html='<p style="color:var(--txt-s);padding:10px;text-align:center">Nenhum resultado encontrado.</p>';
-  document.getElementById('wsResults').innerHTML=html;
-}
+var _dvText='', _dvRef='';
 
-// ── MOBILE: drawer + bottom nav ──
-function initMobile(){
-  if(window.innerWidth>768) return;
-
-  // Inject bottom nav
-  var nav=document.createElement('nav');
-  nav.className='bottom-nav';
-  nav.innerHTML=
-    '<button class="bn-btn" id="bnBooks" onclick="toggleSidebar()">'
-    +'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>'
-    +'<span>Livros</span></button>'
-    +'<a class="bn-btn" href="'+BASE+'index.html">'
-    +'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>'
-    +'<span>Início</span></a>'
-    +'<button class="bn-btn" onclick="window.scrollTo({top:0,behavior:\'smooth\'})">'
-    +'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>'
-    +'<span>Topo</span></button>'
-    +'<button class="bn-btn" onclick="openWordSearch()">' 
-    +'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>'
-    +'<span>Buscar</span></button>';
-  document.body.appendChild(nav);
-
-  // Overlay
-  var ov=document.createElement('div');
-  ov.className='sidebar-overlay';
-  ov.id='sidebarOverlay';
-  ov.onclick=closeSidebar;
-  document.body.appendChild(ov);
-
-  // Make sidebar head clickable to close
-  var sh=document.querySelector('.sidebar-head');
-  if(sh) sh.onclick=closeSidebar;
-}
-
-function toggleSidebar(){
-  document.querySelector('.sidebar').classList.toggle('open');
-  document.getElementById('sidebarOverlay').classList.toggle('show');
-}
-function closeSidebar(){
-  document.querySelector('.sidebar').classList.remove('open');
-  var ov=document.getElementById('sidebarOverlay');
-  if(ov) ov.classList.remove('show');
-}
-
-// ── PWA ──
-var deferredPrompt=null;
-function initPWA(){
-  window.addEventListener('beforeinstallprompt',function(e){
-    e.preventDefault();
-    deferredPrompt=e;
-    var banner=document.getElementById('pwaBanner');
-    if(banner) banner.classList.add('show');
-  });
-}
-function installPWA(){
-  if(!deferredPrompt) return;
-  deferredPrompt.prompt();
-  deferredPrompt.userChoice.then(function(){
-    deferredPrompt=null;
-    dismissPWA();
-  });
-}
-function dismissPWA(){
-  var banner=document.getElementById('pwaBanner');
-  if(banner) banner.classList.remove('show');
-}
-
-// ── BUSCA POR PALAVRA ──
 function searchWord(){
   var q=document.getElementById('wordSearchInput').value.trim().toLowerCase();
   if(q.length<2){alert("Digite pelo menos 2 letras.");return;}
   var results=[];
   var books=Object.keys(DB.kjv||{});
+  outer:
   for(var bi=0;bi<books.length;bi++){
     var book=books[bi];
     var caps=Object.keys(DB.kjv[book]||{});
@@ -415,12 +293,10 @@ function searchWord(){
           results.push({book:ptName,cap:cap,verse:v.v,
             araText:(araMap[v.v]||'').replace(/\{[^}]+\}/g,''),
             href:BASE+slug+'/'+cap+'.html'});
-          if(results.length>=50) break;
+          if(results.length>=50) break outer;
         }
       }
-      if(results.length>=50) break;
     }
-    if(results.length>=50) break;
   }
   renderWordResults(results,q);
 }
@@ -431,7 +307,9 @@ function renderWordResults(results,q){
   if(!results.length){panel.innerHTML='<p style="color:var(--txt-s);padding:20px">Nenhum resultado encontrado.</p>';return;}
   var html='<div style="padding:10px 0 14px;font-size:.78rem;color:var(--txt-s)">'+results.length+(results.length>=50?' (primeiros 50)':'')+' resultado(s)</div>';
   results.forEach(function(r){
-    var hi=r.araText.replace(new RegExp('('+q+')','gi'),'<mark style="background:rgba(201,168,76,.3);border-radius:2px">$1</mark>');
+    var safe=r.araText.replace(/[<>]/g,'');
+    var re2=new RegExp('('+q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','gi');
+    var hi=safe.replace(re2,'<mark style="background:rgba(201,168,76,.3);border-radius:2px">$1</mark>');
     html+='<div style="padding:10px 0;border-bottom:1px solid var(--parch-dd)">'
       +'<a href="'+r.href+'" style="font-family:Cinzel,serif;font-size:.82rem;color:var(--gold);font-weight:600;text-decoration:none">'+r.book+' '+r.cap+':'+r.verse+'</a>'
       +'<p style="font-family:Crimson Pro,serif;font-size:1rem;line-height:1.7;color:var(--txt);margin-top:3px">'+hi+'</p>'
@@ -467,25 +345,22 @@ function initDailyVerse(){
   var ptName=EN_PT[ref.b]||ref.b;
   var slug=BOOK_SLUG[ref.b]||ref.b.toLowerCase();
   var href=BASE+slug+'/'+ref.c+'.html';
+  _dvText=text; _dvRef=ptName+' '+ref.c+':'+ref.v;
   dv.innerHTML='<div class="dv-text">"'+text+'"</div>'
     +'<div class="dv-ref"><a href="'+href+'">'+ptName+' '+ref.c+':'+ref.v+'</a></div>'
     +'<div class="dv-actions">'
-    +'<button class="dv-btn" onclick="shareDV(''+text.replace(/'/g,"\'").substring(0,100)+'',''+ptName+' '+ref.c+':'+ref.v+'')">📤 Compartilhar</button>'
+    +'<button class="dv-btn" onclick="shareDV()">📤 Compartilhar</button>'
     +'<button class="dv-btn" onclick="initDailyVerse()">🔄 Outro</button>'
     +'</div>';
 }
 
-function shareDV(text,ref){
-  var msg='"'+text+'..."
-— '+ref+'
-
-Bíblia Strong Interativa: https://voltemosapalavra1-bit.github.io/B-blia_Strong/';
+function shareDV(){
+  var msg='"'+_dvText+'"\n— '+_dvRef+'\n\nBíblia Strong Interativa:\nhttps://voltemosapalavra1-bit.github.io/B-blia_Strong/';
   if(navigator.share){
     navigator.share({title:'Versículo do Dia',text:msg}).catch(function(){});
   } else if(navigator.clipboard){
-    navigator.clipboard.writeText(msg).then(function(){alert('Copiado! Cole onde quiser 😊');});
+    navigator.clipboard.writeText(msg).then(function(){alert('Copiado! Cole onde quiser.');});
   } else {
-    var wa='https://wa.me/?text='+encodeURIComponent(msg);
-    window.open(wa,'_blank');
+    window.open('https://wa.me/?text='+encodeURIComponent(msg),'_blank');
   }
 }
