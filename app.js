@@ -1,7 +1,7 @@
 // ================================================================
-// VOLTEMOS À PALAVRA — app.js
+// VOLTEMOS À PALAVRA — app.js compartilhado
 // ================================================================
-var EN_PT={
+var EN_PT = {
   "Genesis":"Gênesis","Exodus":"Êxodo","Leviticus":"Levítico","Numbers":"Números",
   "Deuteronomy":"Deuteronômio","Joshua":"Josué","Judges":"Juízes","Ruth":"Rute",
   "1 Samuel":"1 Samuel","2 Samuel":"2 Samuel","1 Kings":"1 Reis","2 Kings":"2 Reis",
@@ -21,8 +21,10 @@ var EN_PT={
   "Hebrews":"Hebreus","James":"Tiago","1 Peter":"1 Pedro","2 Peter":"2 Pedro",
   "1 John":"1 João","2 John":"2 João","3 John":"3 João","Jude":"Judas","Revelation":"Apocalipse"
 };
-var PT_EN={};Object.keys(EN_PT).forEach(function(k){PT_EN[EN_PT[k]]=k;});
-var BOOK_SLUG={
+var PT_EN = {};
+Object.keys(EN_PT).forEach(function(k){ PT_EN[EN_PT[k]]=k; });
+
+var BOOK_SLUG = {
   "Genesis":"genesis","Exodus":"exodo","Leviticus":"levitico","Numbers":"numeros",
   "Deuteronomy":"deuteronomio","Joshua":"josue","Judges":"juizes","Ruth":"rute",
   "1 Samuel":"1-samuel","2 Samuel":"2-samuel","1 Kings":"1-reis","2 Kings":"2-reis",
@@ -42,7 +44,7 @@ var BOOK_SLUG={
   "Hebrews":"hebreus","James":"tiago","1 Peter":"1-pedro","2 Peter":"2-pedro",
   "1 John":"1-joao","2 John":"2-joao","3 John":"3-joao","Jude":"judas","Revelation":"apocalipse"
 };
-var ABBR={
+var ABBR = {
   "Gn":"Genesis","Ex":"Exodus","Lv":"Leviticus","Nm":"Numbers","Dt":"Deuteronomy",
   "Jos":"Joshua","Jz":"Judges","Rt":"Ruth","1S":"1 Samuel","2S":"2 Samuel",
   "1R":"1 Kings","2R":"2 Kings","1Cr":"1 Chronicles","2Cr":"2 Chronicles",
@@ -62,7 +64,7 @@ var ABBR={
   "1Jo":"1 John","2Jo":"2 John","3Jo":"3 John","1 Jo":"1 John","2 Jo":"2 John","3 Jo":"3 John",
   "Jd":"Jude","Ap":"Revelation"
 };
-var BOOK_ABBR={
+var BOOK_ABBR = {
   "Genesis":"Gn","Exodus":"Ex","Leviticus":"Lv","Numbers":"Nm","Deuteronomy":"Dt",
   "Joshua":"Jos","Judges":"Jz","Ruth":"Rt","1 Samuel":"1S","2 Samuel":"2S",
   "1 Kings":"1R","2 Kings":"2R","1 Chronicles":"1Cr","2 Chronicles":"2Cr",
@@ -78,24 +80,25 @@ var BOOK_ABBR={
   "Titus":"Tt","Philemon":"Fm","Hebrews":"He","James":"Tg","1 Peter":"1Pe",
   "2 Peter":"2Pe","1 John":"1Jo","2 John":"2Jo","3 John":"3Jo","Jude":"Jd","Revelation":"Ap"
 };
+var OT_LAST = "Malachi";
 
-if(typeof BASE==='undefined') var BASE="";
-var DB={ara:null,kjv:null,str:null,refs:null};
-var bookEN=(typeof INIT_BOOK!=='undefined')?INIT_BOOK:"Genesis";
-var capNum=(typeof INIT_CAP!=='undefined')?INIT_CAP:1;
-var booksEN=[];
+// BASE is set per-page: "" for index.html, "../../" for chapter pages
+if(typeof BASE === 'undefined') var BASE = "";
+
+var DB = { ara:null, kjv:null, str:null, refs:null };
+var bookEN = (typeof INIT_BOOK !== 'undefined') ? INIT_BOOK : "Genesis";
+var capNum = (typeof INIT_CAP  !== 'undefined') ? INIT_CAP  : 1;
+var booksEN = [];
 
 // Load data
-window.addEventListener('DOMContentLoaded',function(){
 (function(){
-  var needed=4,done=0;
-  function check(){done++;if(done>=needed)boot();}
-  fetch((typeof BASE!=='undefined'?BASE:"")+"data/strong.json").then(function(r){return r.json();}).then(function(d){DB.str=d;check();}).catch(function(){DB.str={};check();});
+  var needed=4, done=0;
+  function check(){ done++; if(done>=needed) boot(); }
+  fetch(BASE+"data/strong.json").then(function(r){return r.json();}).then(function(d){DB.str=d;check();}).catch(function(){DB.str={};check();});
   fetch(BASE+"data/kjv.json").then(function(r){return r.json();}).then(function(d){DB.kjv=d;check();}).catch(function(){DB.kjv=null;check();});
   fetch(BASE+"data/ara.json").then(function(r){return r.json();}).then(function(d){DB.ara=d;check();}).catch(function(){DB.ara=null;check();});
   fetch(BASE+"data/refs.json").then(function(r){return r.json();}).then(function(d){DB.refs=d;check();}).catch(function(){DB.refs={};check();});
 })();
-});// end DOMContentLoaded
 
 function boot(){
   if(!DB.kjv||!DB.ara){
@@ -106,17 +109,14 @@ function boot(){
   renderBookList();
   renderCapSelect();
   render();
-  initMobile();
-  initPWA();
-  initDailyVerse();
 }
 
-// ── SIDEBAR ──
 function renderBookList(){
   var ul=document.getElementById("bookList");
   var html='<li class="section-lbl">Antigo Testamento</li>';
+  var passedOT=false;
   booksEN.forEach(function(en){
-    if(en==="Matthew") html+='<li class="section-lbl">Novo Testamento</li>';
+    if(en==="Matthew"&&!passedOT){html+='<li class="section-lbl">Novo Testamento</li>';passedOT=true;}
     var slug=BOOK_SLUG[en]||en.toLowerCase();
     var caps=Object.keys(DB.kjv[en]||{});
     var firstCap=caps.length?Math.min.apply(null,caps.map(Number)):1;
@@ -127,8 +127,6 @@ function renderBookList(){
   ul.innerHTML=html;
 }
 
-// ── CAPÍTULOS ──
-function getCaps(){return Object.keys(DB.kjv[bookEN]||{}).map(Number).sort(function(a,b){return a-b;});}
 function renderCapSelect(){
   var caps=getCaps();
   var sel=document.getElementById("capSel");
@@ -138,6 +136,7 @@ function renderCapSelect(){
            +' data-href="'+BASE+slug+'/'+c+'.html">Cap. '+c+'</option>';
   }).join("");
 }
+
 function onCapSel(){
   var sel=document.getElementById("capSel");
   var opt=sel.options[sel.selectedIndex];
@@ -145,7 +144,10 @@ function onCapSel(){
   if(href) window.location.href=href;
 }
 
-// ── RENDER ──
+function getCaps(){
+  return Object.keys(DB.kjv[bookEN]||{}).map(Number).sort(function(a,b){return a-b;});
+}
+
 function render(){
   var ver=document.querySelector('input[name=ver]:checked').value;
   var par=document.getElementById("chkPar").checked;
@@ -154,10 +156,11 @@ function render(){
   var capS=String(capNum);
   var kjvArr=(DB.kjv[bookEN]||{})[capS]||[];
   var araArr=(DB.ara[bookEN]||{})[capS]||[];
-  var araMap={};araArr.forEach(function(v){araMap[v.v]=v.t;});
+  var araMap={};
+  araArr.forEach(function(v){araMap[v.v]=v.t;});
   var ptName=EN_PT[bookEN]||bookEN;
   document.getElementById("chapTitle").textContent=(par?ptName+" / "+bookEN:(ver==="ara"?ptName:bookEN))+" "+capNum;
-  var subs={ara:"Almeida Revista e Atualizada",kjv:"King James Version + Strong's Numbers"};
+  var subs={ara:"Almeida Revista e Atualizada + Strong",kjv:"King James Version + Strong's Numbers"};
   document.getElementById("chapSub").textContent=par?"ARA · KJV + Strong":subs[ver];
   document.getElementById("parHeads").classList.toggle("show",par);
   var abbr=BOOK_ABBR[bookEN]||bookEN.substring(0,2);
@@ -173,7 +176,9 @@ function render(){
       var sKey=abbr+"."+capNum+"."+verso;
       var refsA=DB.refs[sKey]||[];
       if(refsA.length){
-        var pills=refsA.map(function(r){return '<span class="ref-pill" onclick="navToRef(\''+r+'\')">' +r+'</span>';}).join("");
+        var pills=refsA.map(function(r){
+          return '<span class="ref-pill" onclick="navToRef(\''+r+'\')">' +r+'</span>';
+        }).join("");
         var refId='refs-'+bookEN.replace(/[^a-zA-Z0-9]/g,'_')+'-'+capNum+'-'+verso;
         refsSideHtml='<div class="v-refs-side collapsed" id="'+refId+'">'
           +'<div class="ref-label">Ref</div>'
@@ -181,7 +186,7 @@ function render(){
           +'<div class="ref-list">'+pills+'</div></div>';
       }
     }
-    html+='<div class="verse-row" style="animation-delay:'+(i*.02)+'s">';
+    html+='<div class="verse-row" style="animation-delay:'+(i*.025)+'s">';
     html+='<div class="v-num">'+verso+'</div>';
     if(par){
       html+='<div class="v-cols par">'
@@ -194,7 +199,7 @@ function render(){
     }
     html+='</div>';
   });
-  document.getElementById("versesPanel").innerHTML=html||'<div class="loading">Nenhum versículo.</div>';
+  document.getElementById("versesPanel").innerHTML=html||'<div class="loading">Nenhum versículo encontrado.</div>';
 }
 
 function processStrong(text,showCode){
@@ -206,7 +211,6 @@ function processStrong(text,showCode){
   });
 }
 
-// ── BUSCA ──
 function doSearch(){
   var q=document.getElementById("searchInput").value.trim();
   if(!q) return;
@@ -220,7 +224,6 @@ function doSearch(){
   window.location.href=BASE+slug+"/"+cap+".html";
 }
 
-// ── POPUP STRONG ──
 function openStrong(codigo){
   var d=DB.str[codigo];
   if(!d){alert("Código não encontrado: "+codigo);return;}
@@ -230,21 +233,8 @@ function openStrong(codigo){
   document.getElementById("popXlit").textContent=d.x||"—";
   document.getElementById("popPron").textContent=d.p||"—";
   document.getElementById("popDesc").textContent=d.d||"—";
-  // Pronunciation button
-  var pb=document.getElementById("popPronBtn");
-  if(pb){pb.onclick=function(){pronounceStrong(d.x||d.l,codigo.charAt(0)==="G"?"el-GR":"he-IL");};}
-  // Link to full page
-  var pl=document.getElementById("popPageLink");
-  if(pl){pl.href=BASE+"strong/"+codigo+".html";}
   document.getElementById("overlay").style.display="block";
   document.getElementById("popup").style.display="block";
-}
-function pronounceStrong(word,lang){
-  if(!window.speechSynthesis){alert("Seu navegador não suporta síntese de voz.");return;}
-  var u=new SpeechSynthesisUtterance(word);
-  u.lang=lang; u.rate=0.75;
-  window.speechSynthesis.cancel();
-  window.speechSynthesis.speak(u);
 }
 function closePopup(){
   document.getElementById("overlay").style.display="none";
@@ -252,7 +242,10 @@ function closePopup(){
 }
 document.addEventListener("keydown",function(e){if(e.key==="Escape")closePopup();});
 
-function toggleRefs(id){var el=document.getElementById(id);if(el)el.classList.toggle('collapsed');}
+function toggleRefs(id){
+  var el=document.getElementById(id);
+  if(el)el.classList.toggle('collapsed');
+}
 
 function navToRef(refStr){
   var first=refStr.split("-")[0].trim();
@@ -267,61 +260,8 @@ function navToRef(refStr){
   window.location.href=BASE+slug+"/"+cap+".html";
 }
 
-
-// ── BUSCA POR PALAVRA ──
-var _dvText='', _dvRef='';
-
-function searchWord(){
-  var q=document.getElementById('wordSearchInput').value.trim().toLowerCase();
-  if(q.length<2){alert("Digite pelo menos 2 letras.");return;}
-  var results=[];
-  var books=Object.keys(DB.kjv||{});
-  outer:
-  for(var bi=0;bi<books.length;bi++){
-    var book=books[bi];
-    var caps=Object.keys(DB.kjv[book]||{});
-    for(var ci=0;ci<caps.length;ci++){
-      var cap=caps[ci];
-      var araArr=(DB.ara[book]||{})[cap]||[];
-      var kjvArr=(DB.kjv[book]||{})[cap]||[];
-      var araMap={};araArr.forEach(function(v){araMap[v.v]=v.t;});
-      for(var vi=0;vi<kjvArr.length;vi++){
-        var v=kjvArr[vi];
-        var araT=(araMap[v.v]||'').toLowerCase().replace(/\{[^}]+\}/g,'');
-        var kjvT=v.t.toLowerCase().replace(/\{[^}]+\}/g,'');
-        if(araT.includes(q)||kjvT.includes(q)){
-          var ptName=EN_PT[book]||book;
-          var slug=BOOK_SLUG[book]||book.toLowerCase();
-          results.push({book:ptName,cap:cap,verse:v.v,
-            araText:(araMap[v.v]||'').replace(/\{[^}]+\}/g,''),
-            href:BASE+slug+'/'+cap+'.html'});
-          if(results.length>=50) break outer;
-        }
-      }
-    }
-  }
-  renderWordResults(results,q);
-}
-
-function renderWordResults(results,q){
-  var panel=document.getElementById('wordResultsPanel');
-  if(!panel) return;
-  if(!results.length){panel.innerHTML='<p style="color:var(--txt-s);padding:20px">Nenhum resultado encontrado.</p>';return;}
-  var html='<div style="padding:10px 0 14px;font-size:.78rem;color:var(--txt-s)">'+results.length+(results.length>=50?' (primeiros 50)':'')+' resultado(s)</div>';
-  results.forEach(function(r){
-    var safe=r.araText.replace(/[<>]/g,'');
-    var re2=new RegExp('('+q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','gi');
-    var hi=safe.replace(re2,'<mark style="background:rgba(201,168,76,.3);border-radius:2px">$1</mark>');
-    html+='<div style="padding:10px 0;border-bottom:1px solid var(--parch-dd)">'
-      +'<a href="'+r.href+'" style="font-family:Cinzel,serif;font-size:.82rem;color:var(--gold);font-weight:600;text-decoration:none">'+r.book+' '+r.cap+':'+r.verse+'</a>'
-      +'<p style="font-family:Crimson Pro,serif;font-size:1rem;line-height:1.7;color:var(--txt);margin-top:3px">'+hi+'</p>'
-      +'</div>';
-  });
-  panel.innerHTML=html;
-  panel.style.display='block';
-}
-
 // ── VERSÍCULO DO DIA ──
+var _dvText='', _dvRef='';
 var DAILY_VERSES=[
   {b:"John",c:"3",v:"16"},{b:"Psalms",c:"23",v:"1"},{b:"Romans",c:"8",v:"28"},
   {b:"Philippians",c:"4",v:"13"},{b:"Isaiah",c:"41",v:"10"},{b:"Jeremiah",c:"29",v:"11"},
@@ -329,19 +269,18 @@ var DAILY_VERSES=[
   {b:"John",c:"14",v:"6"},{b:"Psalms",c:"119",v:"105"},{b:"Isaiah",c:"40",v:"31"},
   {b:"Matthew",c:"11",v:"28"},{b:"John",c:"10",v:"10"},{b:"Romans",c:"12",v:"2"},
   {b:"Ephesians",c:"2",v:"8"},{b:"Psalms",c:"46",v:"1"},{b:"1 Corinthians",c:"13",v:"4"},
-  {b:"Galatians",c:"5",v:"22"},{b:"John",c:"1",v:"1"},{b:"Genesis",c:"1",v:"1"},
-  {b:"Hebrews",c:"11",v:"1"},{b:"Matthew",c:"5",v:"3"},{b:"Romans",c:"3",v:"23"},
-  {b:"John",c:"3",v:"36"},{b:"Psalms",c:"91",v:"1"},{b:"Isaiah",c:"53",v:"5"},
-  {b:"Matthew",c:"28",v:"19"},{b:"John",c:"15",v:"5"},{b:"Romans",c:"6",v:"23"}
+  {b:"Genesis",c:"1",v:"1"},{b:"Hebrews",c:"11",v:"1"},{b:"Matthew",c:"5",v:"3"},
+  {b:"John",c:"15",v:"5"},{b:"Romans",c:"6",v:"23"},{b:"Isaiah",c:"53",v:"5"},
+  {b:"Matthew",c:"28",v:"19"},{b:"Psalms",c:"91",v:"1"},{b:"Romans",c:"3",v:"23"},
+  {b:"Galatians",c:"5",v:"22"},{b:"John",c:"1",v:"1"},{b:"John",c:"3",v:"36"}
 ];
-
 function initDailyVerse(){
   var dv=document.getElementById('dailyVerse');
   if(!dv||!DB.ara) return;
   var idx=Math.floor(Math.random()*DAILY_VERSES.length);
   var ref=DAILY_VERSES[idx];
-  var araArr=(DB.ara[ref.b]||{})[ref.c]||[];
-  var vObj=araArr.find(function(v){return v.v===ref.v;});
+  var arr=(DB.ara[ref.b]||{})[ref.c]||[];
+  var vObj=arr.find(function(v){return v.v===ref.v;});
   if(!vObj) return;
   var text=vObj.t.replace(/\{[^}]+\}/g,'');
   var ptName=EN_PT[ref.b]||ref.b;
@@ -355,14 +294,65 @@ function initDailyVerse(){
     +'<button class="dv-btn" onclick="initDailyVerse()">🔄 Outro</button>'
     +'</div>';
 }
-
 function shareDV(){
   var msg='"'+_dvText+'"\n— '+_dvRef+'\n\nBíblia Strong Interativa:\nhttps://voltemosapalavra1-bit.github.io/B-blia_Strong/';
-  if(navigator.share){
-    navigator.share({title:'Versículo do Dia',text:msg}).catch(function(){});
-  } else if(navigator.clipboard){
-    navigator.clipboard.writeText(msg).then(function(){alert('Copiado! Cole onde quiser.');});
-  } else {
-    window.open('https://wa.me/?text='+encodeURIComponent(msg),'_blank');
-  }
+  if(navigator.share){navigator.share({title:'Versículo do Dia',text:msg}).catch(function(){});}
+  else if(navigator.clipboard){navigator.clipboard.writeText(msg).then(function(){alert('Copiado!');});}
+  else{window.open('https://wa.me/?text='+encodeURIComponent(msg),'_blank');}
 }
+
+// ── BUSCA POR PALAVRA ──
+function searchWord(){
+  var q=document.getElementById('wordSearchInput').value.trim().toLowerCase();
+  if(q.length<2){alert('Digite pelo menos 2 letras.');return;}
+  var results=[]; var found=false;
+  var books=Object.keys(DB.kjv||{});
+  for(var bi=0;bi<books.length&&!found;bi++){
+    var book=books[bi];
+    var caps=Object.keys(DB.kjv[book]||{});
+    for(var ci=0;ci<caps.length&&!found;ci++){
+      var cap=caps[ci];
+      var ara2=(DB.ara[book]||{})[cap]||[];
+      var kjv2=(DB.kjv[book]||{})[cap]||[];
+      var am={};ara2.forEach(function(v){am[v.v]=v.t;});
+      for(var vi=0;vi<kjv2.length;vi++){
+        var v=kjv2[vi];
+        var at=(am[v.v]||'').toLowerCase().replace(/\{[^}]+\}/g,'');
+        var kt=v.t.toLowerCase().replace(/\{[^}]+\}/g,'');
+        if(at.includes(q)||kt.includes(q)){
+          results.push({book:EN_PT[book]||book,cap:cap,verse:v.v,
+            text:(am[v.v]||'').replace(/\{[^}]+\}/g,''),
+            href:BASE+(BOOK_SLUG[book]||book.toLowerCase())+'/'+cap+'.html'});
+          if(results.length>=50){found=true;break;}
+        }
+      }
+    }
+  }
+  var panel=document.getElementById('wordResultsPanel');
+  if(!panel) return;
+  if(!results.length){panel.innerHTML='<p style="color:var(--txt-s);padding:16px">Nenhum resultado.</p>';panel.style.display='block';return;}
+  var html='<div style="padding:8px 0 12px;font-size:.78rem;color:var(--txt-s)">'+results.length+(results.length>=50?' (primeiros 50)':'')+' resultado(s)</div>';
+  var esc=q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+  results.forEach(function(r){
+    var hi=r.text.replace(/[<>]/g,'').replace(new RegExp('('+esc+')','gi'),'<mark style="background:rgba(201,168,76,.3)">$1</mark>');
+    html+='<div style="padding:10px 0;border-bottom:1px solid var(--parch-dd)">'
+      +'<a href="'+r.href+'" style="font-family:Cinzel,serif;font-size:.82rem;color:var(--gold);font-weight:600;text-decoration:none">'+r.book+' '+r.cap+':'+r.verse+'</a>'
+      +'<p style="font-family:Crimson Pro,serif;font-size:1rem;line-height:1.7;color:var(--txt);margin-top:3px">'+hi+'</p></div>';
+  });
+  panel.innerHTML=html; panel.style.display='block';
+}
+
+// ── PRONÚNCIA NO POPUP ──
+var _origOpenStrong=openStrong;
+openStrong=function(codigo){
+  _origOpenStrong(codigo);
+  var d=DB.str[codigo]; if(!d) return;
+  var btn=document.getElementById('popAudioBtn');
+  var lnk=document.getElementById('popStrongLink');
+  if(lnk) lnk.href=BASE+'strong/'+codigo+'.html';
+  if(btn){ var xlit=d.x||''; var lang=codigo[0]==='G'?'el-GR':'he-IL';
+    btn.onclick=function(){ if(!window.speechSynthesis)return;
+      var u=new SpeechSynthesisUtterance(xlit); u.lang=lang; u.rate=0.8;
+      window.speechSynthesis.cancel(); window.speechSynthesis.speak(u); };
+  }
+};
