@@ -11,7 +11,7 @@
 <style>
 .strong-hero{background:var(--ink-m);border-radius:var(--r);padding:28px 28px 20px;border:1px solid rgba(201,168,76,.15);margin-bottom:12px;}
 .strong-code{font-family:'Cinzel',serif;font-size:2rem;color:var(--gold);font-weight:700;display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
-.strong-lemma{font-size:2.8rem;color:var(--ink);line-height:1.2;margin:10px 0 4px;font-family:'Crimson Pro',serif;}
+.strong-lemma{font-size:2.8rem;color:var(--parch);line-height:1.2;margin:10px 0 4px;font-family:'Crimson Pro',serif;}
 .strong-xlit{font-style:italic;color:var(--txt-s);font-size:1.1rem;}
 .def-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px;}
 .def-card{background:var(--parch-d);border-radius:7px;border-left:3px solid var(--gold);padding:12px 16px;}
@@ -29,6 +29,16 @@
 .audio-btn{background:var(--gold);border:none;border-radius:20px;padding:6px 16px;font-size:.82rem;font-weight:600;color:var(--ink);cursor:pointer;font-family:'DM Sans',sans-serif;display:flex;align-items:center;gap:6px;transition:.2s;}
 .audio-btn:hover{background:var(--gold-h);transform:translateY(-1px);}
 @media(max-width:768px){.def-grid{grid-template-columns:1fr;} .strong-lemma{font-size:2.2rem;} }
+
+@media(max-width:768px){
+  .strong-hero{padding:16px 14px 14px;}
+  .strong-code{font-size:1.4rem;}
+  .strong-lemma{font-size:1.9rem;}
+  .def-grid{grid-template-columns:1fr;}
+  .layout{padding:10px 12px!important;}
+  .header-inner{padding:0 12px;}
+  .search-wrap{display:none;}
+}
 </style>
 </head>
 <body>
@@ -41,10 +51,14 @@
     </div>
   </div>
 </header>
-<div class="layout">
-  <aside class="sidebar"><div class="sidebar-head">✦ Livros</div><ul class="book-list" id="bookList"></ul></aside>
+<div class="layout" style="grid-template-columns:1fr">
   <section class="main">
-    <div class="chap-bar">
+    <div style="padding:8px 0 4px">
+  <a href="../index.html" style="display:inline-flex;align-items:center;gap:6px;padding:7px 18px;background:var(--gold);color:var(--ink);border-radius:20px;font-family:'DM Sans',sans-serif;font-size:.84rem;font-weight:700;text-decoration:none">
+    📖 Ir para Bíblia
+  </a>
+</div>
+<div class="chap-bar">
       <div><h2 style="font-size:1rem;color:rgba(255,255,255,.5)">Dicionário Strong — Hebraico</h2></div>
       <div class="nav-btns"><a class="nav-btn" href="H3098.html">← H3098</a><a class="nav-btn" href="H3100.html">H3100 →</a></div>
     </div>
